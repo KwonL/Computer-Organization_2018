@@ -53,14 +53,14 @@ module ALU(
             `OP_ADD : begin
                 temp = A + B + Cin;
                 C = temp[15:0];
-                Cout = temp[16] ? 1 : 0;
+                Cout = temp[16];
             end
 
             `OP_SUB : begin
                 //using two's complement
                 temp = A + ~B + 1 + ~C + 1;
                 //Carry is overflow bit
-                Cout = temp[16] ? 1 : 0;
+                Cout = temp[16];
                 C = temp[15:0];
             end
 
