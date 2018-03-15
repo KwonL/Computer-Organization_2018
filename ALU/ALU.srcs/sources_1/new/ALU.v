@@ -51,14 +51,14 @@ module ALU(
             //add need one more bit to caculate overflow bit
             `OP_ADD : begin
                 reg [16:0] temp;
-                temp = (Cin == 1) ? (A + B + Cin) : (A + B);
+                temp = Cin ? (A + B + Cin) : (A + B);
                 C = temp[15:0];
                 Cout = (temp[16] == 1) ? 1 : 0;
             end
 
             `OP_SUB : begin
                 //two's complement
-                C = (Cin == 1) ? (A + ~B) : A + (~B + 1);
+                C = Cin ? (A + ~B) : A + (~B + 1);
                 Cout = 1;
             end
 
@@ -108,13 +108,13 @@ module ALU(
 
             `OP_ARS : begin
                 //add 1 to MSB if A's MSB is 1
-                C = (A[15] == 1) ? ((A >> 1) | 16'h1000) : (A >> 1);
+                C = A[15] ? ((A >> 1) | 16'h1000) : (A >> 1);
                 Cout = 0;
             end
 
             `OP_RR : begin
                 //add 1 to MSB if A's LSB is 1
-                C = (A[0] == 1) ? ((A >> 1) | 16'h1000) : A >> 1;
+                C = A[0] ? ((A >> 1) | 16'h1000) : A >> 1;
                 Cout = 0;
             end
 
@@ -131,7 +131,7 @@ module ALU(
 
             `OP_RL : begin
                 //add 1 to LSB if A's MSB is 1
-                C = (A[15] == 1) ? ((A << 1) | 16'b1) : A << 1;
+                C = A[15] ? ((A << 1) | 16'b1) : A << 1;
                 Cout = 0;
             end
 
