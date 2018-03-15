@@ -53,13 +53,15 @@ module ALU(
                 reg [16:0] temp;
                 temp = Cin ? (A + B + Cin) : (A + B);
                 C = temp[15:0];
-                Cout = (temp[16] == 1) ? 1 : 0;
+                Cout = temp[16] ? 1 : 0;
             end
 
             `OP_SUB : begin
                 //two's complement
-                C = Cin ? (A + ~B) : A + (~B + 1);
-                Cout = 1;
+                reg[16:0] temp;
+                temp = Cin ? (A + ~B) : A + (~B + 1);
+                Cout = temp[16] ? 1 : 0;
+                Cout = temp[15:0];
             end
 
             `OP_ID : begin
