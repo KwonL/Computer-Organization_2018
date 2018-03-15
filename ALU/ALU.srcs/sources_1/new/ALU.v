@@ -58,8 +58,8 @@ module ALU(
 
             `OP_SUB : begin
                 //two's complement
-                C = A + (~B + 1);
-                Cout = 0;
+                C = (Cin == 1) ? (A + ~B) : A + (~B + 1);
+                Cout = 1;
             end
 
             `OP_ID : begin
