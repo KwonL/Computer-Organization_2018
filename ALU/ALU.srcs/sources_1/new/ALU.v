@@ -48,43 +48,50 @@ module ALU(
     
     always @(*) begin
         case (OP)
+            //add need one more bit to caculate overflow bit
             `OP_ADD : begin
-                if (Cin == 1) begin
-                    C = A + B + Cin;
-                end
-                else begin
-                    C = A + B;
-                end
-                Cout = 0;
+                reg [16:0] temp;
+                temp = (Cin == 1) ? (A + B + Cin) : (A + B);
+                C = temp[15:0];
+                Cout = (temp[16] == 1) ? 1 : 0;
             end
+
             `OP_SUB : begin
+                //two's complement
                 C = A + (~B + 1);
                 Cout = 0;
             end
+
             `OP_ID : begin
                 C = A;
                 Cout = 0;
             end
+
             `OP_NAND : begin
                 C = ~(A & B);
                 Cout = 0;
             end
+
             `OP_NOR : begin
                 C = ~(A | B);
                 Cout = 0;
             end
+
             `OP_XNOR : begin
                 C = ~(A ^ B);
                 Cout = 0;
             end
+
             `OP_NOT : begin
                 C = ~A;
                 Cout = 0;
             end
+
             `OP_AND : begin
                 C = A & B;
                 Cout = 0;
             end
+
             `OP_OR : begin
                 C = A | B;
                 Cout = 0;
@@ -93,42 +100,41 @@ module ALU(
                 C = A ^ B;
                 Cout = 0;
             end
+
             `OP_LRS : begin
                 C = A >> 1;
                 Cout = 0;
             end
+
             `OP_ARS : begin
-                if (A[15] == 1) begin
-                    C = (A >> 1) | (16'h1000);
-                end
+                //add 1 to MSB if A's MSB is 1
+                C = (A[15] == 1) ? ((A >> 1) | 16'h1000) : (A >> 1);
                 Cout = 0;
             end
+
             `OP_RR : begin
-                if (A[0] == 1'b1) begin
-                    C = 16'h1000 | (A >> 1);
-                end
-                else begin
-                    C = A >> 1;
-                end
+                //add 1 to MSB if A's LSB is 1
+                C = (A[0] == 1) ? ((A >> 1) | 16'h1000) : A >> 1;
                 Cout = 0;
             end
+
             `OP_LLS : begin 
                 C = A << 1;
                 Cout = 0;
             end
+
+            //ALS = LLS..
             `OP_ALS :  begin
                 C = A <<< 1;
                 Cout = 0;
             end
+
             `OP_RL : begin
-                if (A[15] == 1'b1) begin
-                    C = 16'b1 | (A << 1);
-                end
-                else begin
-                    C = A << 1;
-                end
+                //add 1 to LSB if A's MSB is 1
+                C = (A[15] == 1) ? ((A << 1) | 16'b1) : A << 1;
                 Cout = 0;
             end
+
             default : begin
                 C = A;
                 Cout = 0;
