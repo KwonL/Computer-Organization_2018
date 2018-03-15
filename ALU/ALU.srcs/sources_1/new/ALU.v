@@ -45,23 +45,24 @@ module ALU(
     output reg Cout,
     output reg [15:0] C
     );
+    reg[16:0] temp;
     
     always @(*) begin
         case (OP)
-            //add need one more bit to caculate overflow bit
+            //OP_ADD and OP_SUB need one more bit to caculate overflow bit
             `OP_ADD : begin
-                reg [16:0] temp;
                 temp = Cin ? (A + B + Cin) : (A + B);
                 C = temp[15:0];
                 Cout = temp[16] ? 1 : 0;
             end
 
             `OP_SUB : begin
-                //two's complement
-                reg[16:0] temp;
-                temp = Cin ? (A + ~B) : A + (~B + 1);
+                //using two's complement
+                //if carry in is 1, then sub 1
+                temp = Cin ? (A + ~B) : (A + ~B + 1);
+                //Carry is overflow bit
                 Cout = temp[16] ? 1 : 0;
-                Cout = temp[15:0];
+                C = temp[15:0];
             end
 
             `OP_ID : begin
@@ -110,13 +111,13 @@ module ALU(
 
             `OP_ARS : begin
                 //add 1 to MSB if A's MSB is 1
-                C = A[15] ? ((A >> 1) | 16'h1000) : (A >> 1);
+                C = A[15] ? ((A >> 1) | 16'h8000) : (A >> 1);
                 Cout = 0;
             end
 
             `OP_RR : begin
                 //add 1 to MSB if A's LSB is 1
-                C = A[0] ? ((A >> 1) | 16'h1000) : A >> 1;
+                C = A[0] ? ((A >> 1) | 16'h8000) : A >> 1;
                 Cout = 0;
             end
 
