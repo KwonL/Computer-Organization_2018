@@ -51,15 +51,14 @@ module ALU(
         case (OP)
             //OP_ADD and OP_SUB need one more bit to caculate overflow bit
             `OP_ADD : begin
-                temp = Cin ? (A + B + Cin) : (A + B);
+                temp = A + B + Cin;
                 C = temp[15:0];
                 Cout = temp[16] ? 1 : 0;
             end
 
             `OP_SUB : begin
                 //using two's complement
-                //if carry in is 1, then sub 1
-                temp = Cin ? (A + ~B) : (A + ~B + 1);
+                temp = A + ~B + 1 + ~C + 1;
                 //Carry is overflow bit
                 Cout = temp[16] ? 1 : 0;
                 C = temp[15:0];
