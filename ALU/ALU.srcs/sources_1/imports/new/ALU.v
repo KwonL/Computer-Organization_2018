@@ -58,7 +58,7 @@ module ALU(
 
             `OP_SUB : begin
                 //using two's complement
-                temp = A + ~B + 1 + ~Cin + 1;
+                temp = Cin ? A + ~B : A + ~B + 16'b1;
                 //Carry is overflow bit
                 Cout = temp[16];
                 C = temp[15:0];

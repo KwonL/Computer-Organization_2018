@@ -1,0 +1,104 @@
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+TEST             Add-1 :
+PASSED
+TEST             Add-2 :
+PASSED
+TEST             Add-3 :
+PASSED
+TEST             Add-4 :
+PASSED
+TEST             Add-5 :
+PASSED
+TEST             Add-6 :
+PASSED
+TEST             Add-7 :
+PASSED
+TEST             Add-8 :
+PASSED
+TEST             Add-9 :
+PASSED
+TEST             Sub-1 :
+PASSED
+TEST             Sub-2 :
+PASSED
+TEST             Sub-3 :
+PASSED
+TEST             Sub-4 :
+PASSED
+TEST             Sub-5 :
+PASSED
+TEST             Sub-6 :
+PASSED
+TEST             Sub-7 :
+PASSED
+TEST              Id-1 :
+PASSED
+TEST              Id-2 :
+PASSED
+TEST              Id-3 :
+PASSED
+TEST            Nand-1 :
+PASSED
+TEST            Nand-2 :
+PASSED
+TEST             Nor-1 :
+PASSED
+TEST             Nor-2 :
+PASSED
+TEST            Xnor-1 :
+PASSED
+TEST            Xnor-2 :
+PASSED
+TEST             Not-1 :
+PASSED
+TEST             Not-2 :
+PASSED
+TEST             Not-3 :
+PASSED
+TEST             And-1 :
+PASSED
+TEST             And-2 :
+PASSED
+TEST              Or-1 :
+PASSED
+TEST              Or-2 :
+PASSED
+TEST             Xor-1 :
+PASSED
+TEST             Xor-2 :
+PASSED
+TEST             Lrs-1 :
+PASSED
+TEST             Lrs-2 :
+PASSED
+TEST             Lrs-3 :
+PASSED
+TEST             Lrs-4 :
+PASSED
+TEST             Ars-1 :
+PASSED
+TEST             Ars-2 :
+PASSED
+TEST             Ars-3 :
+PASSED
+TEST             Ars-4 :
+PASSED
+TEST              Rr-1 :
+PASSED
+TEST              Rr-2 :
+PASSED
+TEST             Lls-1 :
+PASSED
+TEST             Lls-2 :
+PASSED
+TEST             Als-1 :
+PASSED
+TEST             Als-2 :
+PASSED
+TEST              Rl-1 :
+PASSED
+TEST              Rl-2 :
+PASSED
+Passed = 50, Failed = 0
+$finish called at time : 5 ns : File "C:/Users/HP/Desktop/C.O_proj/ALU/ALU_TB.v" Line 56
