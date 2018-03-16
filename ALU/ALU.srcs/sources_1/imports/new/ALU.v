@@ -51,7 +51,7 @@ module ALU(
         case (OP)
             //OP_ADD and OP_SUB need one more bit to caculate overflow bit
             `OP_ADD : begin
-                temp = A + B + Cin;
+                temp = A + B + {15'b0, Cin};
                 C = temp[15:0];
                 Cout = temp[16];
             end
@@ -110,13 +110,15 @@ module ALU(
 
             `OP_ARS : begin
                 //add 1 to MSB if A's MSB is 1
-                C = A[15] ? ((A >> 1) | 16'h8000) : (A >> 1);
+                //C = A[15] ? ((A >> 1) | 16'h8000) : (A >> 1);
+                C = (A >> 1) | {A[15], 15'b0};
                 Cout = 0;
             end
 
             `OP_RR : begin
                 //add 1 to MSB if A's LSB is 1
-                C = A[0] ? ((A >> 1) | 16'h8000) : A >> 1;
+                //C = A[0] ? ((A >> 1) | 16'h8000) : A >> 1;
+                C = (A >> 1) | {A[0], 15'b0};
                 Cout = 0;
             end
 
@@ -133,7 +135,8 @@ module ALU(
 
             `OP_RL : begin
                 //add 1 to LSB if A's MSB is 1
-                C = A[15] ? ((A << 1) | 16'b1) : A << 1;
+                //C = A[15] ? ((A << 1) | 16'b1) : A << 1;
+                C = (A << 1) | {15'b0, A[15]};
                 Cout = 0;
             end
 
