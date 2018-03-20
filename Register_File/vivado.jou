@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Tue Mar 20 21:38:05 2018
+# Process ID: 4876
+# Current directory: C:/Users/HP/Desktop/C.O_proj/Register_File
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17592 C:\Users\HP\Desktop\C.O_proj\Register_File\Register_File.xpr
+# Log file: C:/Users/HP/Desktop/C.O_proj/Register_File/vivado.log
+# Journal file: C:/Users/HP/Desktop/C.O_proj/Register_File\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.xpr
