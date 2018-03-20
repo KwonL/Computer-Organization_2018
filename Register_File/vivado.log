@@ -2,10 +2,10 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Tue Mar 20 21:38:05 2018
-# Process ID: 4876
+# Start of session at: Tue Mar 20 23:06:29 2018
+# Process ID: 9580
 # Current directory: C:/Users/HP/Desktop/C.O_proj/Register_File
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17592 C:\Users\HP\Desktop\C.O_proj\Register_File\Register_File.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10796 C:\Users\HP\Desktop\C.O_proj\Register_File\Register_File.xpr
 # Log file: C:/Users/HP/Desktop/C.O_proj/Register_File/vivado.log
 # Journal file: C:/Users/HP/Desktop/C.O_proj/Register_File\vivado.jou
 #-----------------------------------------------------------
@@ -16,5 +16,177 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'.
-exit
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 20 21:51:59 2018...
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse -scan_for_includes C:/Users/HP/Desktop/lab02_verilog/RF_tb.v
+import_files -fileset sim_1 -norecurse C:/Users/HP/Desktop/lab02_verilog/RF_tb.v
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'RF_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.sim/sim_1/behav'
+"xvlog -m64 --relax -prj RF_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.srcs/sources_1/new/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+WARNING: [VRFC 10-1315] redeclaration of ansi port data1 is not allowed [C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.srcs/sources_1/new/RegisterFile.v:33]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.srcs/sim_1/imports/lab02_verilog/RF_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 58efd91f9f954388a494fbd0ca4f33fe --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RF_tb_behav xil_defaultlib.RF_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.srcs/sources_1/new/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.srcs/sources_1/new/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.RF_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot RF_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.sim/sim_1/behav/xsim.dir/RF_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.sim/sim_1/behav/xsim.dir/RF_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Mar 20 23:10:48 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Mar 20 23:10:48 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 817.090 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "RF_tb_behav -key {Behavioral:sim_1:Functional:RF_tb} -tclbatch {RF_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source RF_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+TEST             reset :
+PASSED
+TEST write           1 :
+PASSED
+TEST write           2 :
+PASSED
+TEST write           3 :
+PASSED
+TEST write           4 :
+PASSED
+TEST write           5 :
+PASSED
+TEST write           6 :
+PASSED
+TEST write           7 :
+PASSED
+TEST write           8 :
+PASSED
+TEST write           9 :
+PASSED
+TEST write          10 :
+PASSED
+TEST write          11 :
+PASSED
+TEST write          12 :
+PASSED
+TEST write          13 :
+PASSED
+TEST write          14 :
+PASSED
+TEST write          15 :
+PASSED
+TEST write          16 :
+PASSED
+TEST read           1 :
+PASSED
+TEST read           2 :
+PASSED
+TEST read           3 :
+PASSED
+TEST read           4 :
+PASSED
+TEST read           5 :
+PASSED
+TEST read           6 :
+PASSED
+TEST read           7 :
+PASSED
+TEST read           8 :
+PASSED
+TEST read           9 :
+PASSED
+TEST read          10 :
+PASSED
+TEST read          11 :
+PASSED
+TEST read          12 :
+PASSED
+TEST read          13 :
+PASSED
+TEST read          14 :
+PASSED
+TEST read          15 :
+PASSED
+TEST read          16 :
+PASSED
+TEST sync           1:
+PASSED
+TEST sync           2:
+PASSED
+TEST sync           3:
+PASSED
+TEST sync           4:
+PASSED
+TEST sync           5:
+PASSED
+TEST sync           6:
+PASSED
+TEST sync           7:
+PASSED
+TEST sync           8:
+PASSED
+TEST sync           9:
+PASSED
+TEST sync          10:
+PASSED
+TEST sync          11:
+PASSED
+TEST sync          12:
+PASSED
+TEST sync          13:
+PASSED
+TEST sync          14:
+PASSED
+TEST sync          15:
+PASSED
+TEST sync          16:
+PASSED
+TEST             reset :
+PASSED
+Passed = 50, Failed = 0
+$finish called at time : 202 ns : File "C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.srcs/sim_1/imports/lab02_verilog/RF_tb.v" Line 289
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'RF_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 817.090 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 826.238 ; gain = 0.129

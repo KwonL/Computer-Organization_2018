@@ -1,0 +1,104 @@
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+TEST             reset :
+PASSED
+TEST write           1 :
+PASSED
+TEST write           2 :
+PASSED
+TEST write           3 :
+PASSED
+TEST write           4 :
+PASSED
+TEST write           5 :
+PASSED
+TEST write           6 :
+PASSED
+TEST write           7 :
+PASSED
+TEST write           8 :
+PASSED
+TEST write           9 :
+PASSED
+TEST write          10 :
+PASSED
+TEST write          11 :
+PASSED
+TEST write          12 :
+PASSED
+TEST write          13 :
+PASSED
+TEST write          14 :
+PASSED
+TEST write          15 :
+PASSED
+TEST write          16 :
+PASSED
+TEST read           1 :
+PASSED
+TEST read           2 :
+PASSED
+TEST read           3 :
+PASSED
+TEST read           4 :
+PASSED
+TEST read           5 :
+PASSED
+TEST read           6 :
+PASSED
+TEST read           7 :
+PASSED
+TEST read           8 :
+PASSED
+TEST read           9 :
+PASSED
+TEST read          10 :
+PASSED
+TEST read          11 :
+PASSED
+TEST read          12 :
+PASSED
+TEST read          13 :
+PASSED
+TEST read          14 :
+PASSED
+TEST read          15 :
+PASSED
+TEST read          16 :
+PASSED
+TEST sync           1:
+PASSED
+TEST sync           2:
+PASSED
+TEST sync           3:
+PASSED
+TEST sync           4:
+PASSED
+TEST sync           5:
+PASSED
+TEST sync           6:
+PASSED
+TEST sync           7:
+PASSED
+TEST sync           8:
+PASSED
+TEST sync           9:
+PASSED
+TEST sync          10:
+PASSED
+TEST sync          11:
+PASSED
+TEST sync          12:
+PASSED
+TEST sync          13:
+PASSED
+TEST sync          14:
+PASSED
+TEST sync          15:
+PASSED
+TEST sync          16:
+PASSED
+TEST             reset :
+PASSED
+Passed = 50, Failed = 0
+$finish called at time : 202 ns : File "C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.srcs/sim_1/imports/lab02_verilog/RF_tb.v" Line 289

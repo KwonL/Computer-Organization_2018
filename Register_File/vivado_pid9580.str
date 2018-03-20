@@ -1,0 +1,668 @@
+/*
+
+Vivado v2016.4 (64-bit)
+SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+Process ID: 9580
+
+Current time: 	3/20/18 11:06:41 PM KST
+Time zone: 	Korea Standard Time (Asia/Seoul)
+
+OS: Windows 10
+Version: 10.0
+Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1680x1050
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Gulim,name=±¼¸²,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	C:/Xilinx/Vivado/2016.4/tps/win64/jre
+
+User name: 	JPing
+User home directory: C:/Users/HP
+User working directory: C:/Users/HP/Desktop/C.O_proj/Register_File
+User country: 	KR
+User language: 	ko
+User locale: 	ko_KR
+
+RDI base root directory: C:/Xilinx/Vivado
+RDI data directory: C:/Xilinx/Vivado/2016.4/data
+RDI bin directory: C:/Xilinx/Vivado/2016.4/bin
+
+Vivado preferences path: C:/Users/HP/AppData/Roaming/Xilinx/Vivado/2016.4/vivado.ini
+Vivado layouts directory: C:/Users/HP/AppData/Roaming/Xilinx/Vivado/2016.4/layouts
+
+GUI allocated memory:	211 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 502 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\Users\HP\Desktop\C.O_proj\Register_File\Register_File.xpr. Version: Vivado v2016.4 
+// bt:g (cd:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// Tcl Message: open_project C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.xpr 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 67 MB (+67347kb) [00:00:05]
+// [Engine Memory]: 464 MB (+335124kb) [00:00:05]
+// [GUI Memory]: 75 MB (+5125kb) [00:00:05]
+// [Engine Memory]: 502 MB (+15067kb) [00:00:05]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'. 
+// Project name: Register_File; location: C:/Users/HP/Desktop/C.O_proj/Register_File; part: xc7k70tfbv676-1
+dismissDialog("Open Project"); // bt:g (cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// HMemoryUtils.trashcanNow. Engine heap size: 513 MB. GUI used memory: 34 MB. Current time: 3/20/18 11:06:43 PM KST
+// Elapsed time: 27 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RegisterFile (RegisterFile.v)]", 1, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RegisterFile (RegisterFile.v)]", 1, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 3, true); // y:i (D:JPanel, cd:JFrame) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 3); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// b:g (cd:JFrame): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a:JButton (C:JPanel, b:g)
+// F:q (b:g): Create Source File: addNotify
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, (String) null); // ak:JTextField (JPanel:JComponent, F:q)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, F:q)
+dismissDialog("Create Source File"); // F:q (b:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a:JButton (C:JPanel, b:g)
+// [Engine Memory]: 528 MB (+919kb) [00:00:44]
+setFileChooser("C:/Users/HP/Desktop/lab02_verilog/RF_tb.v");
+selectTable(PAResourceQtoS.SrcChooserTable_SRC_CHOOSER_TABLE, "VerilogSourceFile_small ; 1 ; RF_tb.v ; xil_defaultlib ; C:/Users/HP/Desktop/lab02_verilog", 0, "C:/Users/HP/Desktop/lab02_verilog", 4); // bv:r (JViewport:JComponent, b:g)
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, b:g)
+// 'h' command handler elapsed time: 20 seconds
+dismissDialog("Add Sources"); // b:g (cd:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property SOURCE_SET sources_1 [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: add_files -fileset sim_1 -norecurse -scan_for_includes C:/Users/HP/Desktop/lab02_verilog/RF_tb.v 
+// b:g (cd:JFrame): Add Sources: addNotify
+// bt:g (b:g):  Add Simulation Sources  : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -fileset sim_1 -norecurse C:/Users/HP/Desktop/lab02_verilog/RF_tb.v 
+dismissDialog("Add Simulation Sources"); // bt:g (b:g)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, RF_tb (RF_tb.v)]", 6, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, RF_tb (RF_tb.v)]", 6, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 111, 218); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 111, 218, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 111, 218); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 189, 337); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 189, 337, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 189, 337); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 174, 295); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 174, 295, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 174, 295); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 195, 357); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 195, 330); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 114, 142); // bF:I (JPanel:JComponent, cd:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 542 MB. GUI used memory: 38 MB. Current time: 3/20/18 11:07:38 PM KST
+selectCodeEditor("RF_tb.v", 114, 142, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 114, 142); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 159, 246); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 159, 246, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 159, 246); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 95, 104); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 95, 104, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 95, 104); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 161, 252); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 12, 200); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 33, 217); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 12, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 40, 219); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 39, 221, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 35, 220); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 37, 238); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 61, 232); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 2, 191); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 4, 191, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sim_1 
+selectCodeEditor("RF_tb.v", 99, 236); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 33, 237); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 39, 218); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 39, 218, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 99, 220); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("RF_tb.v", 46, 214); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 46, 214, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 44, 227); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 37, 241); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 37, 241, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 48, 271); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 48, 271, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("RF_tb.v", 122, 212); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("RF_tb.v", 79, 197); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 79, 197, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 92, 192); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 92, 192, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 120, 188); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "RegisterFile.v", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 109, 224); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 109, 224, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 96, 161); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 104, 140); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 12 seconds
+selectCodeEditor("RegisterFile.v", 142, 207); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 143, 274); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("RegisterFile.v", 143, 273, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 80 MB (+1443kb) [00:02:08]
+// Elapsed time: 12 seconds
+selectComboBox(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "Clock", 1); // au:e (NullPanel:JPanel, cd:JFrame)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "Clock"); // l:ak (au:e, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 359, 440); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 358, 441); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 75 seconds
+selectCodeEditor("RegisterFile.v", 304, 252); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 212, 193); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 212, 193, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 306, 335); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 142, 304); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 142, 304, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 115, 293); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 115, 293, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 86, 292); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 86, 292, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("RegisterFile.v", 86, 292); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "RF_tb.v", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("RF_tb.v", 38, 206); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 38, 206, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 92, 200); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "RegisterFile.v", 1, false, true); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "RegisterFile.v", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// [GUI Memory]: 88 MB (+3854kb) [00:03:49]
+// [Engine Memory]: 558 MB (+4168kb) [00:03:49]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "RF_tb.v", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0, false, true); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // H:a (Workspace:JPanel, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "RegisterFile.v", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // u:K (t:D, cd:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // u:K (t:D, cd:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ah:JPopupMenu, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// e:bt (cd:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'RF_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.sim/sim_1/behav' 
+// Tcl Message: "xvlog -m64 --relax -prj RF_tb_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.sim/sim_1/behav' 
+// Tcl Message: Vivado Simulator 2016.4 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved. Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 58efd91f9f954388a494fbd0ca4f33fe --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RF_tb_behav xil_defaultlib.RF_tb xil_defaultlib.glbl -log elaborate.log  Using 2 slave threads. Starting static elaboration 
+// Tcl Message: Built simulation snapshot RF_tb_behav  ****** Webtalk v2016.4 (64-bit)   **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017   **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.  source C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.sim/sim_1/behav/xsim.dir/RF_tb_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message: INFO: [Common 17-186] 'C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.sim/sim_1/behav/xsim.dir/RF_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Mar 20 23:10:48 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html. INFO: [Common 17-206] Exiting Webtalk at Tue Mar 20 23:10:48 2018... 
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 817.090 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.sim/sim_1/behav' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "RF_tb_behav -key {Behavioral:sim_1:Functional:RF_tb} -tclbatch {RF_tb.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2016.4 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: Time resolution is 1 ps 
+// Tcl Message: source RF_tb.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// [GUI Memory]: 92 MB (+286kb) [00:04:16]
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'RF_tb_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 817.090 ; gain = 0.000 
+// 'd' command handler elapsed time: 13 seconds
+// Elapsed time: 14 seconds
+dismissDialog("Run Simulation"); // e:bt (cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 558 MB. GUI used memory: 50 MB. Current time: 3/20/18 11:10:57 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 558 MB. GUI used memory: 52 MB. Current time: 3/20/18 11:10:57 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 558 MB. GUI used memory: 49 MB. Current time: 3/20/18 11:10:57 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 558 MB. GUI used memory: 52 MB. Current time: 3/20/18 11:10:58 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 558 MB. GUI used memory: 45 MB. Current time: 3/20/18 11:10:59 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 558 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:10:59 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 558 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:00 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 558 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:05 PM KST
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 558 MB. GUI used memory: 45 MB. Current time: 3/20/18 11:11:11 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 46 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 45 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 46 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 46 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 49 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 45 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 47 MB. Current time: 3/20/18 11:11:25 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 45 MB. Current time: 3/20/18 11:11:26 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 48 MB. Current time: 3/20/18 11:11:26 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:26 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:26 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:26 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 46 MB. Current time: 3/20/18 11:11:26 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:26 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:26 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:26 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:26 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 45 MB. Current time: 3/20/18 11:11:27 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:27 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 49 MB. Current time: 3/20/18 11:11:27 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 47 MB. Current time: 3/20/18 11:11:27 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:27 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 46 MB. Current time: 3/20/18 11:11:27 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:27 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:27 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:27 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 46 MB. Current time: 3/20/18 11:11:28 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 47 MB. Current time: 3/20/18 11:11:28 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:28 PM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 44 MB. Current time: 3/20/18 11:11:29 PM KST
+// Elapsed time: 35 seconds
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, addr[0:2][1:0]]", 3, true); // a:i (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 569 MB. GUI used memory: 45 MB. Current time: 3/20/18 11:11:32 PM KST
+// TclEventType: WAVEFORM_CLOSE_WCFG
+closeView(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 1"); // u:aE
+selectCodeEditor("RF_tb.v", 186, 244); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 186, 244, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 186, 244); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 429, 317); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 429, 317, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 429, 317); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 426, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 426, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 426, 272, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 426, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 412, 204); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 545, 248); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 290, 241); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 290, 241, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 443, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 443, 388, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 443, 388); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 417, 318); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 283, 197); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 283, 197, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 283, 197); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 321, 325); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 321, 325, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RF_tb.v", 321, 325); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RF_tb.v", 271, 163); // bF:I (JPanel:JComponent, cd:JFrame)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+selectCodeEditor("RegisterFile.v", 99, 140); // bF:I (JPanel:JComponent, cd:JFrame)
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_BREAK, "simulation_live_break"); // y:JideButton (g:CommandBar, cd:JFrame)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k:JideButton (JPanel:JComponent, cd:JFrame)
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - RF_tb", "DesignTask.SIMULATION");
+// y:aO (cd:JFrame): Confirm Close: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, y:aO)
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// [GUI Memory]: 98 MB (+984kb) [00:05:27]
+// Tcl Message: close_sim 
+selectCodeEditor("RegisterFile.v", 786, 350); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 754, 131); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 804, 281); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 804, 281, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 777, 154); // bF:I (JPanel:JComponent, cd:JFrame)
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// Tcl Message: close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 826.238 ; gain = 0.129 
+dismissDialog("Confirm Close"); // y:aO (cd:JFrame)
+selectCodeEditor("RegisterFile.v", 365, 393); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 365, 393); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 338, 321); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 338, 321, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 338, 321); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 338, 410); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 335, 426); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 71 seconds
+selectCodeEditor("RegisterFile.v", 387, 532); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 387, 532, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 463, 671); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 463, 671, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 463, 671); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 433, 576); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 433, 576, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 433, 576); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 463, 672); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 463, 672, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 463, 672); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 442, 608); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 442, 608, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 442, 608); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 442, 608); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 451, 684); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 451, 683, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 451, 683); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "RegisterFile.v", 'c'); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 307, 363); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 277, 281); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "RegisterFile.v", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey(null, null, 'z');
+selectCodeEditor("RegisterFile.v", 3, 279); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "RegisterFile.v", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("RegisterFile.v", 159, 326); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 74, 272); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 91, 278); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 91, 278, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 91, 278); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey(null, null, 'z');
+selectCodeEditor("RegisterFile.v", 143, 280); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 143, 280, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 143, 280); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("RegisterFile.v", 177, 279); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 177, 279, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 251, 271); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 251, 271, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 195, 277); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 105, 276); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 97, 276); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 195, 280); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("RegisterFile.v", 100, 369); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 112, 346); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("RegisterFile.v", 112, 346); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 112, 346, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("RegisterFile.v", 112, 346); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 261, 309); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 267, 327); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("RegisterFile.v", 376, 504); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("RegisterFile.v", 376, 504, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 312, 353); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 302, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 429, 527); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 429, 527, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 429, 527); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 262, 233); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 262, 233, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 262, 233); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 382, 465); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 386, 556); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 271, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 271, 329, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 271, 329); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 419, 646); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 347, 574); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 350, 557); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("RegisterFile.v", 234, 165); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 184, 100); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 181, 142); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("RegisterFile.v", 200, 126); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 29 seconds
+selectCodeEditor("RegisterFile.v", 200, 126); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 247, 187); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 247, 187, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("RegisterFile.v", 247, 187); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("RegisterFile.v", 254, 103); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 290, 143); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 290, 143, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 227, 148); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 227, 148, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 227, 148); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 252, 223); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 236, 165); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 205, 81); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 205, 81, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 205, 81); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 302, 323); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 543, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 130, 91); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 130, 91, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 130, 91); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 173, 678); // bF:I (JPanel:JComponent, cd:JFrame)
+unMinimizeFrame(RDIResource.RDIViews_PROPERTIES, "Source File Properties"); // as:DockableFrame
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // as:DockableFrame (aA:FrameContainer)
+selectCodeEditor("RegisterFile.v", 79, 252); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 104, 338); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 100, 294); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 272, 448); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 309, 546); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 309, 546, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 309, 546); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 268, 417); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 268, 417); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 222, 312); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 12 seconds
+selectButton((HResource) null, "Sources_FileSetView.filterMissingAction"); // r:JideToggleButton (g:CommandBar, cd:JFrame): TRUE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RegisterFile (RegisterFile.v)]", 1, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RegisterFile (RegisterFile.v)]", 1, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RegisterFile (RegisterFile.v)]", 1, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RegisterFile (RegisterFile.v)]", 1, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 140, 344); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 140, 344, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 250, 530); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 250, 530, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 172, 355); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 172, 355, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("RegisterFile.v", 172, 355); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("RegisterFile.v", 245, 516); // bF:I (JPanel:JComponent, cd:JFrame)

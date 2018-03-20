@@ -1,0 +1,15 @@
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 58efd91f9f954388a494fbd0ca4f33fe --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RF_tb_behav xil_defaultlib.RF_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.srcs/sources_1/new/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.srcs/sources_1/new/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.RF_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot RF_tb_behav

@@ -20,37 +20,42 @@
 
 
 module RegisterFile(
-    input [1:0] Addr1,
-    input [1:0] Addr2,
-    input [1:0] Addr3,
-    input [15:0] Data3,
-    input Write,
-    input Clock,
+    input [1:0] addr1,
+    input [1:0] addr2,
+    input [1:0] addr3,
+    input [15:0] data3,
+    input write,
+    input clk,
     input reset_n,
-    output [15:0] Data1,
-    output [15:0] Data2
+    output [15:0] data1,
+    output [15:0] data2
     );
-    reg [15:0] Data1, Data2;
+    reg [15:0] data1, data2;
+    //addr is 2-bit, so register # is 4 = 2^2
     reg [15:0] register[0:3];
     
     //initialize register
     initial begin
-        
+        register[0] <= 0;
+        register[1] <= 0;
+        register[2] <= 0;
+        register[3] <= 0;        
     end
     
     //output is always data of register which is selected
-    always @(posedge Clock) begin
-        Data1 <= register[Addr1];
-        Data2 <= register[Addr2];
+    always @(posedge clk) begin
+        data1 <= register[addr1];
+        data2 <= register[addr2];
     end
     
-    //Write data at positive clock if enable is 1
-    always @(posedge Clock) begin   
-        if (Write == 1) begin
-            register[Addr3] <= Data3;
+    //Write data at positive clk if enable is 1
+    always @(posedge clk) begin   
+        if (write == 1) begin
+            register[addr3] <= data3;
         end
     end
-
+    
+    //reset all register to 0
     always @(reset_n) begin
         if (reset_n == 1) begin
             register[0] <= 0;
