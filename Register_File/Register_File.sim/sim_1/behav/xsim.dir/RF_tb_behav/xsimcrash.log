@@ -1,16 +1,15 @@
-Unable to capture context for thread 11752 in process 4844, can not generate back trace
-Unable to capture context for thread 1684 in process 4844, can not generate back trace
+Unable to capture context for thread 14648 in process 1200, can not generate back trace
+Unable to capture context for thread 11744 in process 1200, can not generate back trace
 Exception at PC 0x00007FFD99D74008
-Unable to capture context for thread 17800 in process 4844, can not generate back trace
-Unable to capture context for thread 17800 in process 4844, can not generate back trace
+Unable to capture context for thread 12504 in process 1200, can not generate back trace
+Unable to capture context for thread 14708 in process 1200, can not generate back trace
 Exception at PC 0x00007FFD99D74008
+Unable to capture context for thread 12504 in process 1200, can not generate back trace
+Unable to capture context for thread 13660 in process 1200, can not generate back trace
 Exception at PC 0x00007FFD1C77BB93
 Printing stacktrace...
 
-Exception at PC 0x00007FFD99D74008
-Exception at PC 0x00007FFD99D74008
-Exception at PC 0x00007FFD99D74008
-Exception at PC 0x00007FFD99D74008
+Unable to capture context for thread 13660 in process 1200, can not generate back trace
 Exception at PC 0x00007FFD99D74008
 Exception at PC 0x00007FFD99D74008
 Exception at PC 0x00007FFD99D74008
@@ -38,3 +37,7 @@ Exception at PC 0x00007FFD99D74008
 [12] (BaseThreadInitThunk+0x14) [0x00007FFD9AD71FE4]
 [13] (RtlUserThreadStart+0x21) [0x00007FFD9D8FEFC1]
 Done
+Exception at PC 0x00007FFD99D74008
+Exception at PC 0x00007FFD99D74008
+Exception at PC 0x00007FFD99D74008
+Exception at PC 0x00007FFD99D74008

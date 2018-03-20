@@ -55,9 +55,9 @@ module RegisterFile(
         end
     end
     
-    //reset all register to 0
-    always @(reset_n) begin
-        if (reset_n == 1) begin
+    // reset all register to 0
+    always @(*) begin
+        if (reset_n == 0) begin
             register[0] <= 0;
             register[1] <= 0;
             register[2] <= 0;
