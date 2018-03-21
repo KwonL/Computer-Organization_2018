@@ -26,6 +26,7 @@ module detector(
     );
     reg out;
     reg [1:0] state;
+    reg [1:0] nextState;
 
     initial begin
         state <= 0;
@@ -58,5 +59,4 @@ module detector(
         endcase
 
     end
-    
 endmodule

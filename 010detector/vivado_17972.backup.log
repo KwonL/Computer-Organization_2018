@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Tue Mar 20 23:26:02 2018
+# Process ID: 17972
+# Current directory: C:/Users/HP/Desktop/C.O_proj/010detector
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9400 C:\Users\HP\Desktop\C.O_proj\010detector\010detector.xpr
+# Log file: C:/Users/HP/Desktop/C.O_proj/010detector/vivado.log
+# Journal file: C:/Users/HP/Desktop/C.O_proj/010detector\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/HP/Desktop/C.O_proj/010detector/010detector.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'.
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 20 23:26:41 2018...
