@@ -24,7 +24,39 @@ module detector(
     input clk,
     output out
     );
-    
-    
+    reg out;
+    reg [1:0] state;
+
+    initial begin
+        state <= 0;
+        out <= 0;
+    end
+
+    //my fsm, state diagram in report
+    always @(posedge clk) begin
+
+        case (state)
+        0 : begin
+            out <= 0;
+            state <= (in == 0) ? 1 : 0;
+        end
+
+        1 : begin
+            out <= 0;
+            state <= (in == 1) ? 2 : 1;
+        end
+
+        2 : begin
+            out <= 0;
+            state <= (in == 0) ? 3 : 0;
+        end
+
+        3 : begin
+            out <= 1;
+            state <= (in == 0) ? 1 : 2;
+        end
+        endcase
+
+    end
     
 endmodule
