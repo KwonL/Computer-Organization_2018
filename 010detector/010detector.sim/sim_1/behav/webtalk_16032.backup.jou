@@ -2,8 +2,8 @@
 # Webtalk v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Wed Mar 21 23:47:49 2018
-# Process ID: 17680
+# Start of session at: Thu Mar 22 00:28:56 2018
+# Process ID: 16032
 # Current directory: C:/Users/HP/Desktop/C.O_proj/010detector/010detector.sim/sim_1/behav
 # Command line: wbtcv.exe -mode batch -source C:/Users/HP/Desktop/C.O_proj/010detector/010detector.sim/sim_1/behav/xsim.dir/detector_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/HP/Desktop/C.O_proj/010detector/010detector.sim/sim_1/behav/webtalk.log

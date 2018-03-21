@@ -1,4 +1,4 @@
 Vivado Simulator 2016.4
 Time resolution is 1 ps
-Passed = 95, Failed = 33
+Passed = 128, Failed = 0
 $finish called at time : 129 ns : File "C:/Users/HP/Desktop/C.O_proj/010detector/010detector.srcs/sim_1/imports/lab02_verilog/010_tb.v" Line 54

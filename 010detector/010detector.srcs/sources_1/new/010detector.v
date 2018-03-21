@@ -33,7 +33,11 @@ module detector(
         out <= 0;
     end
 
-    //my fsm, state diagram in report
+    //my fsm diagram is in report
+    /*
+     * this fsm is mealy machine, and to simplify code, 
+     * there is no next state. (maybe need some bug testing..?)
+     */
     always @(posedge clk) begin
 
         case (state)
@@ -48,14 +52,10 @@ module detector(
         end
 
         2 : begin
-            out <= 0;
-            state <= (in == 0) ? 3 : 0;
+            out <= (in == 0) ? 1 : 0;
+            state <= (in == 0) ? 1 : 0;
         end
 
-        3 : begin
-            out <= 1;
-            state <= (in == 0) ? 1 : 2;
-        end
         endcase
 
     end
