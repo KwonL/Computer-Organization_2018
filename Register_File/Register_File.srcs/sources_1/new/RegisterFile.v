@@ -30,7 +30,6 @@ module RegisterFile(
     output [15:0] data1,
     output [15:0] data2
     );
-    reg [15:0] data1, data2;
     //addr is 2-bit, so register # is 4 = 2^2
     reg [15:0] register[0:3];
     
@@ -43,10 +42,8 @@ module RegisterFile(
     end
     
     //output is always data of register which is selected
-    always @(posedge clk) begin
-        data1 <= register[addr1];
-        data2 <= register[addr2];
-    end
+    assign data1 = register[addr1];
+    assign data2 = register[addr2];
     
     //Write data at positive clk if enable is 1
     always @(posedge clk) begin   

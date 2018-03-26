@@ -2,21 +2,19 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Mon Mar 26 23:51:10 2018
-# Process ID: 16412
+# Start of session at: Tue Mar 20 23:06:29 2018
+# Process ID: 9580
 # Current directory: C:/Users/HP/Desktop/C.O_proj/Register_File
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10176 C:\Users\HP\Desktop\C.O_proj\Register_File\Register_File.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10796 C:\Users\HP\Desktop\C.O_proj\Register_File\Register_File.xpr
 # Log file: C:/Users/HP/Desktop/C.O_proj/Register_File/vivado.log
 # Journal file: C:/Users/HP/Desktop/C.O_proj/Register_File\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/HP/Desktop/C.O_proj/Register_File/Register_File.xpr
-launch_simulation
-source RF_tb.tcl
-close_sim
-launch_simulation
-source RF_tb.tcl
-close_sim
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse -scan_for_includes C:/Users/HP/Desktop/lab02_verilog/RF_tb.v
+import_files -fileset sim_1 -norecurse C:/Users/HP/Desktop/lab02_verilog/RF_tb.v
+update_compile_order -fileset sim_1
 launch_simulation
 source RF_tb.tcl
 close_sim
