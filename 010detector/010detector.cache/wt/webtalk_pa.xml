@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Wed Mar 21 23:54:24 2018">
+<application name="pa" timeStamp="Thu Mar 22 00:31:35 2018">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="b352da66b07c45a397e1fd67242c0373" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -18,7 +18,7 @@ This means code written to parse this file will need to be revisited each subseq
 </item>
 <item name="Java Command Handlers">
 <property name="AddSources" value="2" type="JavaHandler"/>
-<property name="SimulationRun" value="2" type="JavaHandler"/>
+<property name="SimulationRun" value="3" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
 <property name="AddSrcWizard_SPECIFY_HDL_AND_NETLIST_FILES_OR_DIRECTORIES" value="2" type="GuiResourceData"/>
@@ -26,21 +26,21 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="BaseDialog_OK" value="2" type="GuiResourceData"/>
 <property name="CreateSrcFileDialog_FILE_NAME" value="1" type="GuiResourceData"/>
 <property name="DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS" value="27" type="GuiResourceData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="40" type="GuiResourceData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="4" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="2" type="GuiResourceData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="43" type="GuiResourceData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="5" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="3" type="GuiResourceData"/>
 <property name="PAViews_PROJECT_SUMMARY" value="1" type="GuiResourceData"/>
 <property name="ProgressDialog_BACKGROUND" value="1" type="GuiResourceData"/>
-<property name="RDIViews_WAVEFORM_VIEWER" value="15" type="GuiResourceData"/>
+<property name="RDIViews_WAVEFORM_VIEWER" value="16" type="GuiResourceData"/>
 <property name="SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT" value="1" type="GuiResourceData"/>
 <property name="SrcChooserPanel_CREATE_FILE" value="2" type="GuiResourceData"/>
-<property name="TaskBanner_CLOSE" value="2" type="GuiResourceData"/>
+<property name="TaskBanner_CLOSE" value="3" type="GuiResourceData"/>
 <property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="26" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="11" type="GuiMode"/>
+<property name="GuiMode" value="12" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="10" type="TclMode"/>
+<property name="TclMode" value="11" type="TclMode"/>
 </item>
 </section>
 </application>
