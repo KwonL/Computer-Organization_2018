@@ -127,7 +127,7 @@ module ALU(
 
             //ALS = LLS..
             `OP_ALS :  begin
-                C = A <<< 1;
+                C = A << 1;
                 Cout = 0;
             end
 
