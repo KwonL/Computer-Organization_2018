@@ -47,21 +47,39 @@ module vending_machine (
 	reg [`kItemBits-1:0] num_items [`kNumItems-1:0]; //use if needed
 	reg [`kCoinBits-1:0] num_coins [`kNumCoins-1:0]; //use if needed
 
-	// my variable 
+	/* my variable */
 	reg [`kTotalBits-1:0] inserted_coins;
 	reg [`kTotalBits-1:0] next_inserted;
-	reg [1:0] temp_s;
+	// var to simplify o_output_item
+	reg [1:0] converted_sel;
+	parameter i_num_items = 10;
+	parameter i_num_coins = 100;
+	integer i;
+	/* end of my var */
+
+	// convert i_select_item to sequential number
+	always @ (*) begin
+		case (i_select_item)
+			4'b0001 : converted_sel = 0;
+			4'b0010 : converted_sel = 1;
+			4'b0100 : converted_sel = 2;
+			4'b1000 : converted_sel = 3;
+		endcase
+	end
 
 	//initializeing
 	initial begin
 		inserted_coins <= 0;
+		for (i = 0; i < kNumItems; i++) begin
+			num_items[i] = i_num_items;
+			num_coins[i] = i_num_coins;
+		end
 	end
 
 
 	// Combinational circuit for the next states
 	always @(i_input_coin or i_select_item or i_trigger_return) begin
 
-		// maybe can simplify..?
 		// input coin!
 		if (i_input_coin != 0) begin
 			case (i_input_coin) 
@@ -76,50 +94,19 @@ module vending_machine (
 		end
 		// item selected!
 		else if (i_select_item != 0) begin
-			case (i_select_item) 
-				4'b0001 : begin
-					// if there is sufficient selected coin
-					if (inserted_coins / kkItemPrice[0] != 0) begin
-						next_inserted = inserted_coins - kkItemPrice[0];
-						o_output_item = i_select_item;
-					end
-					// if not
-					else begin
-						next_inserted = inserted_coins;
-						o_output_item = 0;
-					end
-				end
-				4'b0010 : begin 
-					if (inserted_coins / kkItemPrice[1] != 0) begin
-						next_inserted = inserted_coins - kkItemPrice[1];
-						o_output_item = i_select_item;
-					end
-					else begin
-						next_inserted = inserted_coins;
-						o_output_item = 0;
-					end
-				end
-				4'b0100 : begin
-					if (inserted_coins / kkItemPrice[2] != 0) begin
-						next_inserted = inserted_coins - kkItemPrice[2];
-						o_output_item = i_select_item;
-					end
-					else begin
-						next_inserted = inserted_coins;
-						o_output_item = 0;
-					end
-				end
-				4'b1000 : begin
-					if (inserted_coins / kkItemPrice[3] != 0) begin
-						next_inserted = inserted_coins - kkItemPrice[3];
-						o_output_item = i_select_item;
-					end
-					else begin
-						next_inserted = inserted_coins;
-						o_output_item = 0;
-					end
-				end
-			endcase
+			// if inserted price is sufficient to purchace Item and there is sufficient item
+			if ((inserted_coins / kkItemPrice[converted_sel] != 0) && num_items[converted_sel] != 0) begin
+				next_inserted = inserted_coins - kkItemPrice[converted_sel];
+				o_output_item = i_select_item;
+				// sell item
+				num_items[converted_sel] --;
+			end
+			else begin
+				next_inserted = inserted_coins;
+				o_output_item = 0;
+				$display("Sold out!! : %b", i_select_item);
+			end
+
 			o_return_coin = 0;
 		end
 		// return all coin!
@@ -128,7 +115,9 @@ module vending_machine (
 
 			// output
 			o_output_item = 0;
-			o_return_coin = (inserted_coins / kkCoinValue[2]) + (inserted_coins % kkCoinValue[2]) / kkCoinValue[1] + (inserted_coins % kkCoinValue[2] % kkCoinValue[1]) / kkCoinValue[0];
+			o_return_coin = (inserted_coins / kkCoinValue[2]) 
+						  + (inserted_coins % kkCoinValue[2]) / kkCoinValue[1]
+						  + (inserted_coins % kkCoinValue[2] % kkCoinValue[1]) / kkCoinValue[0];
 		end
 		else begin
 			next_inserted = inserted_coins;
@@ -138,9 +127,17 @@ module vending_machine (
 			o_return_coin = 0;
 		end
 
-		// available : if item can divided by price
-		o_available_item = (next_inserted / kkItemPrice[0] != 0) | (next_inserted / kkItemPrice[1] != 0) << 1 
-		| (next_inserted / kkItemPrice[2] != 0) << 2 | (next_inserted / kkItemPrice[3] != 0) << 3;
+		// available : if item can be divided by price
+		o_available_item = (next_inserted / kkItemPrice[0] != 0) 
+						 | (next_inserted / kkItemPrice[1] != 0) << 1 
+					     | (next_inserted / kkItemPrice[2] != 0) << 2 
+						 | (next_inserted / kkItemPrice[3] != 0) << 3
+						// this is mask for item number..
+						&& ((num_items[0] != 0) ? 1 : 0)
+						&& ((num_items[1] != 0) ? 1 : 0) << 1
+						&& ((num_items[2] != 0) ? 1 : 0) << 2
+						&& ((num_items[3] != 0) ? 1 : 0) << 3;
+						 
 		o_current_total = next_inserted;
 	end
 
@@ -150,6 +147,10 @@ module vending_machine (
 		if (!reset_n) begin
 			// TODO: reset all states.
 			inserted_coins <= 0;
+			for (i = 0; i < kNumItems; i++) begin
+				num_items[i] = i_num_items;
+				num_coins[i] = i_num_coins;
+			end			
 		end
 		else begin
 			// TODO: update all states.
