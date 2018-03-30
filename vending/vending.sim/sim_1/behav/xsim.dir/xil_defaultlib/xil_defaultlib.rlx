@@ -2,8 +2,8 @@
 2016.4
 Jan 23 2017
 19:37:30
-D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/glbl.v,1485222234,verilog,,,,glbl,,,,,,,,
-D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine.v,1522340045,verilog,,,D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine_def.v,vending_machine,,,,,,,,
-D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine_def.v,1522299440,verilog,,,,,,,,,,,,
-D:/Desktop/vending/vending/vending_machine_TB.v,1522299470,verilog,,,D:/Desktop/vending/vending/vending_machine_def.v,vending_machine_tb,,,,,,,,
-D:/Desktop/vending/vending/vending_machine_def.v,1522299440,verilog,,,,,,,,,,,,
+C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v,1485222234,verilog,,,,glbl,,,,,,,,
+C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v,1522427301,verilog,,,C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine_def.v,vending_machine,,,,,,,,
+C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine_def.v,1522378277,verilog,,,,,,,,,,,,
+C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v,1522425134,verilog,,,C:/Users/HP/Desktop/vending/vending/vending_machine_def.v,vending_machine_tb,,,,,,,,
+C:/Users/HP/Desktop/vending/vending/vending_machine_def.v,1522299440,verilog,,,,,,,,,,,,

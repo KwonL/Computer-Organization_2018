@@ -70,7 +70,7 @@ module vending_machine (
 	//initializeing
 	initial begin
 		inserted_coins <= 0;
-		for (i = 0; i < kNumItems; i++) begin
+		for (i = 0; i < `kNumItems; i = i + 1) begin
 			num_items[i] = i_num_items;
 			num_coins[i] = i_num_coins;
 		end
@@ -99,7 +99,7 @@ module vending_machine (
 				next_inserted = inserted_coins - kkItemPrice[converted_sel];
 				o_output_item = i_select_item;
 				// sell item
-				num_items[converted_sel] --;
+				num_items[converted_sel] = num_items[converted_sel] - 1;
 			end
 			else begin
 				next_inserted = inserted_coins;
@@ -128,16 +128,21 @@ module vending_machine (
 		end
 
 		// available : if item can be divided by price
-		o_available_item = (next_inserted / kkItemPrice[0] != 0) 
-						 | (next_inserted / kkItemPrice[1] != 0) << 1 
-					     | (next_inserted / kkItemPrice[2] != 0) << 2 
-						 | (next_inserted / kkItemPrice[3] != 0) << 3
+		o_available_item = 
+						 // LSB of output
+						   ((next_inserted / kkItemPrice[0] != 0) 
+						 & ((num_items[0] != 0) ? 4'b0001 : 0))
+						 // 
+						 | ((next_inserted / kkItemPrice[1] != 0) << 1  
+						 & ((num_items[1] != 0) ? 4'b0001 : 0) << 1)
+						 //
+					     | ((next_inserted / kkItemPrice[2] != 0) << 2 
+						 & ((num_items[2] != 0) ? 4'b0001 : 0) << 2)
+						 // MSB of output
+						 | ((next_inserted / kkItemPrice[3] != 0) << 3 
+						 & ((num_items[3] != 0) ? 4'b0001 : 0) << 3);
 						// this is mask for item number..
-						&& ((num_items[0] != 0) ? 1 : 0)
-						&& ((num_items[1] != 0) ? 1 : 0) << 1
-						&& ((num_items[2] != 0) ? 1 : 0) << 2
-						&& ((num_items[3] != 0) ? 1 : 0) << 3;
-						 
+
 		o_current_total = next_inserted;
 	end
 
@@ -147,7 +152,7 @@ module vending_machine (
 		if (!reset_n) begin
 			// TODO: reset all states.
 			inserted_coins <= 0;
-			for (i = 0; i < kNumItems; i++) begin
+			for (i = 0; i < `kNumItems; i = i + 1) begin
 				num_items[i] = i_num_items;
 				num_coins[i] = i_num_coins;
 			end			
