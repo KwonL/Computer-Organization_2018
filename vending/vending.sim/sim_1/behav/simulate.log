@@ -29,4 +29,18 @@ PASSED
 PASSED
 PASSED
 PASSED
-Passed = 29, Failed = 0
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+Sold out!! : 0001
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 8300ns
+Correct ans=> o_return_coin: 5
+PASSED
+Passed = 40, Failed = 1

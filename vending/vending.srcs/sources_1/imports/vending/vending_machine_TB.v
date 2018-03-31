@@ -1,7 +1,7 @@
 // Title         : vending_machine_TB.v
 // Author      : Hunjun Lee (hunjunlee7515@snu.ac.kr)
 
-`timescale 1ns / 100ps
+`timescale 100ps / 100ps
 
 `include "vending_machine_def.v"
 
@@ -23,7 +23,7 @@ integer Passed;
 integer Failed;
 
 // Unit Under Test port map
-	vending_machine UUT (
+	vending_machine #(.i_num_items(4)) UUT (
 		.clk(clk),
 		.reset_n(reset_n),
 		.i_input_coin(i_input_coin),
@@ -71,14 +71,14 @@ initial begin
 	Insert1000Coin(); // 5500
 
 	Select1stItem();
-	Select1stItem(); // 4700
+	Select1stItem(); // 4700, 2
 
 	Select2ndItem();
-	Select2ndItem(); // 3700
+	Select2ndItem(); // 3700, 2
 
-	Select3rdItem(); // 2700
+	Select3rdItem(); // 2700, 3
 
-	Select4thItem(); // 700
+	Select4thItem(); // 700, 3
 
 	Insert100Coin();
 	Insert100Coin();
@@ -89,6 +89,22 @@ initial begin
 	Insert1000Coin();
 	Insert1000Coin();
 	Insert1000Coin(); //5500
+
+    Select1stItem(); // 1
+    Select1stItem(); // 0
+    Select2ndItem(); // 1
+    Select3rdItem(); // 2
+    Select4thItem(); // 1200, 2
+
+    Insert1000Coin();
+    Insert1000Coin();
+    Insert1000Coin();
+    Insert1000Coin(); // 5200
+
+    Select1stItem(); // 0 no output
+    Select2ndItem(); // 0
+    Select3rdItem(); // 1
+    Select3rdItem(); // 2700, 0 
 
 	TriggerReturn(); // 0
 
@@ -151,13 +167,42 @@ initial begin
     #200 //5500
     general_check(4'b1111, 4'b0000, 5500);
     #200 //5700
-    general_check(4'b0000, 4'b0000, 0);
-    return_check(6);
+    general_check(4'b1111, 4'b0001, 5100);
     #200 //5900
+    // item 1 sold out
+    general_check(4'b1110, 4'b0001, 4700);
+    #200 //6100
+    general_check(4'b1110, 4'b0010, 4200);
+    #200 //6300
+    general_check(4'b1110, 4'b0100, 3200);
+    #200 //6500
+    general_check(4'b0110, 4'b1000, 1200);
+    #200 //6700
+    general_check(4'b1110, 4'b0000, 2200);
+    #200 //6900
+    general_check(4'b1110, 4'b0000, 3200);
+    #200 
+    general_check(4'b1110, 4'b0000, 4200);
+    #200
+    general_check(4'b1110, 4'b0000, 5200);
+    #200 // 7500
+    general_check(4'b1110, 4'b0000, 5200);
+    #200 // 7700
+    // item 2 sold out
+    general_check(4'b1100, 4'b0010, 4700);
+    #200 // 7900
+    general_check(4'b1100, 4'b0100, 3700);
+    #200 // 8100
+    // item 3 sold out
+    general_check(4'b1000, 4'b0100, 2700);
+    #200
+    return_check(5);
+    #200 //
     general_check(4'b0000, 4'b0000, 0);
 
     $display("Passed = %0d, Failed = %0d", Passed, Failed);
 end
+
 task general_check;
 
     input [`kNumItems-1:0] available_item;

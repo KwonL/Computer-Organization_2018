@@ -53,8 +53,10 @@ module vending_machine (
 	// var to simplify o_output_item
 	reg [1:0] converted_sel;
 	parameter i_num_items = 10;
-	parameter i_num_coins = 100;
+	parameter i_num_coins = 10;
 	integer i;
+	wire [`kTotalBits-1:0] t_inserted[2:0];
+	wire [`kTotalBits-1:0] t_result[2:0];
 	/* end of my var */
 
 	// convert i_select_item to sequential number
@@ -115,10 +117,17 @@ module vending_machine (
 
 			// output
 			o_output_item = 0;
-			o_return_coin = (inserted_coins / kkCoinValue[2]) 
-						  + (inserted_coins % kkCoinValue[2]) / kkCoinValue[1]
-						  + (inserted_coins % kkCoinValue[2] % kkCoinValue[1]) / kkCoinValue[0];
+			// o_return_coin = (inserted_coins / kkCoinValue[2]) 
+			// 			  + (inserted_coins % kkCoinValue[2]) / kkCoinValue[1]
+			// 			  + (inserted_coins % kkCoinValue[2] % kkCoinValue[1]) / kkCoinValue[0];
+		
+			/* */
+
+			// 연쇄
+			coin_divide_machine(inserted_coins, 0, kkCoinValue[2], num_coins[2], t_inserted[0], t_result);
+
 		end
+		// no input..
 		else begin
 			next_inserted = inserted_coins;
 			
@@ -146,7 +155,6 @@ module vending_machine (
 		o_current_total = next_inserted;
 	end
 
-
 	// Sequential circuit to reset or update the states
 	always @(posedge clk) begin
 		if (!reset_n) begin
@@ -154,7 +162,7 @@ module vending_machine (
 			inserted_coins <= 0;
 			for (i = 0; i < `kNumItems; i = i + 1) begin
 				num_items[i] = i_num_items;
-				num_coins[i] = i_num_coins;
+				num_coins[i] = 0;
 			end			
 		end
 		else begin
@@ -163,4 +171,20 @@ module vending_machine (
 		end
 	end
 
+endmodule
+
+module coin_divide_machine (
+	input [`kTotalBits-1:0] prev_inserted;
+	input [`kTotalBits-1:0] prev_res;
+	input [`kCoinBits-1:0] coin_val;
+	input [`kCoinBits-1:0] coin_num;
+
+	output [`kTotalBits-1:0] next_inserted;
+	output [`kTotalBits-1:0] next_res;
+);
+
+	assign next_res = prev_res + (prev_inserted / coin_val <= coin_num ?
+								  prev_inserted / coin_val : 0);
+	assign next_inserted = prev_inserted - (prev_inserted / coin_val <= coin_num ? 
+											prev_inserted % coin_val : 0);
 endmodule

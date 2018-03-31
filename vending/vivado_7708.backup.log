@@ -1,0 +1,1362 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sat Mar 31 00:35:10 2018
+# Process ID: 7708
+# Current directory: C:/Users/HP/Desktop/C.O_proj/vending
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11984 C:\Users\HP\Desktop\C.O_proj\vending\vending.xpr
+# Log file: C:/Users/HP/Desktop/C.O_proj/vending/vivado.log
+# Journal file: C:/Users/HP/Desktop/C.O_proj/vending\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/HP/Desktop/C.O_proj/vending/vending.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Desktop/C.O_2018/vending' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v', nor could it be found using path 'D:/Desktop/vending/vending/vending_machine_TB.v'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'.
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 800.016 ; gain = 146.402
+update_compile_order -fileset sim_1
+remove_files  C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine_def.v
+add_files -norecurse C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine_def.v
+add_files -norecurse C:/Users/HP/Desktop/vending/vending/vending_machine_def.v
+remove_files  C:/Users/HP/Desktop/vending/vending/vending_machine_def.v
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Mar 31 00:46:29 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Mar 31 00:46:29 2018...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 814.352 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vending_machine_tb_behav -key {Behavioral:sim_1:Functional:vending_machine_tb} -tclbatch {vending_machine_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source vending_machine_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+PASSED
+PASSED
+PASSED
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vending_machine_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 819.109 ; gain = 4.758
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Mar 31 00:47:00 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Mar 31 00:47:00 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vending_machine_tb_behav -key {Behavioral:sim_1:Functional:vending_machine_tb} -tclbatch {vending_machine_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source vending_machine_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 1400ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 500
+FAILED at 1600ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1000
+FAILED at 1800ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1500
+FAILED at 2000ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 2200ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 2400ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 2600ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+FAILED at 2700ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 5100
+FAILED at 2900ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 4700
+FAILED at 3100ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 4200
+FAILED at 3300ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 3700
+FAILED at 3500ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0100, o_current_total: 2700
+FAILED at 3700ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b1000, o_current_total: 700
+FAILED at 3900ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 800
+FAILED at 4100ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 900
+FAILED at 4300ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1000
+FAILED at 4500ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1500
+FAILED at 4700ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2000
+FAILED at 4900ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 5100ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 5300ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 5500ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+PASSED
+PASSED
+PASSED
+Passed = 7, Failed = 22
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vending_machine_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 819.313 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Mar 31 00:52:36 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Mar 31 00:52:36 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vending_machine_tb_behav -key {Behavioral:sim_1:Functional:vending_machine_tb} -tclbatch {vending_machine_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source vending_machine_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 1400/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 500
+FAILED at 1600/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1000
+FAILED at 1800/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1500
+FAILED at 2000/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 2200/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 2400/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 2600/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+FAILED at 2700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 5100
+FAILED at 2900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 4700
+FAILED at 3100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 4200
+FAILED at 3300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 3700
+FAILED at 3500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0100, o_current_total: 2700
+FAILED at 3700/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b1000, o_current_total: 700
+FAILED at 3900/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 800
+FAILED at 4100/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 900
+FAILED at 4300/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1000
+FAILED at 4500/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1500
+FAILED at 4700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2000
+FAILED at 4900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 5100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 5300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 5500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+PASSED
+PASSED
+PASSED
+Passed = 7, Failed = 22
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vending_machine_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 843.773 ; gain = 0.000
+remove_forces { {/vending_machine_tb/Failed} {/vending_machine_tb/o_current_total} {/vending_machine_tb/Passed} {/vending_machine_tb/o_return_coin} }
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 1400/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 500
+FAILED at 1600/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1000
+FAILED at 1800/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1500
+FAILED at 2000/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 2200/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 2400/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 2600/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+FAILED at 2700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 5100
+FAILED at 2900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 4700
+FAILED at 3100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 4200
+FAILED at 3300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 3700
+FAILED at 3500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0100, o_current_total: 2700
+FAILED at 3700/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b1000, o_current_total: 700
+FAILED at 3900/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 800
+FAILED at 4100/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 900
+FAILED at 4300/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1000
+FAILED at 4500/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1500
+FAILED at 4700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2000
+FAILED at 4900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 5100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 5300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 5500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+PASSED
+PASSED
+PASSED
+Passed = 7, Failed = 22
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 847.215 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Mar 31 01:01:20 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Mar 31 01:01:20 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vending_machine_tb_behav -key {Behavioral:sim_1:Functional:vending_machine_tb} -tclbatch {vending_machine_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source vending_machine_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 1400/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 500
+FAILED at 1600/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1000
+FAILED at 1800/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1500
+FAILED at 2000/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 2200/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 2400/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 2600/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+FAILED at 2700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 5100
+FAILED at 2900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 4700
+FAILED at 3100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 4200
+FAILED at 3300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 3700
+FAILED at 3500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0100, o_current_total: 2700
+FAILED at 3700/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b1000, o_current_total: 700
+FAILED at 3900/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 800
+FAILED at 4100/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 900
+FAILED at 4300/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1000
+FAILED at 4500/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1500
+FAILED at 4700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2000
+FAILED at 4900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 5100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 5300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 5500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+PASSED
+PASSED
+PASSED
+Passed = 7, Failed = 22
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vending_machine_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 847.215 ; gain = 0.000
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 1400/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 500
+FAILED at 1600/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1000
+FAILED at 1800/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1500
+FAILED at 2000/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 2200/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 2400/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 2600/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+FAILED at 2700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 5100
+FAILED at 2900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 4700
+FAILED at 3100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 4200
+FAILED at 3300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 3700
+FAILED at 3500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0100, o_current_total: 2700
+FAILED at 3700/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b1000, o_current_total: 700
+FAILED at 3900/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 800
+FAILED at 4100/10 ns
+Correct ans=> o_available_item: 4'b0011, o_output_item: 4'b0000, o_current_total: 900
+FAILED at 4300/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1000
+FAILED at 4500/10 ns
+Correct ans=> o_available_item: 4'b0111, o_output_item: 4'b0000, o_current_total: 1500
+FAILED at 4700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2000
+FAILED at 4900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 5100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 5300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 5500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+PASSED
+PASSED
+PASSED
+Passed = 7, Failed = 22
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 847.215 ; gain = 0.000
+run all
+$finish called at time : 1560 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Mar 31 01:09:35 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Mar 31 01:09:35 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vending_machine_tb_behav -key {Behavioral:sim_1:Functional:vending_machine_tb} -tclbatch {vending_machine_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source vending_machine_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 2000/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 2200/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 2400/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 2600/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+FAILED at 2700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 5100
+FAILED at 2900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 4700
+FAILED at 3100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 4200
+FAILED at 3300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 3700
+FAILED at 3500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0100, o_current_total: 2700
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 4700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2000
+FAILED at 4900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 5100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 5300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 5500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+PASSED
+PASSED
+PASSED
+Passed = 15, Failed = 14
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vending_machine_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 847.215 ; gain = 0.000
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 2000/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 2200/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 2400/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 2600/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+FAILED at 2700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 5100
+FAILED at 2900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 4700
+FAILED at 3100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 4200
+FAILED at 3300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 3700
+FAILED at 3500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0100, o_current_total: 2700
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 4700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2000
+FAILED at 4900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 5100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 5300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 5500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+PASSED
+PASSED
+PASSED
+Passed = 15, Failed = 14
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 847.215 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Mar 31 01:15:17 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Mar 31 01:15:17 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vending_machine_tb_behav -key {Behavioral:sim_1:Functional:vending_machine_tb} -tclbatch {vending_machine_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source vending_machine_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 2000/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 2200/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 2400/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 2600/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+FAILED at 2700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 5100
+FAILED at 2900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 4700
+FAILED at 3100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 4200
+FAILED at 3300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 3700
+FAILED at 3500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0100, o_current_total: 2700
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 4700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2000
+FAILED at 4900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 5100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 5300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 5500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+PASSED
+PASSED
+PASSED
+Passed = 15, Failed = 14
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vending_machine_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 847.215 ; gain = 0.000
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 2000/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 2200/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 2400/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 2600/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+FAILED at 2700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 5100
+FAILED at 2900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 4700
+FAILED at 3100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 4200
+FAILED at 3300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 3700
+FAILED at 3500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0100, o_current_total: 2700
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 4700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2000
+FAILED at 4900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 5100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 5300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 5500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+PASSED
+PASSED
+PASSED
+Passed = 15, Failed = 14
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 847.215 ; gain = 0.000
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 2000/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 2200/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 2400/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 2600/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+FAILED at 2700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 5100
+FAILED at 2900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 4700
+FAILED at 3100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 4200
+FAILED at 3300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 3700
+FAILED at 3500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0100, o_current_total: 2700
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 4700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2000
+FAILED at 4900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 5100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 5300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 5500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+PASSED
+PASSED
+PASSED
+Passed = 15, Failed = 14
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 854.418 ; gain = 0.000
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+ERROR: [VRFC 10-1412] syntax error near o_current_total [C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v:141]
+ERROR: [VRFC 10-1040] module vending_machine ignored due to previous errors [C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v:6]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+ERROR: [VRFC 10-1412] syntax error near o_current_total [C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v:141]
+ERROR: [VRFC 10-1040] module vending_machine ignored due to previous errors [C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v:6]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/xsim.dir/vending_machine_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Mar 31 01:23:04 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sat Mar 31 01:23:04 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vending_machine_tb_behav -key {Behavioral:sim_1:Functional:vending_machine_tb} -tclbatch {vending_machine_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+source vending_machine_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 2000/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 2200/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 2400/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 2600/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+FAILED at 2700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 5100
+FAILED at 2900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0001, o_current_total: 4700
+FAILED at 3100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 4200
+FAILED at 3300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0010, o_current_total: 3700
+FAILED at 3500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0100, o_current_total: 2700
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+FAILED at 4700/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2000
+FAILED at 4900/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 2500
+FAILED at 5100/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 3500
+FAILED at 5300/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 4500
+FAILED at 5500/10 ns
+Correct ans=> o_available_item: 4'b1111, o_output_item: 4'b0000, o_current_total: 5500
+PASSED
+PASSED
+PASSED
+Passed = 15, Failed = 14
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vending_machine_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 854.418 ; gain = 0.000
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+Passed = 29, Failed = 0
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 854.418 ; gain = 0.000
+relaunch_sim
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+"xvlog -m64 --relax -prj vending_machine_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/vending/vending/vending_machine_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vending_machine_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/HP/Desktop/C.O_proj/vending/vending.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto 16cf9700a3bc40d5884f7206dc2a6948 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot vending_machine_tb_behav xil_defaultlib.vending_machine_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/HP/Desktop/C.O_proj/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" Line 6. Module vending_machine doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.vending_machine
+Compiling module xil_defaultlib.vending_machine_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vending_machine_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+Passed = 29, Failed = 0
+relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 854.418 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 31 01:42:18 2018...
