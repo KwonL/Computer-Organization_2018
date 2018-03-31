@@ -5,7 +5,7 @@
 
 `include "vending_machine_def.v"
 
-module vending_machine_tb;
+    module vending_machine_tb;
 
 
 //Internal signal declaration
@@ -108,6 +108,35 @@ initial begin
 
 	TriggerReturn(); // 0
 
+    #350 i_trigger_return = 0;
+    #50
+	#50 reset_n = 0;
+	#100 reset_n = 1;
+
+    #150
+    Insert100Coin();
+    Insert100Coin();    
+    Insert100Coin();    
+    Insert100Coin();    
+    Insert100Coin();    
+    Insert100Coin();    
+    Insert100Coin();    
+    Insert100Coin();    
+    Insert100Coin();    
+    Insert100Coin(); // 1000
+    
+    Insert1000Coin(); // 2000
+
+    Insert500Coin(); // 2500
+
+    Insert100Coin();
+    Insert100Coin();    
+    Insert100Coin();    
+    Insert100Coin();    
+    Insert100Coin(); //3000 -> 1000 : 1, 500 : 1, 100 : 15
+
+    TriggerReturn();
+       
 	#10000 $finish(0);
 end
 
@@ -197,8 +226,45 @@ initial begin
     general_check(4'b1000, 4'b0100, 2700);
     #200
     return_check(5);
-    #200 //
-    general_check(4'b0000, 4'b0000, 0);
+    
+    #400
+    #500
+    general_check(4'b0000, 4'b0000, 100);
+    #200
+    general_check(4'b0000, 4'b0000, 200);
+    #200
+    general_check(4'b0000, 4'b0000, 300);
+    #200
+    general_check(4'b0001, 4'b0000, 400);
+    #200
+    general_check(4'b0011, 4'b0000, 500);
+    #200
+    general_check(4'b0011, 4'b0000, 600);
+    #200
+    general_check(4'b0011, 4'b0000, 700);
+    #200
+    general_check(4'b0011, 4'b0000, 800);
+    #200
+    general_check(4'b0011, 4'b0000, 900);
+    #200
+    general_check(4'b0111, 4'b0000, 1000); // 100
+    #200
+    general_check(4'b1111, 4'b0000, 2000);
+    #200
+    general_check(4'b1111, 4'b0000, 2500);
+    #200
+    general_check(4'b1111, 4'b0000, 2600);
+    #200
+    general_check(4'b1111, 4'b0000, 2700);
+    #200
+    general_check(4'b1111, 4'b0000, 2800);
+    #200
+    general_check(4'b1111, 4'b0000, 2900);
+    #200
+    general_check(4'b1111, 4'b0000, 3000);
+    #200
+    return_check(12);
+    
 
     $display("Passed = %0d, Failed = %0d", Passed, Failed);
 end

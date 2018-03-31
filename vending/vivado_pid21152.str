@@ -1,0 +1,1951 @@
+/*
+
+Vivado v2016.4 (64-bit)
+SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+Process ID: 21152
+
+Current time: 	4/1/18 12:17:41 AM KST
+Time zone: 	Korea Standard Time (Asia/Seoul)
+
+OS: Windows 10
+Version: 10.0
+Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Gulim,name=±¼¸²,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	C:/Xilinx/Vivado/2016.4/tps/win64/jre
+
+User name: 	SNULife
+User home directory: C:/Users/SNULife
+User working directory: D:/Desktop/C.O_2018/vending
+User country: 	KR
+User language: 	ko
+User locale: 	ko_KR
+
+RDI base root directory: C:/Xilinx/Vivado
+RDI data directory: C:/Xilinx/Vivado/2016.4/data
+RDI bin directory: C:/Xilinx/Vivado/2016.4/bin
+
+Vivado preferences path: C:/Users/SNULife/AppData/Roaming/Xilinx/Vivado/2016.4/vivado.ini
+Vivado layouts directory: C:/Users/SNULife/AppData/Roaming/Xilinx/Vivado/2016.4/layouts
+
+GUI allocated memory:	216 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 456 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bt:g (cd:JFrame):  Open Project : addNotify
+// Opening Vivado Project: D:\Desktop\C.O_2018\vending\vending.xpr. Version: Vivado v2016.4 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/Desktop/C.O_2018/vending/vending.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/HP/Desktop/C.O_proj/vending' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// [GUI Memory]: 41 MB (+40187kb) [00:00:05]
+// [Engine Memory]: 415 MB (+283785kb) [00:00:05]
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 68 MB (+26916kb) [00:00:06]
+// [Engine Memory]: 448 MB (+12211kb) [00:00:06]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'. 
+// Project name: vending; location: D:/Desktop/C.O_2018/vending; part: xc7k70tfbv676-1
+dismissDialog("Open Project"); // bt:g (cd:JFrame)
+// [Engine Memory]: 472 MB (+1942kb) [00:00:08]
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// HMemoryUtils.trashcanNow. Engine heap size: 479 MB. GUI used memory: 36 MB. Current time: 4/1/18 12:17:43 AM KST
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [Engine Memory]: 512 MB (+17690kb) [00:00:24]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// HMemoryUtils.trashcanNow. Engine heap size: 524 MB. GUI used memory: 36 MB. Current time: 4/1/18 12:18:03 AM KST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 128 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 2, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vending_machine (vending_machine.v)]", 4, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vending_machine (vending_machine.v)]", 4, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, vending_machine.v]", 3, false); // y:i (D:JPanel, cd:JFrame)
+selectCodeEditor("vending_machine.v", 138, 123); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 224, 267); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 224, 267, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 486, 287); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 555, 271); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 537, 279); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 521, 276); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("vending_machine.v", 571, 258); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 66 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // u:K (t:D, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cd:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // u:K (t:D, cd:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ah:JPopupMenu, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// e:bt (cd:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, e:bt)
+// Tcl Message: "xvlog -m64 --relax -prj vending_machine_tb_vlog.prj" INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine INFO: [VRFC 10-311] analyzing module coin_divide_machine ERROR: [VRFC 10-1412] syntax error near ; [D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine.v:179] 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-99] Step results log file:'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/xvlog.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/xvlog.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// HOptionPane Error: " ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.<br> (Run Simulation)"
+dismissDialog("Run Simulation"); // e:bt (cd:JFrame)
+// a:a (cd:JFrame): Critical Messages: addNotify
+// [GUI Memory]: 75 MB (+3535kb) [00:03:36]
+selectButton("RDIResource.ProgressDialog_ERROR_ENCOUNTERED_PLEASE_SEE_TCL_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, F:JDialog)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cd:JFrame)
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aA:FrameContainer (ContainerContainer:JideSplitPane, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 141, 112); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 141, 112, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 159, 83); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 159, 83, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 159, 83); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 195, 83); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 195, 83, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 195, 83); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 274, 83); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 274, 83, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 274, 83); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 149, 525); // bF:I (JPanel:JComponent, cd:JFrame)
+// [GUI Memory]: 79 MB (+330kb) [00:03:47]
+selectCodeEditor("vending_machine.v", 149, 525, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 149, 525); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 148, 545); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 148, 545, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 215, 543); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 215, 543, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 100, 371); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 100, 371, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 183, 367); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 183, 367, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 108, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 10 seconds
+selectCodeEditor("vending_machine.v", 310, 366); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 287, 476); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 296, 464); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("vending_machine.v", 295, 449); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // u:K (t:D, cd:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // u:K (t:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// e:bt (cd:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, e:bt)
+// TclEventType: LAUNCH_SIM_LOG
+selectCodeEditor("vending_machine.v", 386, 417); // bF:I (JPanel:JComponent, cd:JFrame)
+// Tcl Message: "xvlog -m64 --relax -prj vending_machine_tb_vlog.prj" INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine INFO: [VRFC 10-311] analyzing module coin_divide_machine INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine_TB.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine_tb INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module glbl 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds INFO: [USF-XSim-99] Step results log file:'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/elaborate.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/elaborate.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// HOptionPane Error: " ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.<br> (Run Simulation)"
+dismissDialog("Run Simulation"); // e:bt (cd:JFrame)
+// a:a (cd:JFrame): Critical Messages: addNotify
+selectButton("RDIResource.ProgressDialog_ERROR_ENCOUNTERED_PLEASE_SEE_TCL_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, F:JDialog)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cd:JFrame)
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aA:FrameContainer (ContainerContainer:JideSplitPane, cd:JFrame)
+// [GUI Memory]: 83 MB (+125kb) [00:04:21]
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 136, 120); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 136, 120, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 136, 120); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 117, 37); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 117, 37, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 117, 37); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 129, 64); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 129, 64, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 129, 64); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 124, 32); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 124, 32, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 124, 32); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 139, 63); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 139, 63, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 139, 63); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 135, 29); // dn:I (JPanel:JComponent, cd:JFrame)
+// [Engine Memory]: 540 MB (+2108kb) [00:04:26]
+selectCodeEditor("vending_machine.v", 186, 582); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 144, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 144, 431, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 144, 431); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 198, 545); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 198, 545, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 198, 545); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 159, 469); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 159, 469, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 159, 469); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 207, 546); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 207, 546, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 207, 546); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 147, 447); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 147, 447, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 147, 447); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 209, 550); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 181, 221); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 185, 218); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 11 seconds
+selectCodeEditor("vending_machine.v", 423, 190); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("vending_machine.v", 144, 200); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("vending_machine.v", 144, 184); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 5, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 6, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 6, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 7, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 7, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, vending_machine_tb (vending_machine_TB.v)]", 10, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, vending_machine_tb (vending_machine_TB.v)]", 10, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, vending_machine_tb (vending_machine_TB.v)]", 10, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectCodeEditor("vending_machine_TB.v", 320, 337); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine_TB.v", 159, 138); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine_TB.v", 159, 138, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine_TB.v", 159, 138); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine_TB.v", 241, 286); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine_TB.v", 241, 286, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine_TB.v", 241, 286); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine_TB.v", 175, 117); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine_TB.v", 175, 117, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine_TB.v", 175, 117); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine_TB.v", 252, 293); // bF:I (JPanel:JComponent, cd:JFrame)
+// [GUI Memory]: 89 MB (+978kb) [00:05:37]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, vending_machine_tb (vending_machine_TB.v), UUT - vending_machine (vending_machine.v)]", 11, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, vending_machine_tb (vending_machine_TB.v), UUT - vending_machine (vending_machine.v)]", 11, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 556 MB. GUI used memory: 41 MB. Current time: 4/1/18 12:23:13 AM KST
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vending_machine (vending_machine.v)]", 3, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vending_machine (vending_machine.v)]", 3, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coin_divide_machine (vending_machine.v)]", 4, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coin_divide_machine (vending_machine.v)]", 4, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vending_machine (vending_machine.v)]", 3, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vending_machine (vending_machine.v)]", 3, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("vending_machine.v", 188, 368); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 188, 368, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 201, 357); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 201, 357); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 191, 325); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 191, 325, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 191, 325); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 188, 325); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 116, 340); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 116, 340, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 191, 336); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 127, 336); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 127, 336, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 191, 285); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 203, 292); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("vending_machine.v", 267, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("vending_machine.v", 407, 278); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 407, 278, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 407, 278); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 407, 292); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 407, 292, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 407, 292); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 294, 288); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 200, 288); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 200, 288, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 200, 288); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 200, 288); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 203, 289, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 203, 289); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 257, 289); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 257, 289, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 494, 296); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 494, 296, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 494, 296); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 438, 301); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 438, 301, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 438, 301); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 486, 298); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 212, 296); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 701, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 701, 300, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 701, 300); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 702, 322); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 249, 182); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 298, 175); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 337, 175); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 441, 175); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 507, 180); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 619, 179); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 221, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 221, 176, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 172, 183); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 172, 183, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 264, 163); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 264, 163, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 231, 174); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 231, 174, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 140, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 140, 176, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 140, 176); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 197, 171); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 231, 352); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 231, 352, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 311, 349); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 311, 349, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 249, 352); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 249, 352, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 349, 348); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 349, 348, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 248, 348); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 248, 348, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 327, 348); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 275, 348); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 275, 348, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 275, 348); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 307, 345); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 307, 345, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 339, 342); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 329, 372); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 329, 372, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 389, 359); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 104, 342); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 104, 342, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 146, 349); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 146, 349, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 146, 363); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 146, 363, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 143, 347); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 143, 347, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 136, 373); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 136, 373, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 131, 352); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 131, 352, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 139, 380); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 139, 380, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 139, 356); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 139, 356, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 140, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 140, 360); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 145, 355); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 145, 355, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 134, 369); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 134, 369, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 137, 351); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 137, 351, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 137, 366); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 137, 366, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 137, 356); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 137, 356, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 135, 363); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 135, 363, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 135, 348); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 135, 348, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 186, 313); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 163, 346); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 163, 346, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 195, 335); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 159, 365); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 159, 365, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 159, 358); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 159, 358, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 159, 358); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 172, 393); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 172, 393, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 172, 393); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 159, 340); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 159, 340, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 159, 340); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 180, 411); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 180, 411, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 180, 411); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 153, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 153, 341, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 182, 421); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 180, 415); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 180, 415, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 180, 415); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 148, 333); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 148, 333, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 148, 333); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 175, 409); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 175, 409, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 175, 409); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 141, 334); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 141, 334, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 169, 417); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 169, 417, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 129, 341); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 129, 341, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 156, 415); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 156, 415, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 156, 415); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 122, 337); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 122, 337, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 122, 337); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 158, 414); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 158, 414, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 158, 414); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 121, 339); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 121, 339, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 155, 407); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 155, 407, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 155, 407); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 128, 336); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 128, 336, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 150, 412); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 150, 412, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 150, 412); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 124, 342); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 124, 342, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 124, 342); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 147, 409); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 147, 409, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 119, 332); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 119, 332, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 144, 414); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 144, 414, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 144, 414); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 122, 334); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 122, 334, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 156, 412); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 156, 412, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 156, 412); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 130, 331); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 130, 331, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 130, 331); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 162, 409); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 162, 409, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 162, 409); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 132, 340); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 132, 340, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 132, 340); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 171, 415); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 171, 415, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 171, 415); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 134, 327); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 134, 327, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 134, 327); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 170, 411); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 170, 411, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 133, 334); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 133, 334, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 163, 416); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 163, 416, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 135, 352); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 135, 352, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 135, 352); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 157, 412); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 157, 412, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 157, 412); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 129, 339); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 129, 339, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 160, 418); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 160, 418, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 124, 340); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 124, 340, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 145, 404); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 145, 404, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 145, 404); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 121, 332); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 121, 332, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 121, 332); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 146, 400); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 146, 400, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 146, 400); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 127, 333); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 127, 333, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 127, 333); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 153, 403); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 153, 403, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 153, 403); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 129, 338); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 129, 338, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 157, 404); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 157, 404, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 129, 328); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 129, 328, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 163, 404); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 163, 404, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 163, 404); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 132, 335); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 132, 335, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 132, 335); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 168, 404); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 156 seconds
+selectCodeEditor("vending_machine.v", 564, 499); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 582, 400); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 582, 400, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 582, 400); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 585, 564); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 585, 564, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 585, 564); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("vending_machine.v", 315, 436); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 315, 436, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 315, 436); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 312, 392); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 317, 404); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 95 MB (+2255kb) [00:14:35]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 547 seconds
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cd:JFrame)
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 272, 235); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 283, 231); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 280, 232, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("vending_machine.v", 278, 234); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("vending_machine.v", 588, 259); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 11, false); // u:K (t:D, cd:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ab:JMenuItem (ah:JPopupMenu, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// TclEventType: FILE_SET_CHANGE
+// e:bt (cd:JFrame):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, e:bt)
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: "xvlog -m64 --relax -prj vending_machine_tb_vlog.prj" INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine_TB.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine_tb INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module glbl 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+// Tcl Message: Built simulation snapshot vending_machine_tb_behav 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 821.953 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "vending_machine_tb_behav -key {Behavioral:sim_1:Functional:vending_machine_tb} -tclbatch {vending_machine_tb.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2016.4 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: source vending_machine_tb.tcl 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED Sold out!! : 0001 PASSED PASSED PASSED PASSED FAILED at 8300ns Correct ans=> o_return_coin: 5 FAILED at 8500ns Correct ans=> o_available_item: 4'b0000, o_output_item: 4'b0000, o_current_total: 0 Passed = 39, Failed = 2 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'vending_machine_tb_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 821.953 ; gain = 0.000 
+dismissDialog("Run Simulation"); // e:bt (cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 566 MB. GUI used memory: 65 MB. Current time: 4/1/18 12:37:47 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// [Engine Memory]: 569 MB (+1666kb) [00:20:13]
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 572 MB. GUI used memory: 50 MB. Current time: 4/1/18 12:37:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 572 MB. GUI used memory: 52 MB. Current time: 4/1/18 12:37:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 572 MB. GUI used memory: 49 MB. Current time: 4/1/18 12:37:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 572 MB. GUI used memory: 49 MB. Current time: 4/1/18 12:37:49 AM KST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 185, 480); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 297, 493); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 572 MB. GUI used memory: 49 MB. Current time: 4/1/18 12:37:51 AM KST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 333, 569); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 281, 578); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 10 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 432, 248); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 576 MB. GUI used memory: 49 MB. Current time: 4/1/18 12:38:02 AM KST
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 522, 34); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 522, 34, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 522, 34); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 552, 59); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 552, 59, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 558, 50); // dn:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 558, 50, false, false, false, false, true); // dn:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 573, 72); // dn:I (JPanel:JComponent, cd:JFrame)
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 162, 462); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 406, 462); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 476, 457); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 576 MB. GUI used memory: 49 MB. Current time: 4/1/18 12:38:23 AM KST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 432, 466); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 428, 471); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 576 MB. GUI used memory: 49 MB. Current time: 4/1/18 12:38:24 AM KST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 425, 472, false, false, false, false, true); // l:a (JViewport:JComponent, cd:JFrame) - Double Click
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 576 MB. GUI used memory: 50 MB. Current time: 4/1/18 12:38:25 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 576 MB. GUI used memory: 51 MB. Current time: 4/1/18 12:38:25 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 576 MB. GUI used memory: 49 MB. Current time: 4/1/18 12:38:25 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 576 MB. GUI used memory: 49 MB. Current time: 4/1/18 12:38:26 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 576 MB. GUI used memory: 49 MB. Current time: 4/1/18 12:38:31 AM KST
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, "UUT ; vending_machine ; Verilog Module", 1, "UUT", 0, false); // d:ab (JViewport:JComponent, cd:JFrame)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 177 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vending_machine.v", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // y:JideButton (g:CommandBar, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// b:bt (cd:JFrame):  Relaunch Simulation : addNotify
+// Tcl Message: relaunch_sim 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, b:bt)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: "xvlog -m64 --relax -prj vending_machine_tb_vlog.prj" INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine_TB.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine_tb INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module glbl 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds 
+// Tcl Message: Vivado Simulator 2016.4 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_DELETE_ALL_BREAKPOINTS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:41:42 AM KST
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: Time resolution is 1 ps PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED Sold out!! : 0001 PASSED PASSED PASSED PASSED PASSED PASSED Passed = 41, Failed = 0 relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 849.098 ; gain = 0.000 
+dismissDialog("Relaunch Simulation"); // b:bt (cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 68 MB. Current time: 4/1/18 12:41:43 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 244, 499); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 49 MB. Current time: 4/1/18 12:41:45 AM KST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 218, 499); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 288, 499); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 100 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vending_machine.v", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // y:JideButton (g:CommandBar, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// b:bt (cd:JFrame):  Relaunch Simulation : addNotify
+// Tcl Message: relaunch_sim 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, b:bt)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 65 MB. Current time: 4/1/18 12:43:31 AM KST
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-99] Step results log file:'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/xvlog.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/xvlog.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// Tcl Message: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// HOptionPane Error: " ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed<br>due to earlier errors.<br><br> (Relaunch Simulation)"
+dismissDialog("Relaunch Simulation"); // b:bt (cd:JFrame)
+// a:a (cd:JFrame): Critical Messages: addNotify
+selectButton("RDIResource.ProgressDialog_ERROR_ENCOUNTERED_PLEASE_SEE_TCL_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, F:JDialog)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vending_machine.v", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+dismissDialog("Critical Messages"); // a:a (cd:JFrame)
+selectCodeEditor("vending_machine.v", 290, 269); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 245, 288); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 168, 296); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 183, 297); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("vending_machine.v", 300, 292); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // y:JideButton (g:CommandBar, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// b:bt (cd:JFrame):  Relaunch Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: relaunch_sim 
+// Tcl Message: INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, b:bt)
+// TclEventType: LAUNCH_SIM
+// Tcl Message: "xvlog -m64 --relax -prj vending_machine_tb_vlog.prj" INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine_TB.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine_tb INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module glbl 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds 
+// Tcl Message: Vivado Simulator 2016.4 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_DELETE_ALL_BREAKPOINTS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: Time resolution is 1 ps PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED Sold out!! : 0001 PASSED PASSED PASSED PASSED PASSED PASSED Passed = 41, Failed = 0 
+dismissDialog("Relaunch Simulation"); // b:bt (cd:JFrame)
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 428, 509); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:43:52 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 51 MB. Current time: 4/1/18 12:43:53 AM KST
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 50 MB. Current time: 4/1/18 12:43:53 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 50 MB. Current time: 4/1/18 12:43:54 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 51 MB. Current time: 4/1/18 12:43:54 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 51 MB. Current time: 4/1/18 12:43:55 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 51 MB. Current time: 4/1/18 12:43:55 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 50 MB. Current time: 4/1/18 12:43:55 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 51 MB. Current time: 4/1/18 12:43:55 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 50 MB. Current time: 4/1/18 12:43:56 AM KST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 636, 766); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 181, 513); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 51 MB. Current time: 4/1/18 12:43:56 AM KST
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, "UUT ; vending_machine ; Verilog Module", 1, "vending_machine", 1, false); // d:ab (JViewport:JComponent, cd:JFrame)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, "UUT ; vending_machine ; Verilog Module", 1, "vending_machine", 1, false, false, false, false, false, true); // d:ab (JViewport:JComponent, cd:JFrame) - Double Click
+// TclEventType: SIMULATION_OPEN_SOURCE
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "i_num_coins[31:0] ; 10 ; Array", 21, "i_num_coins[31:0]", 0, true); // l:ab (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "i_num_coins[31:0] ; 10 ; Array", 21, "10", 1, true); // l:ab (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// [Engine Memory]: 598 MB (+727kb) [00:26:32]
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 52 MB. Current time: 4/1/18 12:44:10 AM KST
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "i_num_items[31:0] ; 4 ; Array", 20, "i_num_items[31:0]", 0, true); // l:ab (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, i_num_coins[31:0]]", 11, true); // a:i (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, o_return_coin[9:0]]", 7, true, false, false, false, true, false); // a:i (JViewport:JComponent, cd:JFrame) - Popup Trigger - Node
+selectMenu((HResource) null, "Name"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenu((HResource) null, "Waveform Style"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenu((HResource) null, "Signal Color"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenu((HResource) null, "Radix"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenuItem((HResource) null, "Binary"); // P:JCheckBoxMenuItem (JPopupMenu:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:44:14 AM KST
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, i_num_items[31:0]]", 12, true); // a:i (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, i_num_coins[31:0]]", 11, true, false, true, false, false, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Node
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, Failed[31:0]]", 10, true, false, true, false, false, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Node
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, Failed[31:0]]", 10, true, false, true, false, false, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:44:15 AM KST
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, Passed[31:0]]", 9, true, false, true, false, false, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, Passed[31:0]]", 9, true, false, true, false, false, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Node
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, Failed[31:0]]", 10, true, false, true, false, false, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:44:17 AM KST
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, Passed[31:0]]", 9, true, false, true, false, false, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, o_current_total[31:0]]", 8, true, false, true, false, false, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Node
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, o_return_coin[9:0]]", 7, true, false, true, false, false, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:44:18 AM KST
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, Passed[31:0]]", 9, true, false, true, false, true, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Popup Trigger - Node
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, Failed[31:0]]", 10, true, false, false, false, true, false); // a:i (JViewport:JComponent, cd:JFrame) - Popup Trigger - Node
+selectMenu((HResource) null, "Name"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenu((HResource) null, "Signal Color"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenu((HResource) null, "Radix"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 425, 260); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // y:JideButton (g:CommandBar, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// b:bt (cd:JFrame):  Relaunch Simulation : addNotify
+// Tcl Message: relaunch_sim 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, b:bt)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:44:25 AM KST
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: "xvlog -m64 --relax -prj vending_machine_tb_vlog.prj" INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine_TB.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine_tb INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module glbl 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds 
+// Tcl Message: Vivado Simulator 2016.4 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_DELETE_ALL_BREAKPOINTS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: Time resolution is 1 ps PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED Sold out!! : 0001 PASSED PASSED PASSED PASSED PASSED PASSED Passed = 41, Failed = 0 relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 850.605 ; gain = 0.000 
+dismissDialog("Relaunch Simulation"); // b:bt (cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:44:30 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 52 MB. Current time: 4/1/18 12:44:32 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:44:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 52 MB. Current time: 4/1/18 12:44:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:44:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 52 MB. Current time: 4/1/18 12:44:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:44:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 52 MB. Current time: 4/1/18 12:44:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:44:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:44:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:44:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:44:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 52 MB. Current time: 4/1/18 12:44:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:44:34 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 52 MB. Current time: 4/1/18 12:44:34 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:44:35 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, i_num_items[31:0]]", 12, true); // a:i (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, i_num_coins[31:0]]", 11, true); // a:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, i_num_items[31:0]]", 12, true); // a:i (JViewport:JComponent, cd:JFrame) - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:44:41 AM KST
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, i_num_coins[31:0]]", 11, true); // a:i (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, i_num_items[31:0]]", 12, true, false, true, false, false, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Node
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 89 MB. Current time: 4/1/18 12:44:44 AM KST
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, "glbl ; glbl ; Verilog Module", 2, "glbl", 0, false); // d:ab (JViewport:JComponent, cd:JFrame)
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, "UUT ; vending_machine ; Verilog Module", 1, "UUT", 0, false); // d:ab (JViewport:JComponent, cd:JFrame)
+// Elapsed time: 13 seconds
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "num_coins[2:0][7:0] ; 0b,05,08 ; Array", 13, "num_coins[2:0][7:0]", 0, true); // l:ab (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// [GUI Memory]: 106 MB (+6223kb) [00:27:24]
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "num_items[3:0][7:0] ; 02,00,00,00 ; Array", 12, "num_items[3:0][7:0]", 0, true); // l:ab (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_BREAK, "simulation_live_break"); // y:JideButton (g:CommandBar, cd:JFrame)
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, num_items[3:0][7:0]]", 12, true); // a:i (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, num_coins[2:0][7:0]]", 11, true, false, true, false, false, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Node
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, num_coins[2:0][7:0]]", 11, true, false, true, false, true, false); // a:i (JViewport:JComponent, cd:JFrame) - Control Key - Popup Trigger - Node
+selectMenu((HResource) null, "Name"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenu((HResource) null, "Waveform Style"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenu((HResource) null, "Signal Color"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenu((HResource) null, "Radix"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // y:JideButton (g:CommandBar, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// b:bt (cd:JFrame):  Relaunch Simulation : addNotify
+// Tcl Message: relaunch_sim 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, b:bt)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: "xvlog -m64 --relax -prj vending_machine_tb_vlog.prj" INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine_TB.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine_tb INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module glbl 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds 
+// Tcl Message: Vivado Simulator 2016.4 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_DELETE_ALL_BREAKPOINTS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 65 MB. Current time: 4/1/18 12:45:12 AM KST
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: Time resolution is 1 ps PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED Sold out!! : 0001 PASSED PASSED PASSED PASSED PASSED PASSED Passed = 41, Failed = 0 relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 850.605 ; gain = 0.000 
+dismissDialog("Relaunch Simulation"); // b:bt (cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:13 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:15 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:15 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:15 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 57 MB. Current time: 4/1/18 12:45:15 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 62 MB. Current time: 4/1/18 12:45:15 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 598 MB. GUI used memory: 65 MB. Current time: 4/1/18 12:45:15 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 300, 818); // l:a (JViewport:JComponent, cd:JFrame)
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 301, 821, false, false, false, false, true); // l:a (JViewport:JComponent, cd:JFrame) - Double Click
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 300, 822); // l:a (JViewport:JComponent, cd:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 609 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:18 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:19 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:20 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:20 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:20 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 52 MB. Current time: 4/1/18 12:45:20 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:20 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:20 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:24 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:24 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:24 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:26 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 610 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 61 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 63 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 52 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:27 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:28 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:28 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:28 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:28 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:28 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:28 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:28 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:28 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 611 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:29 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 52 MB. Current time: 4/1/18 12:45:30 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:30 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:30 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:30 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:30 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:30 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:31 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:31 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:31 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:31 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 58 MB. Current time: 4/1/18 12:45:32 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:32 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:32 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:32 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:32 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:32 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:32 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:32 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:32 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:33 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:40 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:40 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:40 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:40 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:44 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:44 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:44 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:44 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:44 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:44 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:44 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:45 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:45 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:45 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:45 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:45 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:45 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:45 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:45 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:45 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:45 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:46 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:46 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:46 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:47 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:47 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 55 MB. Current time: 4/1/18 12:45:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:48 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:49 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:49 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:49 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:49 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:49 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:49 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:49 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 612 MB. GUI used memory: 53 MB. Current time: 4/1/18 12:45:49 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 613 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:50 AM KST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 613 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:45:50 AM KST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// HMemoryUtils.trashcanNow. Engine heap size: 620 MB. GUI used memory: 54 MB. Current time: 4/1/18 12:46:38 AM KST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 105 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "vending_machine.v", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h:k (JPanel:JComponent, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 1*", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // y:JideButton (g:CommandBar, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// b:bt (cd:JFrame):  Relaunch Simulation : addNotify
+// Tcl Message: relaunch_sim 
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background"); // a:JButton (JPanel:JComponent, b:bt)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// [GUI Memory]: 115 MB (+3496kb) [00:29:32]
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-37] Inspecting design source files for 'vending_machine_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: "xvlog -m64 --relax -prj vending_machine_tb_vlog.prj" INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.srcs/sources_1/imports/vending/vending_machine_TB.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module vending_machine_tb INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav/glbl.v" into library xil_defaultlib INFO: [VRFC 10-311] analyzing module glbl 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Desktop/C.O_2018/vending/vending.sim/sim_1/behav' 

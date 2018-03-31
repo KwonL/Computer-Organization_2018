@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="vending_machine_tb_behav2.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="vending_machine_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1205948800fs"></ZoomStartTime>
+      <ZoomEndTime time="1413748801fs"></ZoomEndTime>
+      <Cursor1Time time="2240000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="148"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/vending_machine_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vending_machine_tb/reset_n" type="logic">
+      <obj_property name="ElementShortName">reset_n</obj_property>
+      <obj_property name="ObjectShortName">reset_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vending_machine_tb/i_input_coin" type="array">
+      <obj_property name="ElementShortName">i_input_coin[2:0]</obj_property>
+      <obj_property name="ObjectShortName">i_input_coin[2:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vending_machine_tb/i_select_item" type="array">
+      <obj_property name="ElementShortName">i_select_item[3:0]</obj_property>
+      <obj_property name="ObjectShortName">i_select_item[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vending_machine_tb/i_trigger_return" type="logic">
+      <obj_property name="ElementShortName">i_trigger_return</obj_property>
+      <obj_property name="ObjectShortName">i_trigger_return</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vending_machine_tb/o_available_item" type="array">
+      <obj_property name="ElementShortName">o_available_item[3:0]</obj_property>
+      <obj_property name="ObjectShortName">o_available_item[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vending_machine_tb/o_output_item" type="array">
+      <obj_property name="ElementShortName">o_output_item[3:0]</obj_property>
+      <obj_property name="ObjectShortName">o_output_item[3:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vending_machine_tb/o_return_coin" type="array">
+      <obj_property name="ElementShortName">o_return_coin[9:0]</obj_property>
+      <obj_property name="ObjectShortName">o_return_coin[9:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vending_machine_tb/o_current_total" type="array">
+      <obj_property name="ElementShortName">o_current_total[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_current_total[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vending_machine_tb/Passed" type="array">
+      <obj_property name="ElementShortName">Passed[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Passed[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vending_machine_tb/Failed" type="array">
+      <obj_property name="ElementShortName">Failed[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Failed[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vending_machine_tb/UUT/num_coins" type="array">
+      <obj_property name="ElementShortName">num_coins[2:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_coins[2:0][7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

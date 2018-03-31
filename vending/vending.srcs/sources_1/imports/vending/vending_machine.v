@@ -3,7 +3,7 @@
 
 `include "vending_machine_def.v"
 
-module vending_machine (
+                                                                                                                                                                                                                    module vending_machine (
 
 	clk,							// Clock signal
 	reset_n,						// Reset signal (active-low)
@@ -55,8 +55,8 @@ module vending_machine (
 	parameter i_num_items = 10;
 	parameter i_num_coins = 10;
 	integer i;
-	wire [`kTotalBits-1:0] t_inserted[2:0];
-	wire [`kTotalBits-1:0] t_result[2:0];
+	reg [`kTotalBits-1:0] t_inserted[1:0];
+	reg [`kTotalBits-1:0] t_res[1:0];
 	/* end of my var */
 
 	// convert i_select_item to sequential number
@@ -85,15 +85,25 @@ module vending_machine (
 		// input coin!
 		if (i_input_coin != 0) begin
 			case (i_input_coin) 
-				3'b001 : next_inserted = inserted_coins + kkCoinValue[0];
-				3'b010 : next_inserted = inserted_coins + kkCoinValue[1];
-				3'b100 : next_inserted = inserted_coins	+ kkCoinValue[2];
+				3'b001 : begin
+					next_inserted = inserted_coins + kkCoinValue[0];
+					num_coins[0] = num_coins[0] + 1;
+				end
+				3'b010 : begin 
+					next_inserted = inserted_coins + kkCoinValue[1];
+					num_coins[1] = num_coins[1] + 1;
+				end
+				3'b100 : begin
+					next_inserted = inserted_coins	+ kkCoinValue[2];
+					num_coins[2] = num_coins[2] + 1;
+				end
 			endcase	
 
 			// output
 			o_output_item = 0;
 			o_return_coin = 0;
 		end
+
 		// item selected!
 		else if (i_select_item != 0) begin
 			// if inserted price is sufficient to purchace Item and there is sufficient item
@@ -106,27 +116,62 @@ module vending_machine (
 			else begin
 				next_inserted = inserted_coins;
 				o_output_item = 0;
-				$display("Sold out!! : %b", i_select_item);
 			end
 
 			o_return_coin = 0;
 		end
+
 		// return all coin!
 		else if (i_trigger_return != 0) begin
-			next_inserted = 0;
-
 			// output
 			o_output_item = 0;
 			// o_return_coin = (inserted_coins / kkCoinValue[2]) 
 			// 			  + (inserted_coins % kkCoinValue[2]) / kkCoinValue[1]
 			// 			  + (inserted_coins % kkCoinValue[2] % kkCoinValue[1]) / kkCoinValue[0];
-		
-			/* */
 
-			// 연쇄
-			coin_divide_machine(inserted_coins, 0, kkCoinValue[2], num_coins[2], t_inserted[0], t_result);
+			/*
+			 * t_res and t_inserted is for wiring between each block
+			 * if there is sufficient coins, then add that amount
+			 * and send temporary result to next if block(also test if there is sufficient coins)
+			 * and send remainder to next block to test
+			 *
+			 * if there is no sufficient coins, cosnume all coin
+			 * and send res, remainder to next if block  
+			 */
+			// if block for 1000 coin
+			if ((inserted_coins / kkCoinValue[2]) <= num_coins[2]) begin
+				t_res[0] = inserted_coins / kkCoinValue[2];
+				t_inserted[0] = inserted_coins % kkCoinValue[2];
+				num_coins[2] = num_coins[2] - inserted_coins / kkCoinValue[2];
+			end else begin
+				t_res[0] = num_coins[2];
+				t_inserted[0] = inserted_coins;
+				num_coins[2] = 0;
+			end
+			
+			// if block for 500 coin
+			if ((t_inserted[0] / kkCoinValue[1]) <= num_coins[1]) begin
+				t_res[1] = t_res[0] + t_inserted[0] / kkCoinValue[1];
+				t_inserted[1] = t_inserted[0] % kkCoinValue[1];
+				num_coins[1] = num_coins[1] - t_inserted[0] / kkCoinValue[1];
+			end else begin
+				t_res[1] = t_res[0] + num_coins[1];
+				t_inserted[0] = t_inserted[0];
+				num_coins[1] = 0;
+			end
+
+			// if block for 100 coin
+			if ((t_inserted[1] / kkCoinValue[0]) <= num_coins[0]) begin
+				o_return_coin = t_res[1] + t_inserted[1] / kkCoinValue[0];
+				num_coins[0] = num_coins[0] - t_inserted[1] / kkCoinValue[0];
+				next_inserted = 0;
+			end else begin
+				o_return_coin = 0;
+				next_inserted = inserted_coins;
+			end
 
 		end
+
 		// no input..
 		else begin
 			next_inserted = inserted_coins;
@@ -136,7 +181,10 @@ module vending_machine (
 			o_return_coin = 0;
 		end
 
-		// available : if item can be divided by price
+		/*
+		 * Check whether there are sufficient items,
+		 * and check whether inserted price is sufficient to pruchase item
+		 */
 		o_available_item = 
 						 // LSB of output
 						   ((next_inserted / kkItemPrice[0] != 0) 
@@ -159,7 +207,7 @@ module vending_machine (
 	always @(posedge clk) begin
 		if (!reset_n) begin
 			// TODO: reset all states.
-			inserted_coins <= 0;
+			next_inserted <= 0;
 			for (i = 0; i < `kNumItems; i = i + 1) begin
 				num_items[i] = i_num_items;
 				num_coins[i] = 0;
@@ -171,20 +219,4 @@ module vending_machine (
 		end
 	end
 
-endmodule
-
-module coin_divide_machine (
-	input [`kTotalBits-1:0] prev_inserted;
-	input [`kTotalBits-1:0] prev_res;
-	input [`kCoinBits-1:0] coin_val;
-	input [`kCoinBits-1:0] coin_num;
-
-	output [`kTotalBits-1:0] next_inserted;
-	output [`kTotalBits-1:0] next_res;
-);
-
-	assign next_res = prev_res + (prev_inserted / coin_val <= coin_num ?
-								  prev_inserted / coin_val : 0);
-	assign next_inserted = prev_inserted - (prev_inserted / coin_val <= coin_num ? 
-											prev_inserted % coin_val : 0);
 endmodule
