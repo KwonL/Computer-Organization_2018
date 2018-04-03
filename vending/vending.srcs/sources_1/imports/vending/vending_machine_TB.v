@@ -136,7 +136,20 @@ initial begin
     Insert100Coin(); //3000 -> 1000 : 1, 500 : 1, 100 : 15
 
     TriggerReturn();
-       
+    
+    #350 i_trigger_return = 0;
+    #50
+    #50 reset_n = 0;
+    #100 reset_n = 1;
+
+    #150
+    Insert1000Coin();
+    Insert1000Coin();
+    
+    Select1stItem();
+    
+    TriggerReturn();
+    
 	#10000 $finish(0);
 end
 
@@ -263,7 +276,17 @@ initial begin
     #200
     general_check(4'b1111, 4'b0000, 3000);
     #200
-    return_check(12);
+    return_check(17);
+    
+    #700
+    general_check(4'b0111, 4'b0000, 1000);
+    #200
+    general_check(4'b1111, 4'b0000, 2000);
+    #200
+    general_check(4'b0111, 4'b0001, 1600);
+    #200
+    return_check(1);
+    
     
 
     $display("Passed = %0d, Failed = %0d", Passed, Failed);
@@ -288,7 +311,7 @@ task general_check;
 endtask
 task return_check;
 
-    input [`kNumCoins-1:0] return_coin;
+    input [8:0] return_coin;
     begin
         if(return_coin == o_return_coin) begin
             Passed = Passed + 1;

@@ -58,5 +58,9 @@ PASSED
 PASSED
 PASSED
 PASSED
-Passed = 58, Failed = 0
-$finish called at time : 2240 ns
+PASSED
+PASSED
+PASSED
+PASSED
+Passed = 62, Failed = 0
+$finish called at time : 2380 ns

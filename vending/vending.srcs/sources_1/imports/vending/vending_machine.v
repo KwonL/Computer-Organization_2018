@@ -125,10 +125,6 @@
 		else if (i_trigger_return != 0) begin
 			// output
 			o_output_item = 0;
-			// o_return_coin = (inserted_coins / kkCoinValue[2]) 
-			// 			  + (inserted_coins % kkCoinValue[2]) / kkCoinValue[1]
-			// 			  + (inserted_coins % kkCoinValue[2] % kkCoinValue[1]) / kkCoinValue[0];
-
 			/*
 			 * t_res and t_inserted is for wiring between each block
 			 * if there is sufficient coins, then add that amount
@@ -138,6 +134,7 @@
 			 * if there is no sufficient coins, cosnume all coin
 			 * and send res, remainder to next if block  
 			 */
+			 
 			// if block for 1000 coin
 			if ((inserted_coins / kkCoinValue[2]) <= num_coins[2]) begin
 				t_res[0] = inserted_coins / kkCoinValue[2];
@@ -145,7 +142,7 @@
 				num_coins[2] = num_coins[2] - inserted_coins / kkCoinValue[2];
 			end else begin
 				t_res[0] = num_coins[2];
-				t_inserted[0] = inserted_coins;
+				t_inserted[0] = inserted_coins - kkCoinValue[2] * num_coins[2];
 				num_coins[2] = 0;
 			end
 			
@@ -156,7 +153,7 @@
 				num_coins[1] = num_coins[1] - t_inserted[0] / kkCoinValue[1];
 			end else begin
 				t_res[1] = t_res[0] + num_coins[1];
-				t_inserted[0] = t_inserted[0];
+				t_inserted[1] = t_inserted[0] - kkCoinValue[1] * num_coins[1];
 				num_coins[1] = 0;
 			end
 
@@ -166,8 +163,8 @@
 				num_coins[0] = num_coins[0] - t_inserted[1] / kkCoinValue[0];
 				next_inserted = 0;
 			end else begin
-				o_return_coin = 0;
-				next_inserted = inserted_coins;
+				o_return_coin = t_res[1] + num_coins[0];
+				next_inserted =  t_inserted[1] - kkCoinValue[0] * num_coins[0];
 			end
 
 		end
