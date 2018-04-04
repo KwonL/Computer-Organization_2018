@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../single_cpu.srcs/sources_1/imports/verilog_files/RegisterFile.v" --include "../../../single_cpu.srcs/sources_1/imports/verilog_files"
+verilog xil_defaultlib  "../../../single_cpu.srcs/sources_1/imports/verilog_files/ALU.v" --include "../../../single_cpu.srcs/sources_1/imports/verilog_files"
+verilog xil_defaultlib  "../../../single_cpu.srcs/sources_1/imports/verilog_files/cpu.v" --include "../../../single_cpu.srcs/sources_1/imports/verilog_files"
+verilog xil_defaultlib  "../../../single_cpu.srcs/sim_1/imports/verilog_files/cpu_tb.v" --include "../../../single_cpu.srcs/sources_1/imports/verilog_files"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
