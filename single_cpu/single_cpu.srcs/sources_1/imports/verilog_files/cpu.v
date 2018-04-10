@@ -28,7 +28,6 @@ module cpu (
     wire [5:0] func_code;
     wire RegDst, Jump, ALUSrc, RegWrite, isWWD, lhi;
     wire [3:0] ALUOp;
-    wire [`WORD_SIZE-1:0] PC_next;
     
     control_unit Control (
         .reset_n (reset_n),
@@ -48,7 +47,7 @@ module cpu (
         .clk(clk),
         .reset_n (reset_n),
         .inputReady (inputReady),
-        .data (inst),
+        .data (data),
         .readM (readM),
         .address (address),
         .num_inst (num_inst),
@@ -142,6 +141,16 @@ module control_unit (
                 RegWrite = 0;
                 isWWD = 0;
             end
+            
+            default : begin
+                RegDst = 0;
+                Jump = 0;
+                ALUOperation = 0;
+                ALUSrc = 0;
+                RegWrite = 0;
+                isWWD = 0;
+                lhi = 0;                
+            end
         endcase
     end
 
@@ -156,7 +165,7 @@ module datapath (
     output [`WORD_SIZE-1:0] readM,
     output [`WORD_SIZE-1:0] address,
 
-    output [`WORD_SIZE-1:0] num_inst;
+    output [`WORD_SIZE-1:0] num_inst,
     output [`WORD_SIZE-1:0] output_port,
 
     input RegDst,
@@ -168,7 +177,7 @@ module datapath (
     input lhi, 
     
     output [3:0] opcode,
-    output func_code
+    output [5:0] func_code
 );
     parameter WORD_SIZE = 16;
 
@@ -176,6 +185,7 @@ module datapath (
     reg [`WORD_SIZE-1:0] PC;
     wire [`WORD_SIZE-1:0] PC_jmp;
     reg [`WORD_SIZE-1:0] inst;
+    wire [`WORD_SIZE-1:0] PC_next;
     // end of register //
     
     // Redef of in or out
@@ -198,7 +208,7 @@ module datapath (
     initial begin
         inst <= 0;
         PC <= 0;
-        num_inst <= 1;
+        num_inst <= 0;
     end
     assign readM = 1;
     //////////////////////
@@ -207,7 +217,7 @@ module datapath (
     always @ (posedge clk) begin 
         if (reset_n == 0) begin
             PC <= 0;
-            num_inst <= 1;
+            num_inst <= 0;
             inst <= 0;
         end else begin
             PC <= PC_next;
@@ -227,19 +237,16 @@ module datapath (
     /////////////
 
     // wiring all mux or inputs
-    assign addr1 = data[11:10];
-    assign addr2 = data[9:8];
-    assign addr3 = RegDst ? data[7:6] : data[9:8];
+    assign addr1 = inst[11:10];
+    assign addr2 = inst[9:8];
+    assign addr3 = RegDst ? inst[7:6] : inst[9:8];
     assign ALUsrc_wire = ALUSrc ? extended : data2;
-    assign data3 = lhi ? {data[7:0], 8'b0} : ALU_out;
+    assign data3 = lhi ? {inst[7:0], 8'b0} : ALU_out;
     //////////////////////
 
     // wwd
     always @ (posedge clk) output_port <= isWWD ? data1 : output_port;
     ////////////////
-
-    // lhi
-
     
     // Register file wiring
     RegisterFile rf(
@@ -264,7 +271,7 @@ module datapath (
     );
 
     // sign extension module for ADI
-    sign_extension SE(.imm(data[7:0]), .extended(extended));
+    sign_extension SE(.imm(inst[7:0]), .extended(extended));
 
 endmodule
 

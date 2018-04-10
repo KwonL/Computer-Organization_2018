@@ -1,0 +1,5 @@
+verilog work "C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/RegisterFile.v"
+verilog work "C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/ALU.v"
+verilog work "C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v"
+verilog work "C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sim_1/imports/verilog_files/cpu_tb.v"
+verilog work C:/Xilinx/14.3/ISE_DS/PlanAhead/data/verilog/src/glbl.v

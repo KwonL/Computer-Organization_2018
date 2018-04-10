@@ -1,0 +1,38 @@
+Vivado Simulator 2012.3
+Copyright 1986-1999, 2001-2012 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/14.3/ISE_DS/PlanAhead/bin/unwrapped/win64.o/xelab.exe --incremental --debug typical --O2 --relax --mt auto -L work -L unisims_ver -L unimacro_ver -L xilinxcorelib_ver -L secureip --snapshot tb_cpu_behav --prj C:/Users/ECE/Desktop/single_cpu/single_cpu.sim/sim_1/behav/tb_cpu.prj work.tb_cpu work.glbl 
+Multi-threading in on. Using 3 slave threads
+Determining compilation order of HDL files
+INFO: [VRFC 10-165] Analyzing Verilog file "C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/RegisterFile.v" into library work
+INFO: [VRFC 10-165] Analyzing Verilog file "C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/ALU.v" into library work
+INFO: [VRFC 10-165] Analyzing Verilog file "C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v" into library work
+WARNING: [VRFC 10-1195] overwriting previous definition of module ALU [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/ALU.v:40]
+WARNING: [VRFC 10-1315] redeclaration of ansi port RegDst is not allowed [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:90]
+WARNING: [VRFC 10-1315] redeclaration of ansi port Jump is not allowed [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:91]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUOperation is not allowed [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:92]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUSrc is not allowed [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:93]
+WARNING: [VRFC 10-1315] redeclaration of ansi port RegWrite is not allowed [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:94]
+WARNING: [VRFC 10-1315] redeclaration of ansi port isWWD is not allowed [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:95]
+WARNING: [VRFC 10-1315] redeclaration of ansi port lhi is not allowed [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:96]
+WARNING: [VRFC 10-1315] redeclaration of ansi port num_inst is not allowed [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:192]
+WARNING: [VRFC 10-1315] redeclaration of ansi port output_port is not allowed [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:193]
+INFO: [VRFC 10-165] Analyzing Verilog file "C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sim_1/imports/verilog_files/cpu_tb.v" into library work
+INFO: [VRFC 10-165] Analyzing Verilog file "C:/Xilinx/14.3/ISE_DS/PlanAhead/data/verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING: [VRFC 10-1239] port Cout is not connected to this instance [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:265]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 16 for port readM [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:51]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port Cin [C:/Users/ECE/Desktop/single_cpu/single_cpu.srcs/sources_1/imports/verilog_files/cpu.v:268]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.control_unit
+Compiling module work.RegisterFile
+Compiling module work.ALU
+Compiling module work.sign_extension
+Compiling module work.datapath
+Compiling module work.cpu
+Compiling module work.tb_cpu
+Compiling module work.glbl
+Waiting for 1 sub-compilation(s) to finish...
+Built simulation snapshot tb_cpu_behav

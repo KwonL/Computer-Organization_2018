@@ -1,1 +1,1 @@
--wto "4a0dec0ee7ba40d6aaeec2e0ffdcfa49" --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "tb_cpu_behav" "xil_defaultlib.tb_cpu" "xil_defaultlib.glbl" -log "elaborate.log" 
+--incremental --debug "typical" --O2 --relax --mt "auto" -L "work" -L "unisims_ver" -L "unimacro_ver" -L "xilinxcorelib_ver" -L "secureip" --snapshot "tb_cpu_behav" --prj "C:/Users/ECE/Desktop/single_cpu/single_cpu.sim/sim_1/behav/tb_cpu.prj" "work.tb_cpu" "work.glbl" 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_cpu_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_cpu" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/tb_cpu/readM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">readM</obj_property>
+      <obj_property name="ObjectShortName">readM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/address" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">address[15:0]</obj_property>
+      <obj_property name="ObjectShortName">address[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/inputReady" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inputReady</obj_property>
+      <obj_property name="ObjectShortName">inputReady</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/reset_n" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset_n</obj_property>
+      <obj_property name="ObjectShortName">reset_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/num_inst" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">num_inst[15:0]</obj_property>
+      <obj_property name="ObjectShortName">num_inst[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/output_port" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">output_port[15:0]</obj_property>
+      <obj_property name="ObjectShortName">output_port[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cpu/outputData" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">outputData[15:0]</obj_property>
+      <obj_property name="ObjectShortName">outputData[15:0]</obj_property>
+   </wvobject>
+</wave_config>
