@@ -19,59 +19,16 @@ module cpu (
     input clk,                          // clock signal
   
     // for debuging/testing purpose
-    output reg [`WORD_SIZE-1:0] num_inst,   // number of instruction during execution
+    output [`WORD_SIZE-1:0] num_inst,   // number of instruction during execution
     output [`WORD_SIZE-1:0] output_port // this will be used for a "WWD" instruction
 );
-  
+
     // Datapath - control Unit
     wire [3:0] opcode;
     wire [5:0] func_code;
     wire RegDst, Jump, ALUSrc, RegWrite, isWWD, lhi;
     wire [3:0] ALUOp;
     wire [`WORD_SIZE-1:0] PC_next;
-
-    // internel register or wire for RTL
-    reg [`WORD_SIZE-1:0] PC;
-    wire [`WORD_SIZE-1:0] PC_jmp;
-    reg [`WORD_SIZE-1:0] inst;
-    // end of register //
-
-    // read data from memory Address [PC]
-    assign address = PC;
-    always @ (posedge inputReady) inst <= data;
-    ///////////////////////
-
-    // initializing cpu
-    initial begin
-        inst <= 0;
-        PC <= 0;
-        num_inst <= 1;
-    end
-    assign readM = 1;
-    //////////////////////
-
-    // PC, inst update
-    always @ (posedge clk) begin 
-        if (reset_n == 0) begin
-            PC <= 0;
-            num_inst <= 1;
-            inst <= 0;
-        end else begin
-            PC <= PC_next;
-            num_inst <= num_inst + 1;
-        end
-    end
-    assign PC_next = Jump ? PC_jmp : PC + 1;
-    ////////////////    
-
-    // instruction decoding
-    assign opcode = inst[`WORD_SIZE-1:`WORD_SIZE-4];
-    assign func_code = inst[5:0];
-    ////////////////////////
-
-    // PC jump
-    assign PC_jmp = {4'b0, inst[11:0]};
-    /////////////
     
     control_unit Control (
         .reset_n (reset_n),
@@ -94,6 +51,7 @@ module cpu (
         .data (inst),
         .readM (readM),
         .address (address),
+        .num_inst (num_inst),
         .output_port (output_port),
         
         .RegDst (RegDst),
@@ -196,8 +154,9 @@ module datapath (
     input [`WORD_SIZE-1:0] data,
     
     output [`WORD_SIZE-1:0] readM,
-    input [`WORD_SIZE-1:0] address,
+    output [`WORD_SIZE-1:0] address,
 
+    output [`WORD_SIZE-1:0] num_inst;
     output [`WORD_SIZE-1:0] output_port,
 
     input RegDst,
@@ -207,10 +166,21 @@ module datapath (
     input Jump,
     input isWWD,
     input lhi, 
-    input [3:0] opcode,
-    input func_code
+    
+    output [3:0] opcode,
+    output func_code
 );
     parameter WORD_SIZE = 16;
+
+    // internel register for PC
+    reg [`WORD_SIZE-1:0] PC;
+    wire [`WORD_SIZE-1:0] PC_jmp;
+    reg [`WORD_SIZE-1:0] inst;
+    // end of register //
+    
+    // Redef of in or out
+    reg [`WORD_SIZE-1:0] num_inst;
+    reg [`WORD_SIZE-1:0] output_port;
 
     // variables for wiring
     wire [WORD_SIZE-1:0] data1, data2, data3;
@@ -218,6 +188,43 @@ module datapath (
     wire [WORD_SIZE-1:0] ALUsrc_wire, extended;
     wire [WORD_SIZE-1:0] ALU_out;
     // end of var //
+
+    // read data from memory Address [PC]
+    assign address = PC;
+    always @ (posedge inputReady) inst <= data;
+    ///////////////////////
+
+    // initializing cpu
+    initial begin
+        inst <= 0;
+        PC <= 0;
+        num_inst <= 1;
+    end
+    assign readM = 1;
+    //////////////////////
+
+    // PC, inst update
+    always @ (posedge clk) begin 
+        if (reset_n == 0) begin
+            PC <= 0;
+            num_inst <= 1;
+            inst <= 0;
+        end else begin
+            PC <= PC_next;
+            num_inst <= num_inst + 1;
+        end
+    end
+    assign PC_next = Jump ? PC_jmp : PC + 1;
+    ////////////////    
+
+    // instruction decoding
+    assign opcode = inst[`WORD_SIZE-1:`WORD_SIZE-4];
+    assign func_code = inst[5:0];
+    ////////////////////////
+
+    // PC jump
+    assign PC_jmp = {4'b0, inst[11:0]};
+    /////////////
 
     // wiring all mux or inputs
     assign addr1 = data[11:10];
@@ -228,7 +235,7 @@ module datapath (
     //////////////////////
 
     // wwd
-    assign output_port = isWWD ? data1 : output_port;
+    always @ (posedge clk) output_port <= isWWD ? data1 : output_port;
     ////////////////
 
     // lhi
