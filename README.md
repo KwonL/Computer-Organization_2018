@@ -13,4 +13,5 @@ My space for Projects
     2-2) Register File
 
 3. Vending machine : RTL Design
-4. 16-bit single cycle cpu
+4. 16-bit single cycle CPU
+5. 16-bit multi cycle CPU
