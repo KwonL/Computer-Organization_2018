@@ -18,13 +18,173 @@ module cpu (
     output [`WORD_SIZE-1:0] output_port, // this will be used for a "WWD" instruction
     output is_halted // 1 if the cpu is halted
 );
-    // ... fill in the rest of the code
+
+    datapath dp(
+    .clk(clk),
+    .reset_n(reset_n),
+    .inputReady(inputReady),
+    .data(data),
+    
+    .readM(readM),
+    .writeM(writeM),
+    .address(address),
+
+    .num_inst(num_inst),
+    .output_port(output_port),
+
+    .RIWrite(RIWrite),
+    .RDWrite(RDWrite),
+    .PCWrite(PCWrite),
+    .MEMWrite(MEMWrite),
+    .MEMRead(MEMRead),
+    .MEMsrc(MEMsrc),
+
+    .RegDst(RegDst),
+    .RegWrite(RegWrite),
+    .ALUSrc(ALUSrc),
+    .ALUOp(ALUOp),
+    .Jump(jump),
+    .isWWD(isWWD),
+    .lhi(lhi), 
+    
+    .opcode(opcode),
+    .func_code(func_code)
+    );
+
+    control_unit Control (
+        .reset_n (reset_n),
+        .opcode (opcode),
+        .func_code (func_code),
+        .RegDst (RegDst),
+        .Jump (Jump),
+        .ALUOperation (ALUOp),
+        .ALUSrc (ALUSrc),
+        .RegWrite (RegWrite),
+        .isWWD (isWWD),
+        .lhi (lhi)
+    ); 
+
 endmodule
 
 
 /*
  * definition fo module
  */
+
+/*
+ * this module is kind of FSM machine that control controller by update stage
+ * at every clock cycle. FSM is moore machine
+ * stage : IF(4 cycle) ID(1 cycle) EX(2 cycle) MEM(4 cycle) WB(2 cycle)
+ * 
+ *       +-----+-----+-----+-----+----+-----+-----+------+------+------+------+------+-----+-----+
+ * state |  0  |  1  |  2  |  3  |  4 |  5  |  6  |   7  |   8  |   9  |  10  |  11  |  12 |  13 |
+ *       +-----+-----+-----+-----+----+-----+-----+------+------+------+------+------+-----+-----+
+ * stage | IF0 | IF1 | IF2 | IF3 | ID | EX0 | EX1 | MEM0 | MEM1 | MEM2 | MEM3 | MEM4 | WB0 | WB1 |
+ *       +-----+-----+-----+-----+----+-----+-----+------+------+------+------+------+-----+-----+
+ */
+ module micro_control (
+     input reset_n,
+
+     // datapath로부터 instruction을 받아야함
+     // need some addintional port for datapath
+     input [`WORD_SIZE-1:0] inst,
+     input clk,
+
+    output RIWrite,
+    output RDWrite,
+    output PCWrite,
+    output MEMWrite,
+    output MEMRead,
+
+    output MEMsrc
+ );
+    // redef
+    reg RIWrite;
+    reg RDWrite;
+    reg PCWrite;
+    reg MEMWrite;
+    reg MEMRead;
+ 
+    /* register for fsm */
+    reg [3:0] state;
+    reg [3:0] next_state;
+    ////////////////////////
+
+    initial begin
+        state <= 0;
+        next_state <= 0;
+    end
+
+    // block for output
+    always @ (posedge clk) begin
+            // IF stage
+            if (state < 4) begin
+                RIWrite <= 0;
+                RDWrite <= 0;
+                PCWrite <= 0;
+                MEMWrite <= 0;
+                MEMRead <= 1;
+            end
+            // ID stage
+            else if (state == 4) begin
+                RIWrite <= 0;
+                RDWrite <= 0;
+                PCWrite <= 0;
+                MEMWrite <= 0;
+                MEMRead <= 0;
+            end
+            // EX stage
+            else if (state < 7) begin
+                RIWrite <= 0;
+                PCWrite <= 0;
+                MEMWrite <= 0;
+                MEMRead <= 0;
+            end
+            // MEM stage
+            else if (state < 12) begin
+                // Store
+                if (inst[15:12] == `OPCODE_SWD) begin
+                    RIWrite <= 0;
+                    RDWrite <= 0;
+                    PCWrite <= 0;
+                    MEMWrite <= 1;
+                    MEMRead <= 0;
+                end
+                // Load
+                else if (inst[15:12] == `OPCODE_LWD) begin
+                    RIWrite <= 0;
+                    RDWrite <= 0;
+                    PCWrite <= 0;
+                    MEMWrite <= 0;
+                    MEMRead <= 1;
+                end
+            end
+            // WB stage 1
+            else if (state == 12) begin
+                RIWrite <= 0;
+                PCWrite <= 0;
+                MEMWrite <= 0;
+                MEMRead <= 0;
+            end 
+            // WB stage 2
+            else begin
+                RIWrite <= 0;
+                PCWrite <= 1;
+                MEMWrite <= 0;
+                MEMRead <= 0;
+            end
+    end
+
+    // block for next state
+
+    // 지금 stage에서, instruction의 type에 따라 stage를 skip할지
+    // 계속할지 정해서 하자
+    always @ (posedge clk) begin
+    
+        
+    
+    end
+ endmodule
 
 module control_unit (
     input reset_n, 
@@ -115,11 +275,19 @@ module datapath (
     input inputReady,
     input [`WORD_SIZE-1:0] data,
     
-    output [`WORD_SIZE-1:0] readM,
+    output readM,
+    output writeM,
     output [`WORD_SIZE-1:0] address,
 
     output [`WORD_SIZE-1:0] num_inst,
     output [`WORD_SIZE-1:0] output_port,
+
+    input RIWrite,
+    input RDWrite,
+    input PCWrite,
+    input MEMWrite,
+    input MEMRead,
+    input MEMsrc,
 
     input RegDst,
     input RegWrite,
@@ -132,29 +300,34 @@ module datapath (
     output [3:0] opcode,
     output [5:0] func_code
 );
-    parameter WORD_SIZE = 16;
 
     // internel register for PC
     reg [`WORD_SIZE-1:0] PC;
     wire [`WORD_SIZE-1:0] PC_jmp;
     reg [`WORD_SIZE-1:0] inst;
     wire [`WORD_SIZE-1:0] PC_next;
+
+    reg [`WORD_SIZE-1:0] reg_data;
     // end of register //
     
     // Redef of in or out
     reg [`WORD_SIZE-1:0] num_inst;
     reg [`WORD_SIZE-1:0] output_port;
+    ///////////////////////////
 
     // variables for wiring
-    wire [WORD_SIZE-1:0] data1, data2, data3;
+    wire [`WORD_SIZE-1:0] data1, data2, data3;
     wire [1:0] addr1, addr2,  addr3;
-    wire [WORD_SIZE-1:0] ALUsrc_wire, extended;
-    wire [WORD_SIZE-1:0] ALU_out;
+    wire [`WORD_SIZE-1:0] ALUsrc_wire, extended;
+    wire [`WORD_SIZE-1:0] ALU_out;
     // end of var //
 
     // read data from memory Address [PC]
-    assign address = PC;
-    always @ (posedge inputReady) inst <= data;
+    assign address = MEMsrc ? ALU_out : PC;
+    always @ (posedge inputReady) begin
+        if (RIWrite == 1) inst <= data;
+        else if (RDWrite == 1) reg_data <= data;
+    end
     ///////////////////////
 
     // initializing cpu
@@ -163,7 +336,8 @@ module datapath (
         PC <= 0;
         num_inst <= 0;
     end
-    assign readM = 1;
+    assign readM = MEMRead;
+    assign writeM = MEMWrite;
     //////////////////////
 
     // PC, inst update
@@ -172,12 +346,13 @@ module datapath (
             PC <= 0;
             num_inst <= 0;
             inst <= 0;
-        end else begin
+        end
+        else if (PCWrite == 1) begin
             PC <= PC_next;
             num_inst <= num_inst + 1;
         end
     end
-    assign PC_next = Jump ? PC_jmp : PC + 1;
+    assign PC_next = Jump ? PC_jmp : PC + 4;
     ////////////////    
 
     // instruction decoding
