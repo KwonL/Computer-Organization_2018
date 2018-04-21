@@ -19,126 +19,104 @@
 //////////////////////////////////////////////////////////////////////////////////
 `define	OP_ADD  4'b0000
 `define	OP_SUB	4'b0001
-//  Bitwise Boolean operation
 `define	OP_ORR	4'b0010
 `define	OP_NOT	4'b0011
-`define	OP_NOR	4'b0100
-`define	OP_XNOR	4'b0101
-`define	OP_NOT	4'b0110
-`define	OP_AND	4'b0111
-`define	OP_OR	4'b1000
-`define	OP_XOR	4'b1001
-// Shifting
-`define	OP_LRS	4'b1010
-`define	OP_ARS	4'b1011
-`define	OP_RR	4'b1100
-`define	OP_LLS	4'b1101
-`define	OP_ALS	4'b1110
-`define	OP_RL	4'b1111
+`define	OP_TCP	4'b0100
+`define	OP_SHL	4'b0101
+`define	OP_SHR	4'b0110
+`define	OP_ADI	4'b0111
+`define	OP_ORI	4'b1000
+`define	OP_LHI	4'b1001
+// branch
+`define	OP_BNE	4'b1010
+`define	OP_BEQ	4'b1011
+`define	OP_BGZ	4'b1100
+`define	OP_BLZ	4'b1101
+`define OP_AND  4'b1110
 
 
 module ALU(
     input [15:0] A,
     input [15:0] B,
     input [3:0] OP,
-    output reg [15:0] C
-    output reg Zero;
+    output reg [15:0] C,
+    output reg Zero
     );
-    reg[16:0] temp;
     
     always @(*) begin
         case (OP)
-            //OP_ADD and OP_SUB need one more bit to caculate overflow bit
             `OP_ADD : begin
-                temp = A + B + {15'b0, Cin};
-                C = temp[15:0];
-                Cout = temp[16];
+                Zero = 0;
+                C = A + B;
             end
 
             `OP_SUB : begin
-                //using two's complement
-                temp = Cin ? A + ~B : A + ~B + 16'b1;
-                //Carry is overflow bit
-                Cout = temp[16];
-                C = temp[15:0];
-            end
-
-            `OP_ID : begin
-                C = A;
-                Cout = 0;
-            end
-
-            `OP_NAND : begin
-                C = ~(A & B);
-                Cout = 0;
-            end
-
-            `OP_NOR : begin
-                C = ~(A | B);
-                Cout = 0;
-            end
-
-            `OP_XNOR : begin
-                C = ~(A ^ B);
-                Cout = 0;
-            end
-
-            `OP_NOT : begin
-                C = ~A;
-                Cout = 0;
+                Zero = 0;
+                C = A - B;
             end
 
             `OP_AND : begin
+                Zero = 0;
                 C = A & B;
-                Cout = 0;
             end
 
-            `OP_OR : begin
+            `OP_ORR : begin
                 C = A | B;
-                Cout = 0;
-            end
-            `OP_XOR : begin 
-                C = A ^ B;
-                Cout = 0;
+                Zero = 0;
             end
 
-            `OP_LRS : begin
-                C = A >> 1;
-                Cout = 0;
+            `OP_NOT : begin
+                Zero = 0;
+                C = ~A;
             end
 
-            `OP_ARS : begin
-                //add 1 to MSB if A's MSB is 1
-                C = (A >> 1) | {A[15], 15'b0};
-                Cout = 0;
+            `OP_TCP : begin
+                Zero = 0;
+                C = ~A + 1;
             end
 
-            `OP_RR : begin
-                //add 1 to MSB if A's LSB is 1
-                C = (A >> 1) | {A[0], 15'b0};
-                Cout = 0;
-            end
-
-            `OP_LLS : begin 
+            `OP_SHL : begin
+                Zero = 0;
                 C = A << 1;
-                Cout = 0;
             end
 
-            //ALS = LLS..
-            `OP_ALS :  begin
-                C = A << 1;
-                Cout = 0;
+            `OP_SHR : begin
+                Zero = 0;
+                C = {A[15], A[15:1]};
             end
 
-            `OP_RL : begin
-                //add 1 to LSB if A's MSB is 1
-                C = (A << 1) | {15'b0, A[15]};
-                Cout = 0;
+            `OP_ADI : begin
+                Zero = 0;
+                C = A + B;
             end
 
-            default : begin
-                C = A;
-                Cout = 0;
+            `OP_ORI : begin
+                Zero = 0;
+                C = A | {8'b0, B};
+            end
+            `OP_LHI : begin 
+                Zero = 0;
+                C = {B[7:0], 8'b0};
+            end
+
+            `OP_BNE : begin
+                Zero = (A != B);
+                C = A + B - 4;
+            end
+
+            `OP_BEQ : begin
+                Zero = (A == B);
+                C = A + B - 4;
+            end
+
+            `OP_BGZ : begin
+                Zero = (A > 0);
+                C = A + B - 4;
+            end
+
+            `OP_BLZ : begin
+                Zero = (A < 0);
+                C = A + B - 4;
             end
         endcase
     end

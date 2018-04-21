@@ -18,52 +18,71 @@ module cpu (
     output [`WORD_SIZE-1:0] output_port, // this will be used for a "WWD" instruction
     output is_halted // 1 if the cpu is halted
 );
+    wire [15:0] inst_out;
+    wire [3:0] ALUOp;
+    wire [5:0] func_code;
+    wire [1:0] PCSource;
+    wire [3:0] opcode;
+    wire [1:0] ALUSrcB;
 
     datapath dp(
-    .clk(clk),
-    .reset_n(reset_n),
-    .inputReady(inputReady),
-    .data(data),
-    
-    .readM(readM),
-    .writeM(writeM),
-    .address(address),
+        .clk(clk),
+        .reset_n(reset_n),
+        .inputReady(inputReady),
+        .data(data),
+        
+        .readM(readM),
+        .writeM(writeM),
+        .address(address),
 
-    .num_inst(num_inst),
-    .output_port(output_port),
+        .num_inst(num_inst),
+        .output_port(output_port),
 
-    .RIWrite(RIWrite),
-    .RDWrite(RDWrite),
-    .PCWrite(PCWrite),
-    .MEMWrite(MEMWrite),
-    .MEMRead(MEMRead),
-    .MEMsrc(MEMsrc),
+        .PCWriteCond(PCWriteCond),
+        .PCWrite(PCWrite),
+        .PCWrite_t(PCWrite_t),
+        .IorD(IorD),
+        .MemRead(MemRead),
+        .MemWrite(MemWrite),
+        .MemtoReg(MemtoReg),
+        .IRWrite(IRWrite),
 
-    .RegDst(RegDst),
-    .RegWrite(RegWrite),
-    .ALUSrc(ALUSrc),
-    .ALUOp(ALUOp),
-    .Jump(jump),
-    .isWWD(isWWD),
-    .lhi(lhi), 
-    
-    .opcode(opcode),
-    .func_code(func_code),
+        .PCSource(PCSource),
+        .ALUOp(ALUOp),
+        .ALUSrcB(ALUSrcB),
+        .ALUSrcA(ALUSrcA),
+        .RegWrite(RegWrite),
+        .RegDst(RegDst),
+        .isWWD(isWWD),
 
-    .inst(inst)
+        .opcode(opcode),
+        .func_code(func_code),
+
+        .inst_out(inst_out)
     );
 
     control_unit Control (
-        .reset_n (reset_n),
-        .opcode (opcode),
-        .func_code (func_code),
-        .RegDst (RegDst),
-        .Jump (Jump),
-        .ALUOperation (ALUOp),
-        .ALUSrc (ALUSrc),
-        .RegWrite (RegWrite),
-        .isWWD (isWWD),
-        .lhi (lhi)
+        .reset_n(reset_n),
+        .clk(clk),
+        .opcode(inst_out[15:12]),
+        .func_code(inst_out[5:0]),
+
+        .PCWriteCond(PCWriteCond),
+        .PCWrite(PCWrite),
+        .PCWrite_t(PCWrite_t),
+        .IorD(IorD),
+        .MemRead(MemRead),
+        .MemWrite(MemWrite),
+        .MemtoReg(MemtoReg),
+        .IRWrite(IRWrite),
+
+        .PCSource(PCSource),
+        .ALUOp(ALUOp),
+        .ALUSrcB(ALUSrcB),
+        .ALUSrcA(ALUSrcA),
+        .RegWrite(RegWrite),
+        .RegDst(RegDst),
+        .isWWD(isWWD)
     ); 
 
 endmodule
@@ -72,214 +91,6 @@ endmodule
 /*
  * definition fo module
  */
-
-/*
- * this module is kind of FSM machine that control controller by update stage
- * at every clock cycle. FSM is moore machine
- * stage : IF(4 cycle) ID(1 cycle) EX(2 cycle) MEM(4 cycle) WB(2 cycle)
- * 
- *       +-----+-----+-----+-----+----+-----+-----+------+------+------+------+------+-----+-----+
- * state |  0  |  1  |  2  |  3  |  4 |  5  |  6  |   7  |   8  |   9  |  10  |  11  |  12 |  13 |
- *       +-----+-----+-----+-----+----+-----+-----+------+------+------+------+------+-----+-----+
- * stage | IF0 | IF1 | IF2 | IF3 | ID | EX0 | EX1 | MEM0 | MEM1 | MEM2 | MEM3 | MEM4 | WB0 | WB1 |
- *       +-----+-----+-----+-----+----+-----+-----+------+------+------+------+------+-----+-----+
- */
- module micro_control (
-     input reset_n,
-
-     // datapath로부터 instruction을 받아야함
-     // need some addintional port for datapath
-     input [`WORD_SIZE-1:0] inst,
-     input clk,
-
-    output RIWrite,
-    output RDWrite,
-    output PCWrite,
-    output MEMWrite,
-    output MEMRead,
-
-    output MEMsrc
- );
-    // redef
-    reg RIWrite;
-    reg RDWrite;
-    reg PCWrite;
-    reg MEMWrite;
-    reg MEMRead;
- 
-    /* register for fsm */
-    reg [3:0] state;
-    reg [3:0] next_state;
-    ////////////////////////
-
-    initial begin
-        state <= 0;
-        next_state <= 0;
-    end
-
-    // block for output
-    always @ (posedge clk) begin
-            // IF stage
-            if (state < 4) begin
-                RIWrite <= 0;
-                RDWrite <= 0;
-                PCWrite <= 0;
-                MEMWrite <= 0;
-                MEMRead <= 1;
-            end
-            // ID stage
-            else if (state == 4) begin
-                RIWrite <= 0;
-                RDWrite <= 0;
-                PCWrite <= 0;
-                MEMWrite <= 0;
-                MEMRead <= 0;
-            end
-            // EX stage
-            else if (state < 7) begin
-                RIWrite <= 0;
-                PCWrite <= 0;
-                MEMWrite <= 0;
-                MEMRead <= 0;
-            end
-            // MEM stage
-            else if (state < 12) begin
-                // Store
-                if (inst[15:12] == `OPCODE_SWD) begin
-                    RIWrite <= 0;
-                    RDWrite <= 0;
-                    PCWrite <= 0;
-                    MEMWrite <= 1;
-                    MEMRead <= 0;
-                end
-                // Load
-                else if (inst[15:12] == `OPCODE_LWD) begin
-                    RIWrite <= 0;
-                    RDWrite <= 0;
-                    PCWrite <= 0;
-                    MEMWrite <= 0;
-                    MEMRead <= 1;
-                end
-            end
-            // WB stage 1
-            else if (state == 12) begin
-                RIWrite <= 0;
-                PCWrite <= 0;
-                MEMWrite <= 0;
-                MEMRead <= 0;
-            end 
-            // WB stage 2
-            else begin
-                RIWrite <= 0;
-                PCWrite <= 1;
-                MEMWrite <= 0;
-                MEMRead <= 0;
-            end
-    end
-
-    // block for next state
-
-    // 지금 stage에서, instruction의 type에 따라 stage를 skip할지
-    // 계속할지 정해서 하자
-    always @ (state) begin
-        
-        // IF stage : continue whatever input
-        if (state < 3) begin
-            next_state <= state + 1;
-        end
-        else if (state == 3) begin
-            if (inst[15:12] == `OPCODE_JMP) next_state <= 0;
-            else next_state <= state + 1;
-        end
-        else if (state < 5) begin
-            
-        end
-    
-    end
- endmodule
-
-module control_unit (
-    input reset_n, 
-    input [3:0] opcode,
-    input [5:0] func_code,
-    
-    output RegDst,
-    output Jump,
-    output ALUOperation,
-    output ALUSrc,
-    output RegWrite,
-    output isWWD,
-    output lhi
-    );
-
-    reg RegDst;
-    reg Jump;
-    reg [3:0] ALUOperation;
-    reg ALUSrc;
-    reg RegWrite;
-    reg isWWD;
-    reg lhi;
-
-    always @ (*) begin
-        case (opcode)
-
-            4'hf : begin
-                if (func_code == `FUNC_ADD) begin
-                    RegDst = 1;
-                    Jump = 0;
-                    ALUOperation = `OP_ADD; 
-                    ALUSrc = 0;
-                    RegWrite = 1;
-                    isWWD = 0;
-                    lhi = 0;
-                end
-                // wwd control
-                else if (func_code == 6'h1c) begin
-                    Jump = 0;
-                    isWWD = 1;
-                    RegWrite = 0;
-                end
-            end
-
-            `OPCODE_ADI : begin
-                RegDst = 0;
-                Jump = 0;
-                ALUOperation = `OP_ADD;
-                ALUSrc = 1;
-                RegWrite = 1;
-                isWWD = 0;
-                lhi = 0;
-            end
-
-            `OPCODE_LHI : begin
-                RegDst = 0;
-                Jump = 0;
-                ALUOperation = `OP_ADD;
-                ALUSrc = 0;
-                RegWrite = 1;
-                isWWD = 0;
-                lhi = 1;
-            end
-
-            `OPCODE_JMP : begin
-                Jump = 1;
-                RegWrite = 0;
-                isWWD = 0;
-            end
-            
-            default : begin
-                RegDst = 0;
-                Jump = 0;
-                ALUOperation = 0;
-                ALUSrc = 0;
-                RegWrite = 0;
-                isWWD = 0;
-                lhi = 0;                
-            end
-        endcase
-    end
-
-endmodule
 
 module datapath (
     input clk,
@@ -294,100 +105,149 @@ module datapath (
     output [`WORD_SIZE-1:0] num_inst,
     output [`WORD_SIZE-1:0] output_port,
 
-    input RIWrite,
-    input RDWrite,
+    input PCWriteCond,
     input PCWrite,
-    input MEMWrite,
-    input MEMRead,
-    input MEMsrc,
+    input PCWrite_t,
+    input IorD,
+    input MemRead,
+    input MemWrite,
+    input MemtoReg,
+    input IRWrite,
 
-    input RegDst,
-    input RegWrite,
-    input ALUSrc,
+    input [1:0] PCSource,
     input [3:0] ALUOp,
-    input Jump,
+    input [1:0] ALUSrcB,
+    input ALUSrcA,
+    input RegWrite,
+    input RegDst,
     input isWWD,
-    input lhi, 
     
     output [3:0] opcode,
     output [5:0] func_code,
 
-    output [`WORD_SIZE-1:0] inst;
+    output [`WORD_SIZE-1:0] inst_out
 );
 
     // internel register for PC
     reg [`WORD_SIZE-1:0] PC;
     wire [`WORD_SIZE-1:0] PC_jmp;
     reg [`WORD_SIZE-1:0] inst;
-    wire [`WORD_SIZE-1:0] PC_next;
-
+    reg [`WORD_SIZE-1:0] PC_next;
+    reg [`WORD_SIZE-1:0] PC_4_temp;
     reg [`WORD_SIZE-1:0] reg_data;
     // end of register //
     
     // Redef of in or out
     reg [`WORD_SIZE-1:0] num_inst;
-    reg [`WORD_SIZE-1:0] output_port;
     ///////////////////////////
 
     // variables for wiring
     wire [`WORD_SIZE-1:0] data1, data2, data3;
     wire [1:0] addr1, addr2,  addr3;
-    wire [`WORD_SIZE-1:0] ALUsrc_wire, extended;
-    wire [`WORD_SIZE-1:0] ALU_out;
+    wire [`WORD_SIZE-1:0] ALUsrc_wire1, extended;
+    reg [`WORD_SIZE-1:0] ALUsrc_wire2 = 16'h4;
+    wire [`WORD_SIZE-1:0] ALU_wire;
+    wire Zero;
     // end of var //
 
-    // read data from memory Address [PC]
-    assign address = MEMsrc ? ALU_out : PC;
+    // registers (A, B, ALUOut and so on..)
+    reg [`WORD_SIZE-1:0] ALUOut;
+    reg [`WORD_SIZE-1:0] A;
+    reg [`WORD_SIZE-1:0] B;
+    // end of reg //  
+
+    // register wiring
+    always @ (posedge clk) begin
+
+        ALUOut <= ALU_wire;
+        A <= data1;
+        B <= data2;
+
+    end
+    // end of wiring //
+
+    assign inst_out = inst;
+
+    // read data from memory Address 
+    assign address = IorD ? ALU_wire : PC;
     always @ (posedge inputReady) begin
-        if (RIWrite == 1) inst <= data;
-        else if (RDWrite == 1) reg_data <= data;
+        if (IRWrite == 1) inst <= data;
+        else reg_data <= data;
     end
     ///////////////////////
+
+    // send data
+    assign data = writeM ? data2 : 16'bz;
+    /////////////////////
 
     // initializing cpu
     initial begin
         inst <= 0;
         PC <= 0;
         num_inst <= 0;
+        reg_data <= 0;
     end
-    assign readM = MEMRead;
-    assign writeM = MEMWrite;
+    //////////////////////
+
+    // memory signal  
+    assign readM = MemRead;
+    assign writeM = MemWrite;
     //////////////////////
 
     // PC, inst update
-    always @ (posedge clk) begin 
+    always @ (posedge clk or reset_n) begin 
         if (reset_n == 0) begin
             PC <= 0;
             num_inst <= 0;
             inst <= 0;
         end
-        else if (PCWrite == 1) begin
+        else if (PCWrite == 1 | (PCWriteCond & Zero)) begin
             PC <= PC_next;
             num_inst <= num_inst + 1;
         end
     end
-    assign PC_next = Jump ? PC_jmp : PC + 4;
-    ////////////////    
+    // PC MUX
+    always @ (PC or inst or ALUOut or ALU_wire or PCSource) begin
+        case (PCSource)
+            0 : PC_next = PC_4_temp;
+            1 : PC_next = ALUOut;
+            2 : PC_next = {PC[15:12], inst[11:0]};
+        endcase
+    end
+    // temporalily save PC + 4 at ID stage
+    always @ (posedge clk) begin
+        if (PCWrite_t) begin
+            PC_4_temp <= ALU_wire;
+        end
+    end
+    /////////////////////////
+
+    // output port
+    assign output_port = isWWD ? data1 : output_port;
+    ////////////////////
 
     // instruction decoding
     assign opcode = inst[`WORD_SIZE-1:`WORD_SIZE-4];
     assign func_code = inst[5:0];
     ////////////////////////
 
-    // PC jump
-    assign PC_jmp = {4'b0, inst[11:0]};
-    /////////////
-
     // wiring all mux or inputs
     assign addr1 = inst[11:10];
     assign addr2 = inst[9:8];
     assign addr3 = RegDst ? inst[7:6] : inst[9:8];
-    assign ALUsrc_wire = ALUSrc ? extended : data2;
-    assign data3 = lhi ? {inst[7:0], 8'b0} : ALU_out;
+    assign ALUsrc_wire1 = ALUSrcA ? A : PC;
+    always @ (extended or B or ALUSrcB) begin
+        case (ALUSrcB)
+            0 : ALUsrc_wire2 = B;
+            1 : ALUsrc_wire2 = 16'h1;
+            2 : ALUsrc_wire2 = extended;
+        endcase
+    end
+    assign data3 = MemtoReg ? reg_data : ALUOut;
     //////////////////////
 
     // wwd
-    always @ (posedge clk) output_port <= isWWD ? data1 : output_port;
+    
     ////////////////
     
     // Register file wiring
@@ -405,11 +265,11 @@ module datapath (
 
     // ALU wiring
     ALU alu(
-        .A(data1),
-        .B(ALUsrc_wire),
-        .Cin(0),
+        .A(ALUsrc_wire1),
+        .B(ALUsrc_wire2),
         .OP(ALUOp),
-        .C(ALU_out)
+        .C(ALU_wire),
+        .Zero(Zero)
     );
 
     // sign extension module for ADI

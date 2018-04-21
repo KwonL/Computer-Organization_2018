@@ -1,42 +1,45 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/RegisterFile.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module RegisterFile
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module control_unit
+WARNING: [VRFC 10-1315] redeclaration of ansi port PCWriteCond is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:28]
+WARNING: [VRFC 10-1315] redeclaration of ansi port PCWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:29]
+WARNING: [VRFC 10-1315] redeclaration of ansi port IorD is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:30]
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemRead is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:31]
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:32]
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemtoReg is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:33]
+WARNING: [VRFC 10-1315] redeclaration of ansi port IRWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:34]
+WARNING: [VRFC 10-1315] redeclaration of ansi port PCSource is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:36]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUOp is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:37]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUSrcB is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:38]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUSrcA is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:39]
+WARNING: [VRFC 10-1315] redeclaration of ansi port RegWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:40]
+WARNING: [VRFC 10-1315] redeclaration of ansi port RegDst is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:41]
+WARNING: [VRFC 10-1315] redeclaration of ansi port isWWD is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:42]
+WARNING: [VRFC 10-1315] redeclaration of ansi port PCWrite_t is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v:43]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/memory.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module memory
 WARNING: [VRFC 10-1315] redeclaration of ansi port data is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/memory.v:11]
 WARNING: [VRFC 10-1315] redeclaration of ansi port inputReady is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/memory.v:13]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
-WARNING: [VRFC 10-1195] overwriting previous definition of module ALU [../../../multi_cpu.srcs/sources_1/imports/include/ALU.v:40]
+WARNING: [VRFC 10-1195] overwriting previous definition of module ALU [../../../multi_cpu.srcs/sources_1/imports/include/ALU.v:38]
 INFO: [VRFC 10-311] analyzing module cpu
-INFO: [VRFC 10-2458] undeclared symbol RegDst, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:34]
-INFO: [VRFC 10-2458] undeclared symbol RegWrite, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:35]
-INFO: [VRFC 10-2458] undeclared symbol ALUSrc, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:36]
-INFO: [VRFC 10-2458] undeclared symbol ALUOp, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:37]
-INFO: [VRFC 10-2458] undeclared symbol jump, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:38]
-INFO: [VRFC 10-2458] undeclared symbol isWWD, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:39]
-INFO: [VRFC 10-2458] undeclared symbol lhi, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:40]
-INFO: [VRFC 10-2458] undeclared symbol opcode, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:42]
-INFO: [VRFC 10-2458] undeclared symbol func_code, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:43]
-INFO: [VRFC 10-2458] undeclared symbol Jump, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:51]
-INFO: [VRFC 10-311] analyzing module micro_control
-WARNING: [VRFC 10-1315] redeclaration of ansi port RIWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:91]
-WARNING: [VRFC 10-1315] redeclaration of ansi port RDWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:92]
-WARNING: [VRFC 10-1315] redeclaration of ansi port PCWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:93]
-WARNING: [VRFC 10-1315] redeclaration of ansi port MEMWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:94]
-WARNING: [VRFC 10-1315] redeclaration of ansi port MEMRead is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:95]
-INFO: [VRFC 10-311] analyzing module control_unit
-WARNING: [VRFC 10-1315] redeclaration of ansi port RegDst is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:184]
-WARNING: [VRFC 10-1315] redeclaration of ansi port Jump is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:185]
-WARNING: [VRFC 10-1315] redeclaration of ansi port ALUOperation is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:186]
-WARNING: [VRFC 10-1315] redeclaration of ansi port ALUSrc is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:187]
-WARNING: [VRFC 10-1315] redeclaration of ansi port RegWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:188]
-WARNING: [VRFC 10-1315] redeclaration of ansi port isWWD is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:189]
-WARNING: [VRFC 10-1315] redeclaration of ansi port lhi is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:190]
+INFO: [VRFC 10-2458] undeclared symbol PCWriteCond, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:41]
+INFO: [VRFC 10-2458] undeclared symbol PCWrite, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:42]
+INFO: [VRFC 10-2458] undeclared symbol PCWrite_t, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:43]
+INFO: [VRFC 10-2458] undeclared symbol IorD, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:44]
+INFO: [VRFC 10-2458] undeclared symbol MemRead, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:45]
+INFO: [VRFC 10-2458] undeclared symbol MemWrite, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:46]
+INFO: [VRFC 10-2458] undeclared symbol MemtoReg, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:47]
+INFO: [VRFC 10-2458] undeclared symbol IRWrite, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:48]
+INFO: [VRFC 10-2458] undeclared symbol ALUSrcA, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:53]
+INFO: [VRFC 10-2458] undeclared symbol RegWrite, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:54]
+INFO: [VRFC 10-2458] undeclared symbol RegDst, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:55]
+INFO: [VRFC 10-2458] undeclared symbol isWWD, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:56]
 INFO: [VRFC 10-311] analyzing module datapath
-WARNING: [VRFC 10-1315] redeclaration of ansi port num_inst is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:295]
-WARNING: [VRFC 10-1315] redeclaration of ansi port output_port is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:296]
+WARNING: [VRFC 10-1315] redeclaration of ansi port num_inst is not allowed [D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/cpu.v:141]
 INFO: [VRFC 10-311] analyzing module sign_extension
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sim_1/imports/include/cpu_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cpu_tb
