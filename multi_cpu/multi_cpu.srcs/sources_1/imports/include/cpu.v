@@ -48,7 +48,9 @@ module cpu (
     .lhi(lhi), 
     
     .opcode(opcode),
-    .func_code(func_code)
+    .func_code(func_code),
+
+    .inst(inst)
     );
 
     control_unit Control (
@@ -179,9 +181,19 @@ endmodule
 
     // 지금 stage에서, instruction의 type에 따라 stage를 skip할지
     // 계속할지 정해서 하자
-    always @ (posedge clk) begin
-    
+    always @ (state) begin
         
+        // IF stage : continue whatever input
+        if (state < 3) begin
+            next_state <= state + 1;
+        end
+        else if (state == 3) begin
+            if (inst[15:12] == `OPCODE_JMP) next_state <= 0;
+            else next_state <= state + 1;
+        end
+        else if (state < 5) begin
+            
+        end
     
     end
  endmodule
@@ -298,7 +310,9 @@ module datapath (
     input lhi, 
     
     output [3:0] opcode,
-    output [5:0] func_code
+    output [5:0] func_code,
+
+    output [`WORD_SIZE-1:0] inst;
 );
 
     // internel register for PC

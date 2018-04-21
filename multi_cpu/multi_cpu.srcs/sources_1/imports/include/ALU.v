@@ -20,8 +20,8 @@
 `define	OP_ADD  4'b0000
 `define	OP_SUB	4'b0001
 //  Bitwise Boolean operation
-`define	OP_ID	4'b0010
-`define	OP_NAND	4'b0011
+`define	OP_ORR	4'b0010
+`define	OP_NOT	4'b0011
 `define	OP_NOR	4'b0100
 `define	OP_XNOR	4'b0101
 `define	OP_NOT	4'b0110
@@ -40,10 +40,9 @@
 module ALU(
     input [15:0] A,
     input [15:0] B,
-    input Cin,
     input [3:0] OP,
-    output reg Cout,
     output reg [15:0] C
+    output reg Zero;
     );
     reg[16:0] temp;
     
