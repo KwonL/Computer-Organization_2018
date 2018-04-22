@@ -33,6 +33,7 @@
 `define	OP_BGZ	4'b1100
 `define	OP_BLZ	4'b1101
 `define OP_AND  4'b1110
+`define OP_ID   4'b1111
 
 
 module ALU(
@@ -94,6 +95,7 @@ module ALU(
                 Zero = 0;
                 C = A | {8'b0, B};
             end
+
             `OP_LHI : begin 
                 Zero = 0;
                 C = {B[7:0], 8'b0};
@@ -101,22 +103,24 @@ module ALU(
 
             `OP_BNE : begin
                 Zero = (A != B);
-                C = A + B - 4;
             end
 
             `OP_BEQ : begin
                 Zero = (A == B);
-                C = A + B - 4;
             end
 
-            `OP_BGZ : begin
-                Zero = (A > 0);
-                C = A + B - 4;
+            `OP_BGZ : begin 
+                if (A != 0) Zero = ~A[15];
+                else Zero = 0;
             end
 
             `OP_BLZ : begin
-                Zero = (A < 0);
-                C = A + B - 4;
+                Zero = A[15];
+            end
+            
+            `OP_ID : begin
+                Zero = 0;
+                C = A;
             end
         endcase
     end

@@ -1,6 +1,26 @@
 `include "opcodes.v"
 `include "ALU.v"
 
+/*
+ * This is controller for 16-bit TSC multi cycle cpu.
+ * this module is some kind of FSM machine that it's output is control signal.
+ * 
+ * State Diagram
+ *   +-------+----+----+----+-----+----+
+ *   | State |  0 |  1 |  2 |  3  |  4 |
+ *   +-------+----+----+----+-----+----+
+ *   | Stage | IF | ID | EX | MEM | WB |
+ *   +-------+----+----+----+-----+----+
+ *
+ * Each stage has correct signal that control units for Register allocation.
+ * Example) If i want update PC <= PC + 1, then 
+            PCWrite = 1; PCSource = 0;
+            ALUSrcA = 0; ALUSrcB = 1; ALUOp = `OP_ADD;
+            this control signal will update PC register.
+ * Each instruction can be implemented via data transfer between registers. 
+ * Therefore, the CPU can be implemented by the above method.
+ *
+ */
 module control_unit (
     input reset_n,
     input clk,
@@ -9,7 +29,6 @@ module control_unit (
 
     output PCWriteCond,
     output PCWrite,
-    output PCWrite_t,
     output IorD,
     output MemRead,
     output MemWrite,
@@ -22,7 +41,8 @@ module control_unit (
     output ALUSrcA,
     output RegWrite,
     output RegDst,
-    output isWWD
+    output isWWD,
+    output isHalt
 );
     /* Redef of output fegister */
     reg PCWriteCond = 0;
@@ -38,9 +58,9 @@ module control_unit (
     reg [1:0] ALUSrcB = 0;
     reg ALUSrcA = 0;
     reg RegWrite = 0;
-    reg RegDst = 0;
+    reg [1:0] RegDst = 0;
     reg isWWD = 0;
-    reg PCWrite_t = 0;
+    reg isHalt = 0;
     //////////////////////////////////
 
     // register for state
@@ -63,6 +83,10 @@ module control_unit (
             // ID stage -> EX stage
             1 : begin
                 next_state = state + 1;
+                if (opcode == 15 & func_code == `FUNC_HLT) begin
+                    next_state = state;
+                    isHalt = 1;
+                end
             end
             // EX stage -> ?
             2 : begin
@@ -70,11 +94,11 @@ module control_unit (
                 if (opcode == `OPCODE_LWD | opcode == `OPCODE_SWD)
                     next_state = state + 1;
                 else if (opcode == `OPCODE_JMP 
-                        |opcode == `OPCODE_JAL
                         |opcode == `OPCODE_BEQ
                         |opcode == `OPCODE_BGZ
                         |opcode == `OPCODE_BLZ
-                        |opcode == `OPCODE_BNE)
+                        |opcode == `OPCODE_BNE
+                        |(opcode == 15 & func_code == `FUNC_JPR))
                     next_state = 0;
                 else
                     next_state = state + 2;
@@ -107,13 +131,14 @@ module control_unit (
         case (state)
             // IF stage
             0 : begin
+                // turn off signals
                 isWWD = 0;
                 IorD = 0;
+                PCWriteCond = 0;
                 // PC = PC + 4 to the PC_4_temp
                 RegWrite = 0;
                 MemWrite = 0;
-                PCWrite_t = 1;
-                PCWrite = 0;
+                PCWrite = 1;
                 PCSource = 0;
                 ALUSrcA = 0;
                 ALUSrcB = 1;
@@ -125,7 +150,7 @@ module control_unit (
             // ID stage
             1 : begin
                 // turn off signals
-                PCWrite_t = 0;
+                PCWrite = 0;
                 IRWrite = 0;
                 MemRead = 0;
                 // ALUout <= PC + (sign extend(imm))
@@ -134,8 +159,49 @@ module control_unit (
             end
             // EX stage
             2 : begin
+                // branch
+                if (opcode == `OPCODE_BEQ
+                   |opcode == `OPCODE_BNE
+                   |opcode == `OPCODE_BGZ
+                   |opcode == `OPCODE_BLZ) begin
+                    ALUSrcB = 0;
+                    ALUSrcA = 1;
+                    PCWriteCond = 1;
+                    PCSource = 1;
+                    case (opcode)
+                        `OPCODE_BEQ : ALUOp = `OP_BEQ;
+                        `OPCODE_BNE : ALUOp = `OP_BNE;
+                        `OPCODE_BGZ : ALUOp = `OP_BGZ;
+                        `OPCODE_BLZ : ALUOp = `OP_BLZ;
+                    endcase
+                end
+                // jump instruction
+                else if (opcode == `OPCODE_JMP) begin
+                    PCWrite = 1;
+                    PCSource = 2;
+                end
+                // JAL instruction
+                // JAL jump at WB stage.
+                else if (opcode == `OPCODE_JAL) begin
+                    // store current PC to $2
+                    ALUOp = `OP_ID;
+                    ALUSrcA = 0;
+                end
+                // JRL instruction
+                // JRL also jump at WB stage
+                else if (opcode == 15 & func_code == `FUNC_JRL) begin
+                    ALUOp = `OP_ID;
+                    ALUSrcA = 0;
+                end
+                // JPR instruction : jump to register's val directly
+                else if ((opcode == 15) && (func_code == `FUNC_JPR)) begin
+                    ALUSrcA = 1;
+                    ALUOp = `OP_ID;
+                    PCWrite = 1;
+                    PCSource = 0;
+                end
                 // R-type
-                if (opcode == 15) begin
+                else if (opcode == 15) begin
                     ALUSrcA = 1;
                     ALUSrcB = 0;
                     RegDst = 1;
@@ -154,26 +220,6 @@ module control_unit (
                     if (func_code == 28) begin
                         isWWD = 1;
                     end
-                end
-                // branch
-                else if (opcode == `OPCODE_BEQ
-                        |opcode == `OPCODE_BNE
-                        |opcode == `OPCODE_BGZ
-                        |opcode == `OPCODE_BLZ) begin
-                    ALUSrcB = 0;
-                    ALUSrcA = 0;
-                    PCSource = 1;
-                    case (opcode)
-                        `OPCODE_BEQ : ALUOp = `OP_BEQ;
-                        `OPCODE_BNE : ALUOp = `OP_BNE;
-                        `OPCODE_BGZ : ALUOp = `OP_BGZ;
-                        `OPCODE_BLZ : ALUOp = `OP_BLZ;
-                    endcase
-                end
-                // jump instruction
-                else if (opcode == `OPCODE_JMP | opcode == `OPCODE_JAL) begin
-                    PCWrite = 1;
-                    PCSource = 2;
                 end
                 // SWD, LWD, or I-type
                 else begin
@@ -200,21 +246,19 @@ module control_unit (
                 else begin
                     MemRead = 0;
                     MemWrite = 1;
-                    // next pc
-                    PCSource = 0;
-                    PCWrite = 1;
                 end
             end
             // WB stage
             4 : begin
                 // turn off signal
                 isWWD = 0;
-                // nop or WWD
-                if (opcode == 0 | func_code == 6'h1c) begin
+                // WWD
+                if (func_code == 6'h1c) begin
                     MemRead = 0;
                     MemWrite = 0;
                     RegWrite = 0;
-                end else begin
+                end 
+                else begin
                     MemRead = 0;
                     MemWrite = 0;
                     RegWrite = 1;
@@ -225,9 +269,21 @@ module control_unit (
                         MemtoReg = 0;
                     end
                 end
-                // next pc
-                PCSource = 0;
-                PCWrite = 1;
+                // for JAL instruction, we need to WB PC to $2
+                // and jump to {PC, inst[11:0]}
+                if (opcode == `OPCODE_JAL) begin
+                    PCSource = 2;
+                    PCWrite = 1;
+                    RegDst = 2;                    
+                end
+                // JRL instruction WB stage : Jump to $rs value
+                // and store current PC in $2
+                else if (opcode == 15 && func_code == `FUNC_JRL) begin
+                    PCSource = 0;
+                    ALUSrcA = 1;
+                    PCWrite = 1;
+                    RegDst = 2;
+                end
             end
         endcase
     end

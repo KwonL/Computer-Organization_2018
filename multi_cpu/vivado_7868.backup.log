@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sat Apr 21 22:40:04 2018
+# Process ID: 7868
+# Current directory: D:/Users/lkh116/Desktop/C.O_2018/multi_cpu
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11340 D:\Users\lkh116\Desktop\C.O_2018\multi_cpu\multi_cpu.xpr
+# Log file: D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/vivado.log
+# Journal file: D:/Users/lkh116/Desktop/C.O_2018/multi_cpu\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2016.4/data/ip'.
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 20-1445] Cannot import file 'D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v' on top of itself. Importing a file from the imported source directory can cause this problem.
+add_files -norecurse -scan_for_includes D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v
+INFO: [filemgmt 56-200] Setting project included file 'D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/ALU.v' to type 'Verilog Header'.
+import_files -norecurse D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v
+CRITICAL WARNING: [filemgmt 20-1445] Cannot import file 'D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v' on top of itself. Importing a file from the imported source directory can cause this problem.
+remove_files  D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v
+add_files -norecurse D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v
+ERROR: [filemgmt 56-23] Illegal GUI graph access between updates.
+ERROR: [filemgmt 20-1788] Illegal access of HADGNode between graph update events.
+ERROR: [filemgmt 20-1788] Illegal access of HADGNode between graph update events.
+ERROR: [filemgmt 20-1788] Illegal access of HADGNode between graph update events.
+ERROR: [filemgmt 20-1788] Illegal access of HADGNode between graph update events.
+ERROR: [filemgmt 20-1788] Illegal access of HADGNode between graph update events.

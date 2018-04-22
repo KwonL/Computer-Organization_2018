@@ -4,6 +4,13 @@
 `include "constants.v"
 `include "ALU.v"
 
+/*
+ * CPU module can be splited into two subset.
+ * one is datapath. datapath module connects registers or wires correctly.
+ * one is control_unit. It's output controls datapath and RTL. A detailed explanation is in "controller.v"
+ * 
+ * Yeah~ it took 8 hours to make this....so difficult....
+ */
 module cpu (
     output readM, // read from memory
     output writeM, // write to memory
@@ -24,6 +31,7 @@ module cpu (
     wire [1:0] PCSource;
     wire [3:0] opcode;
     wire [1:0] ALUSrcB;
+    wire [1:0] RegDst;
 
     datapath dp(
         .clk(clk),
@@ -40,7 +48,6 @@ module cpu (
 
         .PCWriteCond(PCWriteCond),
         .PCWrite(PCWrite),
-        .PCWrite_t(PCWrite_t),
         .IorD(IorD),
         .MemRead(MemRead),
         .MemWrite(MemWrite),
@@ -54,6 +61,7 @@ module cpu (
         .RegWrite(RegWrite),
         .RegDst(RegDst),
         .isWWD(isWWD),
+        .isHalt(isHalt),
 
         .opcode(opcode),
         .func_code(func_code),
@@ -69,7 +77,6 @@ module cpu (
 
         .PCWriteCond(PCWriteCond),
         .PCWrite(PCWrite),
-        .PCWrite_t(PCWrite_t),
         .IorD(IorD),
         .MemRead(MemRead),
         .MemWrite(MemWrite),
@@ -82,16 +89,22 @@ module cpu (
         .ALUSrcA(ALUSrcA),
         .RegWrite(RegWrite),
         .RegDst(RegDst),
-        .isWWD(isWWD)
+        .isWWD(isWWD),
+        .isHalt(isHalt)
     ); 
 
 endmodule
 
 
 /*
- * definition fo module
+ * definition of modules
  */
 
+/*
+ * datapath module connects registers or wires.
+ * I implemented this as a schematic in the Lab05 PDF
+ * and only WWD, HALT, JAL and JRL instruction need additional control signal.
+ */
 module datapath (
     input clk,
     input reset_n,
@@ -107,7 +120,6 @@ module datapath (
 
     input PCWriteCond,
     input PCWrite,
-    input PCWrite_t,
     input IorD,
     input MemRead,
     input MemWrite,
@@ -119,8 +131,9 @@ module datapath (
     input [1:0] ALUSrcB,
     input ALUSrcA,
     input RegWrite,
-    input RegDst,
+    input [1:0] RegDst,
     input isWWD,
+    input isHalt,
     
     output [3:0] opcode,
     output [5:0] func_code,
@@ -143,7 +156,8 @@ module datapath (
 
     // variables for wiring
     wire [`WORD_SIZE-1:0] data1, data2, data3;
-    wire [1:0] addr1, addr2,  addr3;
+    wire [1:0] addr1, addr2;
+    reg [1:0] addr3;
     wire [`WORD_SIZE-1:0] ALUsrc_wire1, extended;
     reg [`WORD_SIZE-1:0] ALUsrc_wire2 = 16'h4;
     wire [`WORD_SIZE-1:0] ALU_wire;
@@ -167,6 +181,7 @@ module datapath (
     // end of wiring //
 
     assign inst_out = inst;
+    assign is_halted = isHalt;
 
     // read data from memory Address 
     assign address = IorD ? ALU_wire : PC;
@@ -184,7 +199,7 @@ module datapath (
     initial begin
         inst <= 0;
         PC <= 0;
-        num_inst <= 0;
+        num_inst <= -1;
         reg_data <= 0;
     end
     //////////////////////
@@ -198,27 +213,23 @@ module datapath (
     always @ (posedge clk or reset_n) begin 
         if (reset_n == 0) begin
             PC <= 0;
-            num_inst <= 0;
+            num_inst <= -1;
             inst <= 0;
         end
         else if (PCWrite == 1 | (PCWriteCond & Zero)) begin
             PC <= PC_next;
-            num_inst <= num_inst + 1;
         end
+    end
+    always @ (inst) begin
+        num_inst <= num_inst + 1;
     end
     // PC MUX
     always @ (PC or inst or ALUOut or ALU_wire or PCSource) begin
         case (PCSource)
-            0 : PC_next = PC_4_temp;
+            0 : PC_next = ALU_wire;
             1 : PC_next = ALUOut;
             2 : PC_next = {PC[15:12], inst[11:0]};
         endcase
-    end
-    // temporalily save PC + 4 at ID stage
-    always @ (posedge clk) begin
-        if (PCWrite_t) begin
-            PC_4_temp <= ALU_wire;
-        end
     end
     /////////////////////////
 
@@ -234,7 +245,14 @@ module datapath (
     // wiring all mux or inputs
     assign addr1 = inst[11:10];
     assign addr2 = inst[9:8];
-    assign addr3 = RegDst ? inst[7:6] : inst[9:8];
+    always @ (inst or RegDst) begin
+        case (RegDst)
+            0 : addr3 = inst[9:8];
+            1 : addr3 = inst[7:6];
+            // this is for JAL or JRL instruction
+            2 : addr3 = 2;
+        endcase
+    end
     assign ALUsrc_wire1 = ALUSrcA ? A : PC;
     always @ (extended or B or ALUSrcB) begin
         case (ALUSrcB)

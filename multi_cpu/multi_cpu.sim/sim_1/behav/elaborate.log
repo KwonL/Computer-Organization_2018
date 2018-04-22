@@ -6,9 +6,9 @@ Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v" Line 4. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v" Line 24. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v" Line 4. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sources_1/imports/include/controller.v" Line 24. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.RegisterFile
