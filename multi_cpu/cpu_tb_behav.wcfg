@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="2975000000001fs"></ZoomEndTime>
-      <Cursor1Time time="386450000000fs"></Cursor1Time>
+      <ZoomStartTime time="386396000000fs"></ZoomStartTime>
+      <ZoomEndTime time="387292000001fs"></ZoomEndTime>
+      <Cursor1Time time="386550000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="140"></ValueColumnWidth>
+      <ValueColumnWidth column_width="138"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="28" />
+   <WVObjectSize size="31" />
    <wvobject fp_name="/cpu_tb/readM" type="logic">
       <obj_property name="ElementShortName">readM</obj_property>
       <obj_property name="ObjectShortName">readM</obj_property>
@@ -131,5 +131,17 @@
    <wvobject fp_name="/cpu_tb/UUT/dp/alu/C" type="array">
       <obj_property name="ElementShortName">C[15:0]</obj_property>
       <obj_property name="ObjectShortName">C[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_tb/UUT/Control/isHalt" type="logic">
+      <obj_property name="ElementShortName">isHalt</obj_property>
+      <obj_property name="ObjectShortName">isHalt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_tb/UUT/is_halted" type="logic">
+      <obj_property name="ElementShortName">is_halted</obj_property>
+      <obj_property name="ObjectShortName">is_halted</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_tb/UUT/dp/isHalt" type="logic">
+      <obj_property name="ElementShortName">isHalt</obj_property>
+      <obj_property name="ObjectShortName">isHalt</obj_property>
    </wvobject>
 </wave_config>

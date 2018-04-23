@@ -45,6 +45,7 @@ module cpu (
 
         .num_inst(num_inst),
         .output_port(output_port),
+        .is_halted(is_halted),
 
         .PCWriteCond(PCWriteCond),
         .PCWrite(PCWrite),
@@ -117,6 +118,7 @@ module datapath (
 
     output [`WORD_SIZE-1:0] num_inst,
     output [`WORD_SIZE-1:0] output_port,
+    output is_halted,
 
     input PCWriteCond,
     input PCWrite,

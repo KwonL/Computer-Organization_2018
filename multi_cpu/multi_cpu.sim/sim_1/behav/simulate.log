@@ -1,6 +1,6 @@
 Vivado Simulator 2016.4
 Time resolution is 1 ps
-Clock # 9999
+Clock # 3865
 The testbench is finished. Summarizing...
 All Pass!
-$finish called at time : 1 ms : File "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sim_1/imports/include/cpu_tb.v" Line 147
+$finish called at time : 386550 ns : File "D:/Users/lkh116/Desktop/C.O_2018/multi_cpu/multi_cpu.srcs/sim_1/imports/include/cpu_tb.v" Line 147
