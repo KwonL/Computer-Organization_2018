@@ -15,3 +15,4 @@ My space for Projects
 3. Vending machine : RTL Design
 4. 16-bit single cycle CPU
 5. 16-bit multi cycle CPU
+6. 16-bit pipeline CPU
