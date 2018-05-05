@@ -123,7 +123,7 @@ module cpu_TB();
 						TestPassed[i] = 1'b0;
 						$display("Test #%s has been failed!", TestID[i]);
 						$display("output_port = 0x%0x (Ans : 0x%0x)", output_port, TestAns[i]);
-						-> testbench_finish;
+						// -> testbench_finish;
 					end
 				end
 			end

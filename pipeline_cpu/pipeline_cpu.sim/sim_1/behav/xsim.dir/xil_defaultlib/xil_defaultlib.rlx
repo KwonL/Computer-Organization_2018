@@ -1,0 +1,14 @@
+0.6
+2016.4
+Jan 23 2017
+19:37:30
+D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.sim/sim_1/behav/glbl.v,1485222234,verilog,,,,glbl,,,,,,,,
+D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v,1525538731,verilog,,,,cpu_TB,,,../../../pipeline_cpu.srcs/sources_1/imports/code,,,,,
+D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/ALU.v,1525535464,verilog,,,,ALU,,,,,,,,
+D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v,1525535318,verilog,,,,hazard_detector,,,../../../pipeline_cpu.srcs/sources_1/imports/code,,,,,
+D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v,1525532580,verilog,,,,RegisterFile,,,../../../pipeline_cpu.srcs/sources_1/imports/code,,,,,
+D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v,1525539043,verilog,,,D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/opcodes.v;D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/ALU.v,control_unit,,,../../../pipeline_cpu.srcs/sources_1/imports/code,,,,,
+D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v,1525538315,verilog,,,D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/opcodes.v,cpu,,,../../../pipeline_cpu.srcs/sources_1/imports/code,,,,,
+D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v,1525539775,verilog,,,D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/ALU.v,comparator;datapath;sign_extension,,,../../../pipeline_cpu.srcs/sources_1/imports/code,,,,,
+D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/memory.v,1481726082,verilog,,,,Memory,,,../../../pipeline_cpu.srcs/sources_1/imports/code,,,,,
+D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/opcodes.v,1524409729,verilog,,,,,,,,,,,,

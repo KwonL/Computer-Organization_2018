@@ -1,0 +1,46 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module control_unit
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemRead is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v:25]
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v:26]
+WARNING: [VRFC 10-1315] redeclaration of ansi port RegDst is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v:27]
+WARNING: [VRFC 10-1315] redeclaration of ansi port Jump is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v:28]
+WARNING: [VRFC 10-1315] redeclaration of ansi port Branch is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v:29]
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemtoReg is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v:30]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUOp is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v:31]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUSrc is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v:32]
+WARNING: [VRFC 10-1315] redeclaration of ansi port RegWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v:33]
+WARNING: [VRFC 10-1315] redeclaration of ansi port isWWD is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v:34]
+WARNING: [VRFC 10-1315] redeclaration of ansi port isHalt is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v:35]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hazard_detector
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-1195] overwriting previous definition of module ALU [../../../pipeline_cpu.srcs/sources_1/imports/code/ALU.v:39]
+INFO: [VRFC 10-311] analyzing module datapath
+WARNING: [VRFC 10-1315] redeclaration of ansi port num_inst is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:52]
+WARNING: [VRFC 10-1315] redeclaration of ansi port output_port is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:53]
+INFO: [VRFC 10-2458] undeclared symbol data, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:165]
+INFO: [VRFC 10-311] analyzing module sign_extension
+INFO: [VRFC 10-311] analyzing module comparator
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+WARNING: [VRFC 10-1315] redeclaration of ansi port num_inst is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:32]
+WARNING: [VRFC 10-1315] redeclaration of ansi port output_port is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:33]
+INFO: [VRFC 10-2458] undeclared symbol MemRead, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:41]
+INFO: [VRFC 10-2458] undeclared symbol MemWrite, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:42]
+INFO: [VRFC 10-2458] undeclared symbol Jump, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:45]
+INFO: [VRFC 10-2458] undeclared symbol Branch, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:46]
+INFO: [VRFC 10-2458] undeclared symbol MemtoReg, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:47]
+INFO: [VRFC 10-2458] undeclared symbol ALUSrc, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:49]
+INFO: [VRFC 10-2458] undeclared symbol RegWrite, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:50]
+INFO: [VRFC 10-2458] undeclared symbol isWWD, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:52]
+INFO: [VRFC 10-2458] undeclared symbol isHalt, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:53]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_TB
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
