@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="21666666fs"></ZoomStartTime>
-      <ZoomEndTime time="1195666667fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000fs"></Cursor1Time>
+      <ZoomStartTime time="25874000000fs"></ZoomStartTime>
+      <ZoomEndTime time="26930000001fs"></ZoomEndTime>
+      <Cursor1Time time="26050000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="128"></ValueColumnWidth>
+      <ValueColumnWidth column_width="126"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="42" />
+   <WVObjectSize size="36" />
    <wvobject fp_name="/cpu_TB/reset_n" type="logic">
       <obj_property name="ElementShortName">reset_n</obj_property>
       <obj_property name="ObjectShortName">reset_n</obj_property>
@@ -44,6 +44,26 @@
       <obj_property name="ElementShortName">inst[15:0]</obj_property>
       <obj_property name="ObjectShortName">inst[15:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/cpu_TB/d_address" type="array">
+      <obj_property name="ElementShortName">d_address[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d_address[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/d_data" type="array">
+      <obj_property name="ElementShortName">d_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/dp/data1" type="array">
+      <obj_property name="ElementShortName">data1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/dp/stall" type="logic">
+      <obj_property name="ElementShortName">stall</obj_property>
+      <obj_property name="ObjectShortName">stall</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/dp/Branch_taken" type="logic">
+      <obj_property name="ElementShortName">Branch_taken</obj_property>
+      <obj_property name="ObjectShortName">Branch_taken</obj_property>
+   </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/dp/output_port" type="array">
       <obj_property name="ElementShortName">output_port[15:0]</obj_property>
       <obj_property name="ObjectShortName">output_port[15:0]</obj_property>
@@ -55,50 +75,6 @@
    <wvobject fp_name="/cpu_TB/UUT/dp/rf/register" type="array">
       <obj_property name="ElementShortName">register[0:3][15:0]</obj_property>
       <obj_property name="ObjectShortName">register[0:3][15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/SU/opcode" type="array">
-      <obj_property name="ElementShortName">opcode[3:0]</obj_property>
-      <obj_property name="ObjectShortName">opcode[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/SU/func_code" type="array">
-      <obj_property name="ElementShortName">func_code[5:0]</obj_property>
-      <obj_property name="ObjectShortName">func_code[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/SU/dest_EX" type="array">
-      <obj_property name="ElementShortName">dest_EX[1:0]</obj_property>
-      <obj_property name="ObjectShortName">dest_EX[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/SU/dest_MEM" type="array">
-      <obj_property name="ElementShortName">dest_MEM[1:0]</obj_property>
-      <obj_property name="ObjectShortName">dest_MEM[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/SU/dest_WB" type="array">
-      <obj_property name="ElementShortName">dest_WB[1:0]</obj_property>
-      <obj_property name="ObjectShortName">dest_WB[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/SU/RegWrite_reg_EX" type="logic">
-      <obj_property name="ElementShortName">RegWrite_reg_EX</obj_property>
-      <obj_property name="ObjectShortName">RegWrite_reg_EX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/SU/RegWrite_reg_MEM" type="logic">
-      <obj_property name="ElementShortName">RegWrite_reg_MEM</obj_property>
-      <obj_property name="ObjectShortName">RegWrite_reg_MEM</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/SU/RegWrite_reg_WB" type="logic">
-      <obj_property name="ElementShortName">RegWrite_reg_WB</obj_property>
-      <obj_property name="ObjectShortName">RegWrite_reg_WB</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/SU/rs_addr" type="logic">
-      <obj_property name="ElementShortName">rs_addr</obj_property>
-      <obj_property name="ObjectShortName">rs_addr</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/SU/rt_addr" type="logic">
-      <obj_property name="ElementShortName">rt_addr</obj_property>
-      <obj_property name="ObjectShortName">rt_addr</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/SU/stall" type="logic">
-      <obj_property name="ElementShortName">stall</obj_property>
-      <obj_property name="ObjectShortName">stall</obj_property>
    </wvobject>
    <wvobject fp_name="/cpu_TB/Passed" type="array">
       <obj_property name="ElementShortName">Passed[15:0]</obj_property>
@@ -128,6 +104,10 @@
       <obj_property name="ElementShortName">Jump</obj_property>
       <obj_property name="ObjectShortName">Jump</obj_property>
    </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/controller/Jump_R" type="logic">
+      <obj_property name="ElementShortName">Jump_R</obj_property>
+      <obj_property name="ObjectShortName">Jump_R</obj_property>
+   </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/controller/Branch" type="logic">
       <obj_property name="ElementShortName">Branch</obj_property>
       <obj_property name="ObjectShortName">Branch</obj_property>
@@ -139,10 +119,6 @@
    <wvobject fp_name="/cpu_TB/UUT/controller/ALUOp" type="array">
       <obj_property name="ElementShortName">ALUOp[3:0]</obj_property>
       <obj_property name="ObjectShortName">ALUOp[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/controller/ALUSrc" type="logic">
-      <obj_property name="ElementShortName">ALUSrc</obj_property>
-      <obj_property name="ObjectShortName">ALUSrc</obj_property>
    </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/controller/RegWrite" type="logic">
       <obj_property name="ElementShortName">RegWrite</obj_property>
@@ -156,19 +132,27 @@
       <obj_property name="ElementShortName">isHalt</obj_property>
       <obj_property name="ObjectShortName">isHalt</obj_property>
    </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/dp/ALUSrc1_wire" type="array">
+      <obj_property name="ElementShortName">ALUSrc1_wire[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUSrc1_wire[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/dp/ALUSrc2_wire" type="array">
+      <obj_property name="ElementShortName">ALUSrc2_wire[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUSrc2_wire[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/dp/ALUSrc2" type="logic">
+      <obj_property name="ElementShortName">ALUSrc2</obj_property>
+      <obj_property name="ObjectShortName">ALUSrc2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/dp/ALUSrc2_reg" type="logic">
+      <obj_property name="ElementShortName">ALUSrc2_reg</obj_property>
+      <obj_property name="ObjectShortName">ALUSrc2_reg</obj_property>
+   </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/dp/A" type="array">
       <obj_property name="ElementShortName">A[15:0]</obj_property>
       <obj_property name="ObjectShortName">A[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/dp/B" type="array">
-      <obj_property name="ElementShortName">B[15:0]</obj_property>
-      <obj_property name="ObjectShortName">B[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/alu/A" type="array">
-      <obj_property name="ElementShortName">A[15:0]</obj_property>
-      <obj_property name="ObjectShortName">A[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/alu/B" type="array">
       <obj_property name="ElementShortName">B[15:0]</obj_property>
       <obj_property name="ObjectShortName">B[15:0]</obj_property>
    </wvobject>
@@ -179,13 +163,5 @@
    <wvobject fp_name="/cpu_TB/UUT/dp/alu/C" type="array">
       <obj_property name="ElementShortName">C[15:0]</obj_property>
       <obj_property name="ObjectShortName">C[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/extended" type="array">
-      <obj_property name="ElementShortName">extended[15:0]</obj_property>
-      <obj_property name="ObjectShortName">extended[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/extended_reg" type="array">
-      <obj_property name="ElementShortName">extended_reg[15:0]</obj_property>
-      <obj_property name="ObjectShortName">extended_reg[15:0]</obj_property>
    </wvobject>
 </wave_config>

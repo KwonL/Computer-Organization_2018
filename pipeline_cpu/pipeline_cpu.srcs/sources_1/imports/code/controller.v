@@ -14,10 +14,12 @@ module control_unit (
 
     output [1:0] RegDst,
     output Jump,
+    output Jump_R,
     output Branch,
     output MemtoReg,
     output [3:0] ALUOp,
-    output ALUSrc,
+    output ALUSrc1,
+    output ALUSrc2,
     output RegWrite,
     
     output isWWD,
@@ -28,10 +30,12 @@ module control_unit (
     reg MemWrite = 0;
     reg [1:0] RegDst = 0;
     reg Jump = 0;
+    reg Jump_R = 0;
     reg Branch = 0;
     reg MemtoReg = 0;
     reg [3:0] ALUOp = 0;
-    reg ALUSrc = 0;
+    reg ALUSrc1 = 0;
+    reg ALUSrc2 = 0;
     reg RegWrite = 0;
     reg isWWD = 0;
     reg isHalt = 0;
@@ -46,15 +50,17 @@ module control_unit (
             isHalt = 0;
         end else begin
         // nop
-        if (opcode == 0) begin
+        if (opcode == 0 & func_code == 0) begin
             MemRead = 0;
             MemWrite = 0;
             RegDst = 0;
             Jump = 0;
+            Jump_R = 0;
             Branch = 0;
             MemtoReg = 0;
             ALUOp = 0;
-            ALUSrc = 0;
+            ALUSrc1 = 0;
+            ALUSrc2 = 0;
             RegWrite = 0;
             isWWD = 0;
             isHalt = 0;
@@ -63,7 +69,21 @@ module control_unit (
         else if (opcode == 4'hf) begin
             // this is more simillar to JMP instruciton
             if (func_code == `FUNC_JPR | func_code == `FUNC_JRL) begin
-
+                ALUOp = `OP_ID;
+                MemRead = 0;
+                MemWrite = 0;
+                // write to #2 reg
+                RegDst = 2;
+                Jump = 0;
+                Jump_R = 1;
+                Branch = 0;
+                MemtoReg = 0;
+                ALUSrc1 = 1;
+                ALUSrc2 = 0;
+                isWWD = 0;
+                isHalt = 0;
+                if (func_code == `FUNC_JPR) RegWrite = 0;
+                else RegWrite = 1;
             end
             // HLT..
             else if (func_code == `FUNC_HLT) begin
@@ -71,6 +91,7 @@ module control_unit (
                 MemWrite = 0;
                 Branch = 0;
                 Jump = 0;
+                Jump_R = 0;
                 RegWrite = 0;
                 isHalt = 1;
                 isWWD = 0;
@@ -81,8 +102,10 @@ module control_unit (
                 MemWrite = 0;
                 Branch = 0;
                 Jump = 0;
+                Jump_R = 0;
                 RegWrite = 0;
-                ALUSrc = 1;
+                ALUSrc1 = 0;
+                ALUSrc2 = 1;
                 ALUOp = `OP_ID;
                 MemtoReg = 0;
                 isWWD = 1;
@@ -105,9 +128,11 @@ module control_unit (
                 MemWrite = 0;
                 RegDst = 1;
                 Jump = 0;
+                Jump_R = 0;
                 Branch = 0;
                 MemtoReg = 0;
-                ALUSrc = 0;
+                ALUSrc1 = 0;
+                ALUSrc2 = 0;
                 RegWrite = 1;
                 isWWD = 0;
                 isHalt = 0;
@@ -127,9 +152,11 @@ module control_unit (
             MemWrite = 0;
             RegDst = 0;
             Jump = 0;
+            Jump_R = 0;
             Branch = 0;
             MemtoReg = 0;
-            ALUSrc = 1;
+            ALUSrc1 = 0;
+            ALUSrc2 = 1;
             RegWrite = 1;
             isWWD = 0;
             isHalt = 0;
@@ -152,17 +179,19 @@ module control_unit (
             end
             RegDst = 0;
             Jump = 0;
+            Jump_R = 0;
             Branch = 0;
             MemtoReg = 1;
-            ALUSrc = 1;
+            ALUSrc1 = 0;
+            ALUSrc2 = 1;
             isWWD = 0;
             isHalt = 0;
         end
         // for branch instruction
-        else if (opcode == `OPCODE_BNE
-                |opcode == `OPCODE_BEQ
-                |opcode == `OPCODE_BGZ
-                |opcode == `OPCODE_BLZ) begin
+        else if ((opcode == `OPCODE_BNE)
+                |(opcode == `OPCODE_BEQ)
+                |(opcode == `OPCODE_BGZ)
+                |(opcode == `OPCODE_BLZ)) begin
             case (opcode)
                 `OPCODE_BEQ : ALUOp = `OP_BEQ;
                 `OPCODE_BNE : ALUOp = `OP_BNE;
@@ -173,9 +202,11 @@ module control_unit (
             MemWrite = 0;
             RegDst = 0;
             Jump = 0;
+            Jump_R = 0;
             Branch = 1;
             MemtoReg = 0;
-            ALUSrc = 0;
+            ALUSrc1 = 0;
+            ALUSrc2 = 0;
             RegWrite = 0;
             isWWD = 0;
             isHalt = 0;
@@ -186,13 +217,26 @@ module control_unit (
             MemRead = 0;
             MemWrite = 0;
             Branch = 0;
+            Jump_R = 0;
             Jump = 1;
             RegWrite = 0;
             isWWD = 0;
             isHalt = 0;
         end
         else if (opcode == `OPCODE_JAL) begin
-
+            ALUOp = `OP_ID;
+            MemRead = 0;
+            MemWrite = 0;
+            RegDst = 2;
+            Jump = 1;
+            Jump_R = 0;
+            Branch = 0;
+            MemtoReg = 0;
+            ALUSrc1 = 1;
+            ALUSrc2 = 0;
+            RegWrite = 1;
+            isWWD = 0;
+            isHalt = 0;
         end
         end
     end

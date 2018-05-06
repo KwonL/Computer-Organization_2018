@@ -3,25 +3,24 @@ Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
 Running: D:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto e7332c2036a44b54bff7ce42bd925476 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cpu_TB_behav xil_defaultlib.cpu_TB xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-278] actual bit length 16 differs from formal bit length 1 for port d_data [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:70]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v" Line 4. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 9. Module datapath doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "../../../pipeline_cpu.srcs/sources_1/imports/code/ALU.v" Line 39. Module ALU doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 317. Module comparator doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 2. Module hazard_detector doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 14. Module stall_unit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 310. Module sign_extension doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 345. Module comparator doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 4. Module hazard_detector doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 17. Module stall_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 338. Module sign_extension doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v" Line 4. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 9. Module datapath doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "../../../pipeline_cpu.srcs/sources_1/imports/code/ALU.v" Line 39. Module ALU doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 317. Module comparator doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 2. Module hazard_detector doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 14. Module stall_unit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 310. Module sign_extension doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 345. Module comparator doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 4. Module hazard_detector doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 17. Module stall_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 338. Module sign_extension doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.control_unit

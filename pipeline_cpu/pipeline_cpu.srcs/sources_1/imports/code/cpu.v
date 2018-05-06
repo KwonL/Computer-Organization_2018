@@ -45,10 +45,12 @@ module cpu(
 
         .RegDst(RegDst),
         .Jump(Jump),
+        .Jump_R(Jump_R),
         .Branch(Branch),
         .MemtoReg(MemtoReg),
         .ALUOp(ALUOp),
-        .ALUSrc(ALUSrc),
+        .ALUSrc1(ALUSrc1),
+        .ALUSrc2(ALUSrc2),
         .RegWrite(RegWrite),
 
         .isWWD(isWWD),
@@ -78,10 +80,12 @@ module cpu(
 
         .RegDst(RegDst),
         .Jump(Jump),
+        .Jump_R(Jump_R),
         .Branch(Branch),
         .MemtoReg(MemtoReg),
         .ALUOp(ALUOp),
-        .ALUSrc(ALUSrc),
+        .ALUSrc1(ALUSrc1),
+        .ALUSrc2(ALUSrc2),
         .RegWrite(RegWrite),
 
         .isWWD(isWWD),

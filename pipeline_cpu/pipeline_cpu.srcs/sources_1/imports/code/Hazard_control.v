@@ -1,12 +1,15 @@
+`include "opcodes.v"
+
 // detect control hazard and send hazard signal
 module hazard_detector(
     input Jump,
+    input Jump_R,
     input Branch_taken,
 
     output flush
 );
     
-    assign flush = Jump | Branch_taken;
+    assign flush = Jump | Branch_taken | Jump_R;
 
 endmodule 
 
@@ -36,8 +39,9 @@ module stall_unit(
     reg stall = 0;
 
     always @ (*) begin
+        if (opcode == `OPCODE_JMP | opcode == `OPCODE_JAL) stall = 0;
         // R-type instruction use rt as source except for HLT and WWD
-        if (opcode == 4'hf & (func_code != 6'd29) & (func_code != 6'd28)) begin
+        else if (opcode == 4'hf & (func_code != 6'd29) & (func_code != 6'd28)) begin
             if (((rs_addr == dest_EX) & RegWrite_reg_EX)
                |((rs_addr == dest_MEM) & RegWrite_reg_MEM)
                |((rs_addr == dest_WB) & RegWrite_reg_WB)
