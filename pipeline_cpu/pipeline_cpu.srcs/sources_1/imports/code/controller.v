@@ -7,6 +7,8 @@ module control_unit (
     input [3:0] opcode,
     input [5:0] func_code,
 
+    input stall,
+
     output MemRead,
     output MemWrite,
 
@@ -35,7 +37,14 @@ module control_unit (
     reg isHalt = 0;
     //////////////////////////////////
 
-    always @ (opcode or func_code) begin
+    always @ (opcode or func_code or stall) begin
+        // if stall, turn off write signal.
+        if (stall) begin
+            MemWrite = 0;
+            RegWrite = 0;
+            isWWD = 0;
+            isHalt = 0;
+        end else begin
         // nop
         if (opcode == 0) begin
             MemRead = 0;
@@ -73,6 +82,9 @@ module control_unit (
                 Branch = 0;
                 Jump = 0;
                 RegWrite = 0;
+                ALUSrc = 1;
+                ALUOp = `OP_ID;
+                MemtoReg = 0;
                 isWWD = 1;
                 isHalt = 0;
             // Other R-type instructions
@@ -181,6 +193,7 @@ module control_unit (
         end
         else if (opcode == `OPCODE_JAL) begin
 
+        end
         end
     end
 

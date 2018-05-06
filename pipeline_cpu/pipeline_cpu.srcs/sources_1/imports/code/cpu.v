@@ -38,6 +38,8 @@ module cpu(
         .opcode(opcode),
         .func_code(func_code),
 
+        .stall(stall),
+
         .MemRead(MemRead),
         .MemWrite(MemWrite),
 
@@ -84,6 +86,8 @@ module cpu(
 
         .isWWD(isWWD),
         .isHalt(isHalt),
+
+        .stall_out(stall),
 
         .opcode(opcode),
         .func_code(func_code)

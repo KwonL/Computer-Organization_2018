@@ -37,6 +37,8 @@ module datapath (
     
     input isWWD,
     input isHalt,
+
+    output stall_out,
     
     output [3:0] opcode,
     output [5:0] func_code
@@ -64,6 +66,9 @@ module datapath (
     // for hazard detecting
     wire Branch_taken;
     assign Branch_taken = Branch & Zero;
+    wire stall;
+    // for control unit to stop write signal
+    assign stall_out = stall;
     // end of var //
 
     // registers (A, B, ALUOut and so on..)
@@ -74,7 +79,8 @@ module datapath (
     reg [`WORD_SIZE-1:0] extended_reg;
     reg [`WORD_SIZE-1:0] PC_carrie_reg[1:0];
     reg [1:0] rt_reg;
-    reg [1:0] rd_reg;
+    reg [1:0] rd_reg;   
+    reg [1:0] write_addr_EX;
     reg [1:0] write_addr_MEM;
     reg [1:0] write_addr_WB;
     reg [`WORD_SIZE-1:0] ALUOut_WB;
@@ -114,14 +120,15 @@ module datapath (
         extended_reg <= extended;
         PC_carrie_reg[0] <= PC + 4;
         PC_carrie_reg[1] <= PC_carrie_reg[1];
-        rt_reg <= inst[9:8];
-        rd_reg <= inst[7:6];
-        case (RegDst_reg) 
-            0 : write_addr_MEM <= rt_reg;
-            1 : write_addr_MEM <= rd_reg;
+        // rt_reg <= inst[9:8];
+        // rd_reg <= inst[7:6];
+        case (RegDst) 
+            0 : write_addr_EX <= inst[9:8];
+            1 : write_addr_EX <= inst[7:6];
             // this is for JAL or JRL instruction
-            2 : write_addr_MEM <= 2;
+            2 : write_addr_EX <= 2;
         endcase
+        write_addr_MEM <= write_addr_EX;
         write_addr_WB <= write_addr_MEM;
         A_reg[0] <= A;
         A_reg[1] <= A;
@@ -169,7 +176,7 @@ module datapath (
     initial begin
         inst <= 0;
         PC <= 0;
-        num_inst <= -5;
+        num_inst <= -4;
         reg_data <= 0;
     end
     //////////////////////
@@ -183,14 +190,22 @@ module datapath (
     always @ (posedge clk) begin 
         if (reset_n == 0) begin
             PC <= 0;
-            num_inst <= -5;
+            num_inst <= -4;
             inst <= 0;
         end
         else begin
+            // stalling until data complete
+            if (stall) begin
+                PC <= PC;
+                inst <= inst;
+            end 
+            // normal instruction
+            else begin
             PC <= PC_next;
             // flushing
             if (flush) inst <= 0;
             else inst <= i_data;
+            end
         end
     end
     always @ (inst) begin
@@ -217,7 +232,7 @@ module datapath (
     ///////////////////
 
     // output port
-    always @ (posedge clk) output_port = isWWD ? data1 : output_port;
+    always @ (posedge clk) output_port = isWWD_reg[2] ? ALUOut_WB : output_port;
     ////////////////////
 
     // instruction decoding
@@ -267,6 +282,24 @@ module datapath (
         .Branch_taken(Branch_taken),
 
         .flush(flush)
+    );
+
+    stall_unit SU(
+        .opcode(opcode),
+        .func_code(func_code),
+        
+        .dest_EX(write_addr_EX),
+        .dest_MEM(write_addr_MEM),
+        .dest_WB(write_addr_WB),
+
+        .RegWrite_reg_EX(RegWrite_reg[0]),
+        .RegWrite_reg_MEM(RegWrite_reg[1]),
+        .RegWrite_reg_WB(RegWrite_reg[2]),
+
+        .rs_addr(inst[11:10]),
+        .rt_addr(inst[9:8]),
+
+        .stall(stall)
     );
 
     // sign extension module for ADI
