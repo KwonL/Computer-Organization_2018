@@ -19,7 +19,11 @@ WARNING: [VRFC 10-1315] redeclaration of ansi port isHalt is not allowed [D:/Use
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module hazard_detector
 INFO: [VRFC 10-311] analyzing module stall_unit
-WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:39]
+WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:40]
+INFO: [VRFC 10-311] analyzing module forwarding_unit
+WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:99]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardA is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:100]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardB is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:101]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
 WARNING: [VRFC 10-1195] overwriting previous definition of module ALU [../../../pipeline_cpu.srcs/sources_1/imports/code/ALU.v:39]

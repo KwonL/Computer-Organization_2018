@@ -61,7 +61,8 @@ module datapath (
     wire [`WORD_SIZE-1:0] data1, data2, data3;
     wire [1:0] addr1, addr2;
     wire [1:0] addr3;
-    wire [`WORD_SIZE-1:0] ALUSrc1_wire, ALUSrc2_wire, extended;
+    reg [`WORD_SIZE-1:0] ALUSrc1_wire, ALUSrc2_wire;
+    wire [`WORD_SIZE-1:0] ALUSrc1_MUX_wire, ALUSrc2_MUX_wire, extended;
     wire [`WORD_SIZE-1:0] ALU_wire;
     wire Zero;
     wire flush;
@@ -71,6 +72,8 @@ module datapath (
     wire stall;
     // for control unit to stop write signal
     assign stall_out = stall;
+    wire [1:0] ForwardA;
+    wire [1:0] ForwardB;
     // end of var //
 
     // registers (A, B, ALUOut and so on..)
@@ -80,8 +83,11 @@ module datapath (
     reg [`WORD_SIZE-1:0] B;
     reg [`WORD_SIZE-1:0] extended_reg;
     reg [`WORD_SIZE-1:0] PC_carrie_reg[1:0];
+    // this is for forwarding module
     reg [1:0] rt_reg;
-    reg [1:0] rd_reg;   
+    reg [1:0] rd_reg;
+    reg [1:0] rs_reg;
+    //////////////////   
     reg [1:0] write_addr_EX;
     reg [1:0] write_addr_MEM;
     reg [1:0] write_addr_WB;
@@ -90,6 +96,8 @@ module datapath (
     reg [`WORD_SIZE-1:0] A_reg[1:0];
     // this is for SWD instruction. carrying data2
     reg [`WORD_SIZE-1:0] data2_reg[1:0];
+    reg [3:0] opcode_EX;
+    reg [5:0] func_code_EX;
     // end of reg //  
 
 	// control registers(each stage)
@@ -132,8 +140,9 @@ module datapath (
         PC_carrie_reg[0] <= PC + 1;
         PC_carrie_reg[1] <= PC_carrie_reg[0];
         end
-        // rt_reg <= inst[9:8];
-        // rd_reg <= inst[7:6];
+        rt_reg <= inst[9:8];
+        rd_reg <= inst[7:6];
+        rs_reg <= inst[11:10];
         case (RegDst) 
             0 : write_addr_EX <= inst[9:8];
             1 : write_addr_EX <= inst[7:6];
@@ -145,6 +154,8 @@ module datapath (
         A_reg[0] <= A;
         A_reg[1] <= A;
         reg_data <= d_data;
+        opcode_EX <= opcode;
+        func_code_EX <= func_code;
 
     end
     // end of wiring //
@@ -270,8 +281,20 @@ module datapath (
     assign addr1 = inst[11:10];
     assign addr2 = inst[9:8];
     assign addr3 = write_addr_WB;
-    assign ALUSrc1_wire = ALUSrc1_reg ? PC_carrie_reg[1] : A;
-    assign ALUSrc2_wire = ALUSrc2_reg ? extended_reg : B;
+    assign ALUSrc1_MUX_wire = ALUSrc1_reg ? PC_carrie_reg[1] : A;
+    assign ALUSrc2_MUX_wire = ALUSrc2_reg ? extended_reg : B;
+    always @ (ForwardA or ForwardB or ALUSrc1_MUX_wire or ALUSrc2_MUX_wire or ALUOut or data3) begin
+        case (ForwardA)
+            0: ALUSrc1_wire = ALUSrc1_MUX_wire;
+            1: ALUSrc1_wire = ALUOut;
+            2: ALUSrc1_wire = data3;
+        endcase
+        case (ForwardB)
+            0: ALUSrc2_wire = ALUSrc2_MUX_wire;
+            1: ALUSrc2_wire = ALUOut;
+            2: ALUSrc2_wire = data3;
+        endcase
+    end
     assign data3 = MemtoReg_reg[2] ? reg_data : ALUOut_WB;
     //////////////////////
 
@@ -312,22 +335,47 @@ module datapath (
         .flush(flush)
     );
 
-    stall_unit SU(
+    // stall_unit SU(
+    //     .opcode(opcode),
+    //     .func_code(func_code),
+        
+    //     .dest_EX(write_addr_EX),
+    //     .dest_MEM(write_addr_MEM),
+    //     .dest_WB(write_addr_WB),
+
+    //     .RegWrite_reg_EX(RegWrite_reg[0]),
+    //     .RegWrite_reg_MEM(RegWrite_reg[1]),
+    //     .RegWrite_reg_WB(RegWrite_reg[2]),
+
+    //     .rs_addr(inst[11:10]),
+    //     .rt_addr(inst[9:8]),
+
+    //     .stall(stall)
+    // );
+
+    forwarding_unit FU(
         .opcode(opcode),
         .func_code(func_code),
-        
+        .opcode_EX(opcode_EX),
+        .func_code_EX(func_code_EX),
+
+        .rs_addr(inst[11:10]),
+        .rs_addr_EX(rs_reg),
+        .rt_addr_EX(rt_reg),
+
         .dest_EX(write_addr_EX),
         .dest_MEM(write_addr_MEM),
         .dest_WB(write_addr_WB),
-
+        
         .RegWrite_reg_EX(RegWrite_reg[0]),
         .RegWrite_reg_MEM(RegWrite_reg[1]),
         .RegWrite_reg_WB(RegWrite_reg[2]),
 
-        .rs_addr(inst[11:10]),
-        .rt_addr(inst[9:8]),
+        .MemRead_reg_MEM(MemRead_reg[1]),
 
-        .stall(stall)
+        .stall(stall),
+        .ForwardA(ForwardA),
+        .ForwardB(ForwardB)
     );
 
     // sign extension module for ADI
