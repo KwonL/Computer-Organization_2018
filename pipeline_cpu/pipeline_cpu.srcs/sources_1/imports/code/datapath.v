@@ -217,7 +217,7 @@ module datapath (
 	end
 	// end of wiring
 
-    assign is_halted = isHalt;
+    assign is_halted = isHalt_reg;
 
     // read instruction data from memory Address 
 	assign i_address = PC;
