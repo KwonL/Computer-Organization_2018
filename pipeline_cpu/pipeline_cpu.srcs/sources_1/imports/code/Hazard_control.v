@@ -69,8 +69,11 @@ module stall_unit(
     ////////////////////////////////////////////////////////
 endmodule
 
-////////////////////////
 
+/* 
+ * this module control data forwarding to ID stage
+ * because WWD, JMP instructions use register value in ID stage
+ */
 module forwarding_unit(
     input [3:0] opcode,
     input [5:0] func_code,
@@ -86,6 +89,7 @@ module forwarding_unit(
     input RegWrite_reg_MEM,
     input RegWrite_reg_WB,
 
+    input MemRead_reg_EX,
     input MemRead_reg_MEM,
 
     output stall,
@@ -99,54 +103,63 @@ module forwarding_unit(
     // end of redef //
 
     always @ (*) begin
-        // WWD instruction just stall....
-        // And JPR, JRL instruction use register value at ID stage
-        // so, can not forwarding..
-        if (((opcode == 4'hf) & (func_code == 6'd28))
-           |((opcode == 4'hf) & (func_code == `FUNC_JPR))
-           |((opcode == 4'hf) & (func_code == `FUNC_JRL))) begin
-            if (((rs_addr == dest_EX) & RegWrite_reg_EX)
-               |((rs_addr == dest_MEM) & RegWrite_reg_MEM)
-               |((rs_addr == dest_WB) & RegWrite_reg_WB))
-                stall = 1;
-            else stall = 0;
-            ForwardA = 0;
-            ForwardB = 0;
-        end
         // for R-type instruction except for HLT and WWD and JPR and JRL
-        else if (opcode_EX == 4'hf) begin
+        if ((opcode == 4'hf && func_code != 6'd28 && func_code != `FUNC_JPR && func_code != `FUNC_JRL) || opcode == `OPCODE_SWD) begin
             // if blocks for ForwardA
-            if ((rs_addr_EX == dest_MEM) & RegWrite_reg_MEM) begin
-                // if previous instrucion is LOAD, then must stall 1 cycle
-                stall = MemRead_reg_MEM ? 1 : 0;
+            if ((rs_addr == dest_EX) & RegWrite_reg_EX) begin
+                // if previous instruction is LOAD, then must stall until end of MEM stage
                 ForwardA = 1;
             end
-            else if ((rs_addr_EX == dest_WB) & RegWrite_reg_WB) begin
-                stall = 0;
+            else if ((rs_addr == dest_MEM) & RegWrite_reg_MEM) begin
+                // if previous instrucion is LOAD, then must stall 1 cycle
                 ForwardA = 2;
             end
+            else if ((rs_addr == dest_WB) & RegWrite_reg_WB) begin
+                ForwardA = 3;
+            end else begin
+                ForwardA = 0;
+            end
+
             // if blocks for ForwardB
-            if ((rt_addr_EX == dest_MEM) & RegWrite_reg_MEM) begin
-                stall = MemRead_reg_MEM ? 1 : 0;
+            if ((rt_addr == dest_EX) & RegWrite_reg_EX) begin
                 ForwardB = 1;
             end
-            else if ((rt_addr_EX == dest_WB) & RegWrite_reg_WB) begin
-                stall = 0;
+            else if ((rt_addr == dest_MEM) & RegWrite_reg_MEM) begin
                 ForwardB = 2;
             end
+            else if ((rt_addr == dest_WB) & RegWrite_reg_WB) begin
+                ForwardB = 3;
+            end else begin
+                ForwardB = 0;
+            end
+
+            // if blocks for stall
+            // if prev instruction is LW, then must stall untill MEM stage
+            if (((rt_addr == dest_EX) & RegWrite_reg_EX & MemRead_reg_EX) || ((rs_addr == dest_EX) & RegWrite_reg_EX & MemRead_reg_EX))
+                stall = 1;
+            else stall = 0; 
         end
         else begin
-            // if blocks for ForwardA
-            if ((rs_addr_EX == dest_MEM) & RegWrite_reg_MEM) begin
-                stall = MemRead_reg_MEM ? 1 : 0;
+            if ((rs_addr == dest_EX) & RegWrite_reg_EX) begin
                 ForwardA = 1;
-            end
-            else if ((rs_addr_EX == dest_WB) & RegWrite_reg_WB) begin
-                stall = 0;
+            end 
+            // if blocks for ForwardA
+            else if ((rs_addr == dest_MEM) & RegWrite_reg_MEM) begin
                 ForwardA = 2;
             end
+            else if ((rs_addr == dest_WB) & RegWrite_reg_WB) begin
+                ForwardA = 3;
+            end
+            else ForwardA = 0;
+
             ForwardB = 0;
+
+            // if blocks for stall
+            if ((rs_addr == dest_EX) & RegWrite_reg_EX & MemRead_reg_EX) stall = 1;
+            else stall = 0;
         end
     end
 
 endmodule 
+
+/////////////////////////////////////////

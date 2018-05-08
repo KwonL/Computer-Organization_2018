@@ -223,6 +223,7 @@ module control_unit (
             isWWD = 0;
             isHalt = 0;
         end
+        // for JAL instruction
         else if (opcode == `OPCODE_JAL) begin
             ALUOp = `OP_ID;
             MemRead = 0;

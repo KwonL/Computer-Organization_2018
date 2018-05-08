@@ -5,7 +5,9 @@
  * definition of modules
  */
 
-
+/*
+ * 
+ */
 module datapath (
     input clk,
     input reset_n,
@@ -61,7 +63,7 @@ module datapath (
     wire [`WORD_SIZE-1:0] data1, data2, data3;
     wire [1:0] addr1, addr2;
     wire [1:0] addr3;
-    reg [`WORD_SIZE-1:0] ALUSrc1_wire, ALUSrc2_wire;
+    wire [`WORD_SIZE-1:0] ALUSrc1_wire, ALUSrc2_wire;
     wire [`WORD_SIZE-1:0] ALUSrc1_MUX_wire, ALUSrc2_MUX_wire, extended;
     wire [`WORD_SIZE-1:0] ALU_wire;
     wire Zero;
@@ -74,6 +76,25 @@ module datapath (
     assign stall_out = stall;
     wire [1:0] ForwardA;
     wire [1:0] ForwardB;
+    // for WWD instruction
+    wire [`WORD_SIZE-1:0] A_wire;
+    wire [`WORD_SIZE-1:0] B_wire;
+    // Fowarding in ID stage. and store it in A
+    /* 
+     * 3: forward from WB stage
+     * 2: forward from MEM stage
+     * 1: forward from EX stage
+     * 0: don't forwarding
+     */
+    assign A_wire = (ForwardA == 3) ? reg_data :
+                        (ForwardA == 2) ? (MemtoReg_reg[1] ? d_data : ALUOut) :
+                        (ForwardA == 1) ? ALU_wire :
+                                          data1;
+    // Fowarding in ID stage, and store it in B
+    assign B_wire = (ForwardB == 3) ? reg_data :
+                        (ForwardB == 2) ? (MemtoReg_reg[1] ? d_data : ALUOut) :
+                        (ForwardB == 1) ? ALU_wire :
+                                          data2;
     // end of var //
 
     // registers (A, B, ALUOut and so on..)
@@ -94,10 +115,12 @@ module datapath (
     reg [`WORD_SIZE-1:0] ALUOut_WB;
     // this is for WWD instruction
     reg [`WORD_SIZE-1:0] A_reg[1:0];
+    reg [`WORD_SIZE-1:0] B_reg;
     // this is for SWD instruction. carrying data2
     reg [`WORD_SIZE-1:0] data2_reg[1:0];
     reg [3:0] opcode_EX;
     reg [5:0] func_code_EX;
+    reg [`WORD_SIZE-1:0] data3_reg_WB;
     // end of reg //  
 
 	// control registers(each stage)
@@ -123,15 +146,21 @@ module datapath (
 	reg isHalt_reg;
 	// end of reg//
 
+    /*
+     * usually, I named reg variable in this way
+     * 
+     *     ~_wire: wire used for MUXing data. 
+     *     ~_reg : register used for carrying value to next stage. 
+     *     ~_EX or ~_MEM..: used for carrying value in that stage.
+     */
     // register wiring
     always @ (posedge clk) begin
 
         ALUOut <= ALU_wire;
         ALUOut_WB <= ALUOut;
-        A <= data1;
-        B <= data2;
-        data2_reg[0] <= data2;
-        data2_reg[1] <= data2_reg[0];
+        A <= A_wire;
+        B <= B_wire;
+        B_reg <= B;
         extended_reg <= extended;
         if (stall) begin
         PC_carrie_reg[0] <= PC_carrie_reg[0];
@@ -153,9 +182,12 @@ module datapath (
         write_addr_WB <= write_addr_MEM;
         A_reg[0] <= A;
         A_reg[1] <= A;
-        reg_data <= d_data;
         opcode_EX <= opcode;
         func_code_EX <= func_code;
+        case (MemtoReg_reg[1])
+            1: reg_data <= d_data;
+            0: reg_data <= ALUOut;
+        endcase
 
     end
     // end of wiring //
@@ -194,7 +226,7 @@ module datapath (
     ///////////////////////
 
     // send data
-    assign d_data = MemWrite_reg[1] ? data2_reg[1] : 16'bz;
+    assign d_data = MemWrite_reg[1] ? B_reg : 16'bz;
     /////////////////////
 
     // load data
@@ -244,12 +276,12 @@ module datapath (
     // Jump: jump to PC jump
     // Jump_R: jump to regster #2 value
     // Branch: jump to PC + 1 + extended_reg
-    always @ (Jump or Jump_R or PC_jmp or Branch_taken or PC_carrie_reg[0] or extended_reg or PC or data1) begin
+    always @ (Jump or Jump_R or PC_jmp or Branch_taken or PC_carrie_reg[0] or extended_reg or PC or A_wire) begin
         if (Jump) begin
             PC_next = PC_jmp;
         end
         else if (Jump_R) begin
-            PC_next = data1;
+            PC_next = A_wire;
         end
         else if (Branch_taken) begin
             PC_next = PC_carrie_reg[0] + extended;
@@ -267,9 +299,11 @@ module datapath (
     // output port
     // this implementation write output_port in WB stage
     // always @ (posedge clk) output_port = isWWD_reg[2] ? ALUOut_WB : output_port;
+    ///////////////////////////////////////////////////////
+    
     // this implementation write output_port in ID stage
     // So, when stall, output_port must stall...
-    always @ (posedge clk) output_port = stall ? output_port : (isWWD ? data1 : output_port);
+    always @ (posedge clk) output_port = stall ? output_port : (isWWD ? A_wire : output_port);
     ////////////////////
 
     // instruction decoding
@@ -281,21 +315,11 @@ module datapath (
     assign addr1 = inst[11:10];
     assign addr2 = inst[9:8];
     assign addr3 = write_addr_WB;
-    assign ALUSrc1_MUX_wire = ALUSrc1_reg ? PC_carrie_reg[1] : A;
-    assign ALUSrc2_MUX_wire = ALUSrc2_reg ? extended_reg : B;
-    always @ (ForwardA or ForwardB or ALUSrc1_MUX_wire or ALUSrc2_MUX_wire or ALUOut or data3) begin
-        case (ForwardA)
-            0: ALUSrc1_wire = ALUSrc1_MUX_wire;
-            1: ALUSrc1_wire = ALUOut;
-            2: ALUSrc1_wire = data3;
-        endcase
-        case (ForwardB)
-            0: ALUSrc2_wire = ALUSrc2_MUX_wire;
-            1: ALUSrc2_wire = ALUOut;
-            2: ALUSrc2_wire = data3;
-        endcase
-    end
-    assign data3 = MemtoReg_reg[2] ? reg_data : ALUOut_WB;
+    // in JAL, JRL instruction, have to save PC + 1 val to #2 reg
+    assign ALUSrc1_wire = ALUSrc1_reg ? PC_carrie_reg[1] : A;
+    // for I-type instruction
+    assign ALUSrc2_wire = ALUSrc2_reg ? extended_reg : B;
+    assign data3 = reg_data;
     //////////////////////
 
     // Register file wiring
@@ -320,8 +344,8 @@ module datapath (
     );
 
     comparator CP(
-        .A(data1),
-        .B(data2),
+        .A(A_wire),
+        .B(B_wire),
         .OP(ALUOp),
 
         .Zero(Zero)
@@ -356,12 +380,9 @@ module datapath (
     forwarding_unit FU(
         .opcode(opcode),
         .func_code(func_code),
-        .opcode_EX(opcode_EX),
-        .func_code_EX(func_code_EX),
 
         .rs_addr(inst[11:10]),
-        .rs_addr_EX(rs_reg),
-        .rt_addr_EX(rt_reg),
+        .rt_addr(inst[9:8]),
 
         .dest_EX(write_addr_EX),
         .dest_MEM(write_addr_MEM),
@@ -371,6 +392,7 @@ module datapath (
         .RegWrite_reg_MEM(RegWrite_reg[1]),
         .RegWrite_reg_WB(RegWrite_reg[2]),
 
+        .MemRead_reg_EX(MemRead_reg[0]),
         .MemRead_reg_MEM(MemRead_reg[1]),
 
         .stall(stall),
@@ -390,6 +412,7 @@ module sign_extension(
     assign extended = imm[7] ? { {8{1'b1}}, imm} : {8'b0, imm}; 
 endmodule
 
+// this module used for Branch instruction can Jump at ID stage
 module comparator(
     input [`WORD_SIZE-1:0] A,
     input [`WORD_SIZE-1:0] B,

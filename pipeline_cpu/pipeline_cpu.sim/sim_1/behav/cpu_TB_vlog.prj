@@ -1,7 +1,7 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  "../../../pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" --include "../../../pipeline_cpu.srcs/sources_1/imports/code"
-verilog xil_defaultlib  "../../../pipeline_cpu.srcs/sources_1/imports/code/controller.v" --include "../../../pipeline_cpu.srcs/sources_1/imports/code"
 verilog xil_defaultlib  "../../../pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" --include "../../../pipeline_cpu.srcs/sources_1/imports/code"
+verilog xil_defaultlib  "../../../pipeline_cpu.srcs/sources_1/imports/code/controller.v" --include "../../../pipeline_cpu.srcs/sources_1/imports/code"
 verilog xil_defaultlib  "../../../pipeline_cpu.srcs/sources_1/imports/code/datapath.v" --include "../../../pipeline_cpu.srcs/sources_1/imports/code"
 verilog xil_defaultlib  "../../../pipeline_cpu.srcs/sources_1/imports/code/memory.v" --include "../../../pipeline_cpu.srcs/sources_1/imports/code"
 verilog xil_defaultlib  "../../../pipeline_cpu.srcs/sources_1/imports/code/cpu.v" --include "../../../pipeline_cpu.srcs/sources_1/imports/code"

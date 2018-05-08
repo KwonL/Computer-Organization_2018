@@ -46,7 +46,7 @@ module RegisterFile(
     assign data2 = register[addr2];
     
     //Write data at positive clk if enable is 1
-    always @(negedge clk) begin   
+    always @(posedge clk) begin   
         if (write == 1) begin
             register[addr3] <= data3;
         end
