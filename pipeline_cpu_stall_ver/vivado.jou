@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Tue May 08 22:27:07 2018
+# Process ID: 8564
+# Current directory: D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_stall_ver
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5284 D:\Users\lkh116\Desktop\C.O_2018\pipeline_cpu_stall_ver\pipeline_cpu.xpr
+# Log file: D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_stall_ver/vivado.log
+# Journal file: D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_stall_ver\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_stall_ver/pipeline_cpu.xpr
+launch_simulation
+open_wave_config D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_stall_ver/cpu_TB_behav.wcfg
+source cpu_TB.tcl
+run all
+close_sim
