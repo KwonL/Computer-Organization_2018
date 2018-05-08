@@ -1,0 +1,7 @@
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+Clock # 1210
+The testbench is finished. Summarizing...
+Test #   20 : No Result
+Pass : 55/56
+$finish called at time : 121150 ns : File "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v" Line 159

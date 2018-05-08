@@ -73,7 +73,7 @@ module cpu(
 
         .num_inst(num_inst),
         .output_port(output_port),
-        .is_halted(isHalt),
+        .is_halted(is_halted),
 
         .MemRead(MemRead),
         .MemWrite(MemWrite),
