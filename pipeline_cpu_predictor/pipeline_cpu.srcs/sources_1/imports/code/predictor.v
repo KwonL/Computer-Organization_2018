@@ -4,6 +4,8 @@
 `include "opcodes.v"
 
 module Branch_predictor (
+    input clk,
+
     input [`WORD_SIZE-1:0] PC,
 
     input send_addr_sig,
@@ -13,6 +15,10 @@ module Branch_predictor (
     output taken,
     output [`WORD_SIZE-1:0] target_addr
 );
+
+    integer recorded_num = 0;
+    integer correct = 0;
+    integer incorrect = 0;
     
     reg [`WORD_SIZE-1:0] BTB [0:2**`s-1];
     reg [`WORD_SIZE-`s-1:0] tag [0:2**`s-1];
@@ -28,8 +34,8 @@ module Branch_predictor (
         end
     end
 
-    reg taken = 0;
-    reg [`WORD_SIZE-1:0] target_addr = 0;
+    wire taken = 0;
+    wire [`WORD_SIZE-1:0] target_addr = 0;
 
     wire [`s-1:0] index; 
     assign index = PC[`s-1:0];
@@ -41,31 +47,56 @@ module Branch_predictor (
     wire [`WORD_SIZE-`s-1:0] tag_prev;
     assign tag_prev = PC_prev[`WORD_SIZE-1:`s];
 
-    // 
-    always @ (index) begin
-        if (BTB[index] != 0 && tag[index] == tag_in && state[index] >= 2'b10) begin
-            taken = 1;
-            target_addr = BTB[index];
-        end
-        else begin
-            taken = 0;
-            target_addr = 0;
-        end
-    end
+    // // 
+    // always @ (index) begin
+    //     if ((BTB[index] != 0) && (tag[index] == tag_in) && (state[index] >= 2'b10)) begin
+    //         taken = 1;
+    //         target_addr = BTB[index];
+    //     end
+    //     else begin
+    //         taken = 0;
+    //         target_addr = 0;
+    //     end
+    // end
+    assign taken = (BTB[index] != 0 && tag[index] == tag_in && state[index] >= 2'b10) ?
+                    1 :
+                    0;
+    assign target_addr = (BTB[index] != 0 && tag[index] == tag_in && state[index] >= 2'b10) ?
+                    BTB[index] :
+                    0;
 
-    always @ (posedge send_addr_sig) begin
-        if (BTB[index_prev] == 0) begin
-            BTB[index_prev] <= Actual_address;
-            tag[index_prev] <= tag_prev;
-        end
-        else if (BTB[index_prev] != Actual_address) begin
-            state[index_prev] <= state[index_prev] - 1;
-            tag[index_prev] <= tag_prev;
-            if (Actual_address != PC_prev + 1) BTB[index_prev] <= Actual_address;
-        end
-        else begin
-            tag[index_prev] <= tag_prev;
-            state[index_prev] <= state[index_prev] + 1;
+    always @ (posedge clk) begin
+        if (send_addr_sig) begin
+            if (BTB[index_prev] == 0) begin
+                if (Actual_address != PC_prev + 1) begin
+                    BTB[index_prev] <= Actual_address;
+                    tag[index_prev] <= tag_prev;
+
+                    recorded_num <= recorded_num + 1;
+                end
+            end
+            else if (tag[index_prev] == tag_prev && (BTB[index_prev] != Actual_address)) begin
+                state[index_prev] <= state[index_prev] - 1;
+                if (Actual_address != PC_prev + 1) begin
+                    BTB[index_prev] <= Actual_address;
+                    tag[index_prev] <= tag_prev;
+
+                    recorded_num <= recorded_num + 1;
+                    incorrect <= incorrect + 1;
+                end
+            end
+            else if (tag[index_prev] == tag_prev && (BTB[index_prev] == Actual_address)) begin
+                state[index_prev] <= state[index_prev] + 1;
+
+                correct <= correct + 1;
+            end
+            else begin
+                BTB[index_prev] <= Actual_address;
+                tag[index_prev] <= tag_prev;
+
+                recorded_num <= recorded_num + 1;
+                incorrect <= incorrect + 1;
+            end
         end
     end
 

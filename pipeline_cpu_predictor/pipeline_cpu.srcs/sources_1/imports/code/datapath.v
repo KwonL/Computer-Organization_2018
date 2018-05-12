@@ -96,8 +96,9 @@ module datapath (
 
     // variables for branch predictor
     wire [`WORD_SIZE-1:0] Actual_address;
-    assign Actual_address = (Branch_taken | Jump_R | Jump) ? PC_next : PC;
-    reg send_addr_sig = 1;
+    assign Actual_address = flush ? PC_next : PC;
+    wire send_addr_sig;
+    assign send_addr_sig = (Jump | Jump_R | Branch);
     wire taken;
     reg taken_reg;
     wire [`WORD_SIZE-1:0] target_addr;
@@ -107,11 +108,11 @@ module datapath (
         // else if (Jump_R) Actual_address <= A_wire;
         // else if (Branch_taken) Actual_address <= PC_carrie_reg[0] + extended_reg;
         // else Actual_address <= target_addr;
-        // Actual_address <= PC_next;
-        send_addr_sig <= (Jump | Jump_R | Branch);
+        // // Actual_address <= PC_next;
+        // send_addr_sig <= (Jump | Jump_R | Branch);
         taken_reg <= taken;
     end
-    always @ (negedge clk) send_addr_sig <= 0;
+    // always @ (negedge clk) send_addr_sig <= 0;
     // end of var
 
     // registers (A, B, ALUOut and so on..)
@@ -462,6 +463,8 @@ module datapath (
     );
 
     Branch_predictor BP(
+        .clk(clk),
+
         .PC(PC),
 
         .send_addr_sig(send_addr_sig),
