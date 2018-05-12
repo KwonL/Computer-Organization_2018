@@ -2,7 +2,11 @@
 `include "ALU.v"
 
 /*
- *
+ * datapath module connects registers or wires.
+ * I implemented this as a schematic in the Lab06 PDF
+ * and only WWD, HALT, JAL and JRL instruction need additional control signal.
+ * Forwarding data to ID stage because WWD and other JMP instructions using
+ * reg value in ID stage
  */
 module datapath (
     input clk,
@@ -321,7 +325,7 @@ module datapath (
             PC_next = target_addr;
         end else begin
             if (Jump) begin
-                // if jump to predicted address and incorrect, fit it
+                // if jump to predicted address and incorrect, fix it
                 if (PC != PC_jmp) PC_next = PC_jmp;
                 // if next jmp address is same with PC when prediction not taken,
                 // you just jump to next instruction
@@ -329,18 +333,24 @@ module datapath (
                 else PC_next = PC + 1;
             end
             else if (Branch) begin
+                // if branch taken
                 if (Branch_taken) begin
+                    // if branch taken and prediction incorrect, fix it
                     if ((PC != PC_carrie_reg[0] + extended)) PC_next = PC_carrie_reg[0] + extended;
+                    // 
                     else if ((PC == PC_carrie_reg[0] + extended) && !taken_reg) PC_next = PC;
                     else PC_next = PC + 1;
                 end
                 else begin
+                    // if predicted address is incorrect, then fix it
                     if (taken_reg) PC_next = PC_carrie_reg[0] + 1;
                     else PC_next = PC + 1;
                 end
             end
             else if (Jump_R) begin
+                // if predicted address is incorrect, then fix it
                 if ((PC != A_wire)) PC_next = A_wire;
+                // this means you just jump to next instruction
                 else if ((PC == A_wire) && !taken_reg) PC_next = PC;
                 else PC_next = PC + 1;
             end
@@ -464,6 +474,7 @@ module datapath (
 
     Branch_predictor BP(
         .clk(clk),
+        .prev_taken(taken_reg),
 
         .PC(PC),
 
