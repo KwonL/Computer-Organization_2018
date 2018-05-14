@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sat May 12 16:35:12 2018">
+<application name="pa" timeStamp="Mon May 14 18:11:42 2018">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="49e6e7e84346466689a83ff73a3e1c2c" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -24,11 +24,11 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ProjectSettingsCmdHandler" value="1" type="JavaHandler"/>
 <property name="ShowView" value="1" type="JavaHandler"/>
 <property name="SimulationBreak" value="6" type="JavaHandler"/>
-<property name="SimulationRelaunch" value="214" type="JavaHandler"/>
-<property name="SimulationRestart" value="242" type="JavaHandler"/>
-<property name="SimulationRun" value="17" type="JavaHandler"/>
-<property name="SimulationRunAll" value="92" type="JavaHandler"/>
-<property name="SimulationRunForTime" value="448" type="JavaHandler"/>
+<property name="SimulationRelaunch" value="225" type="JavaHandler"/>
+<property name="SimulationRestart" value="247" type="JavaHandler"/>
+<property name="SimulationRun" value="18" type="JavaHandler"/>
+<property name="SimulationRunAll" value="102" type="JavaHandler"/>
+<property name="SimulationRunForTime" value="449" type="JavaHandler"/>
 <property name="SimulationStep" value="1" type="JavaHandler"/>
 <property name="UnselectAllCmdHandler" value="2" type="JavaHandler"/>
 <property name="ViewTaskRTLAnalysis" value="1" type="JavaHandler"/>
@@ -43,28 +43,28 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="BaseDialog_YES" value="1" type="GuiResourceData"/>
 <property name="CmdMsgDialog_CANCEL" value="2" type="GuiResourceData"/>
 <property name="CmdMsgDialog_MESSAGES" value="7" type="GuiResourceData"/>
-<property name="CmdMsgDialog_OK" value="42" type="GuiResourceData"/>
+<property name="CmdMsgDialog_OK" value="43" type="GuiResourceData"/>
 <property name="CommandsInput_TYPE_TCL_COMMAND_HERE" value="2" type="GuiResourceData"/>
 <property name="CreateSrcFileDialog_FILE_NAME" value="1" type="GuiResourceData"/>
 <property name="FileSetPanel_FILE_SET_PANEL_TREE" value="152" type="GuiResourceData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="30" type="GuiResourceData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="31" type="GuiResourceData"/>
 <property name="GettingStartedView_CREATE_NEW_PROJECT" value="1" type="GuiResourceData"/>
 <property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="2" type="GuiResourceData"/>
 <property name="PACommandNames_LEAVE_FEEDBACK_HELP" value="4" type="GuiResourceData"/>
 <property name="PACommandNames_SIMULATION_LIVE_BREAK" value="19" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_LIVE_RESTART" value="255" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_LIVE_RUN" value="458" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_LIVE_RUN_ALL" value="99" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_LIVE_RESTART" value="260" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_LIVE_RUN" value="459" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_LIVE_RUN_ALL" value="109" type="GuiResourceData"/>
 <property name="PACommandNames_SIMULATION_LIVE_STEP" value="1" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_RELAUNCH" value="226" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="17" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_RELAUNCH" value="239" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="18" type="GuiResourceData"/>
 <property name="PAViews_CODE" value="4" type="GuiResourceData"/>
 <property name="ProgressDialog_BACKGROUND" value="23" type="GuiResourceData"/>
-<property name="ProgressDialog_CANCEL" value="18" type="GuiResourceData"/>
+<property name="ProgressDialog_CANCEL" value="19" type="GuiResourceData"/>
 <property name="ProjectNameChooser_CHOOSE_PROJECT_LOCATION" value="1" type="GuiResourceData"/>
 <property name="ProjectNameChooser_PROJECT_NAME" value="1" type="GuiResourceData"/>
 <property name="RDICommands_UNSELECT_ALL" value="3" type="GuiResourceData"/>
-<property name="RDIViews_WAVEFORM_VIEWER" value="1733" type="GuiResourceData"/>
+<property name="RDIViews_WAVEFORM_VIEWER" value="1738" type="GuiResourceData"/>
 <property name="RemoveSourcesDialog_ALSO_DELETE" value="4" type="GuiResourceData"/>
 <property name="SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE" value="85" type="GuiResourceData"/>
 <property name="SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE" value="209" type="GuiResourceData"/>
@@ -73,13 +73,13 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO" value="4" type="GuiResourceData"/>
 <property name="SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO" value="3" type="GuiResourceData"/>
 <property name="SrcChooserTable_SRC_CHOOSER_TABLE" value="1" type="GuiResourceData"/>
-<property name="TclConsoleView_TCL_CONSOLE_CODE_EDITOR" value="590" type="GuiResourceData"/>
-<property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="169" type="GuiResourceData"/>
+<property name="TclConsoleView_TCL_CONSOLE_CODE_EDITOR" value="608" type="GuiResourceData"/>
+<property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="173" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="46" type="GuiMode"/>
+<property name="GuiMode" value="49" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="31" type="TclMode"/>
+<property name="TclMode" value="34" type="TclMode"/>
 </item>
 </section>
 </application>

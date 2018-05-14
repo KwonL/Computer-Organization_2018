@@ -485,6 +485,20 @@ module datapath (
         .taken(taken),
         .target_addr(target_addr)
     );
+    
+    // Branch_predictor_always BP(
+    //     .clk(clk),
+    //     .prev_taken(taken_reg),
+
+    //     .PC(PC),
+
+    //     .send_addr_sig(send_addr_sig),
+    //     .PC_prev(PC_carrie_reg[0]-1),
+    //     .Actual_address(Actual_address),
+
+    //     .taken(taken),
+    //     .target_addr(target_addr)
+    // );
 
     // sign extension module for ADI
     sign_extension SE(.imm(inst[7:0]), .extended(extended));

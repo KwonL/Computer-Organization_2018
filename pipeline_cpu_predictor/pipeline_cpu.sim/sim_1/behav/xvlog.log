@@ -1,3 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/predictor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Branch_predictor
+WARNING: [VRFC 10-1315] redeclaration of ansi port taken is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/predictor.v:52]
+WARNING: [VRFC 10-1315] redeclaration of ansi port target_addr is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/predictor.v:53]
+INFO: [VRFC 10-311] analyzing module Branch_predictor_always
+WARNING: [VRFC 10-1315] redeclaration of ansi port taken is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/predictor.v:169]
+WARNING: [VRFC 10-1315] redeclaration of ansi port target_addr is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/predictor.v:170]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module hazard_detector
 INFO: [VRFC 10-311] analyzing module stall_unit
@@ -6,10 +13,6 @@ INFO: [VRFC 10-311] analyzing module forwarding_unit
 WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:105]
 WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardA is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:106]
 WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardB is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:107]
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/predictor.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Branch_predictor
-WARNING: [VRFC 10-1315] redeclaration of ansi port taken is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/predictor.v:166]
-WARNING: [VRFC 10-1315] redeclaration of ansi port target_addr is not allowed [D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/predictor.v:167]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module RegisterFile
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor/pipeline_cpu.srcs/sources_1/imports/code/controller.v" into library xil_defaultlib
