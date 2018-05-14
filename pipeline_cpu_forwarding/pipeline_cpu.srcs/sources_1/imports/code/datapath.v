@@ -2,12 +2,13 @@
 `include "ALU.v"
 
 /*
- * definition of modules
+ * datapath module connects registers or wires.
+ * I implemented this as a schematic in the Lab06 PDF
+ * and only WWD, HALT, JAL and JRL instruction need additional control signal.
+ * Forwarding data to ID stage because WWD and other JMP instructions using
+ * reg value in ID stage
  */
 
-/*
- * 
- */
 module datapath (
     input clk,
     input reset_n,

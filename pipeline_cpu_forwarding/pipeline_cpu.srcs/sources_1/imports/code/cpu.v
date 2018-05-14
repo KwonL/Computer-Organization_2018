@@ -3,6 +3,12 @@
 
 `include "opcodes.v"
 
+/*
+ * CPU module can be splited into two subset.
+ * one is datapath. datapath module connects registers or wires correctly.
+ * one is control_unit. It's output controls datapath and RTL.
+ */
+
 module cpu(
     input Clk, 
     input Reset_N, 
