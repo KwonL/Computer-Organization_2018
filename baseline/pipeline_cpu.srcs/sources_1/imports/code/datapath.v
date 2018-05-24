@@ -8,10 +8,11 @@
  * Forwarding data to ID stage because WWD and other JMP instructions using
  * reg value in ID stage
  */
+
 module datapath (
     input clk,
     input reset_n,
-
+	
 	output i_readM,
 	output i_writeM,
 	output [`WORD_SIZE-1:0] i_address,
@@ -22,8 +23,8 @@ module datapath (
 	output [`WORD_SIZE-1:0] d_address,
 	inout [`WORD_SIZE-1:0] d_data,
 
-    output [`WORD_SIZE-1:0] num_inst,
-    output [`WORD_SIZE-1:0] output_port,
+    output [`WORD_SIZE-1:0] num_inst, 
+    output [`WORD_SIZE-1:0] output_port, 
     output is_halted,
 
     input MemRead,
@@ -38,12 +39,12 @@ module datapath (
     input ALUSrc1,
     input ALUSrc2,
     input RegWrite,
-
+    
     input isWWD,
     input isHalt,
 
     output stall_out,
-
+    
     output [3:0] opcode,
     output [5:0] func_code
 );
@@ -53,7 +54,7 @@ module datapath (
     reg [`WORD_SIZE-1:0] inst;
     reg [`WORD_SIZE-1:0] PC_next;
     // end of register //
-
+    
     // Redef of in or out
     reg [`WORD_SIZE-1:0] num_inst;
     reg [`WORD_SIZE-1:0] output_port;
@@ -67,7 +68,6 @@ module datapath (
     wire [`WORD_SIZE-1:0] ALUSrc1_MUX_wire, ALUSrc2_MUX_wire, extended;
     wire [`WORD_SIZE-1:0] ALU_wire;
     wire Zero;
-    wire flush_wire;
     wire flush;
     // for hazard detecting
     wire Branch_taken;
@@ -81,43 +81,22 @@ module datapath (
     wire [`WORD_SIZE-1:0] A_wire;
     wire [`WORD_SIZE-1:0] B_wire;
     // Fowarding in ID stage. and store it in A
-    /*
+    /* 
      * 3: forward from WB stage
      * 2: forward from MEM stage
      * 1: forward from EX stage
      * 0: don't forwarding
      */
     assign A_wire = (ForwardA == 3) ? reg_data :
-                    (ForwardA == 2) ? (MemtoReg_reg[1] ? d_data : ALUOut) :
-                    (ForwardA == 1) ? ALU_wire :
-                                      data1;
+                        (ForwardA == 2) ? (MemtoReg_reg[1] ? d_data : ALUOut) :
+                        (ForwardA == 1) ? ALU_wire :
+                                          data1;
     // Fowarding in ID stage, and store it in B
     assign B_wire = (ForwardB == 3) ? reg_data :
-                    (ForwardB == 2) ? (MemtoReg_reg[1] ? d_data : ALUOut) :
-                    (ForwardB == 1) ? ALU_wire :
-                                      data2;
+                        (ForwardB == 2) ? (MemtoReg_reg[1] ? d_data : ALUOut) :
+                        (ForwardB == 1) ? ALU_wire :
+                                          data2;
     // end of var //
-
-    // variables for branch predictor
-    wire [`WORD_SIZE-1:0] Actual_address;
-    assign Actual_address = flush ? PC_next : PC;
-    wire send_addr_sig;
-    assign send_addr_sig = (Jump | Jump_R | Branch);
-    wire taken;
-    reg taken_reg;
-    wire [`WORD_SIZE-1:0] target_addr;
-
-    always @ (posedge clk) begin
-        // if (Jump) Actual_address <= PC_jmp;
-        // else if (Jump_R) Actual_address <= A_wire;
-        // else if (Branch_taken) Actual_address <= PC_carrie_reg[0] + extended_reg;
-        // else Actual_address <= target_addr;
-        // // Actual_address <= PC_next;
-        // send_addr_sig <= (Jump | Jump_R | Branch);
-        taken_reg <= taken;
-    end
-    // always @ (negedge clk) send_addr_sig <= 0;
-    // end of var
 
     // registers (A, B, ALUOut and so on..)
     reg [`WORD_SIZE-1:0] ALUOut;
@@ -130,7 +109,7 @@ module datapath (
     reg [1:0] rt_reg;
     reg [1:0] rd_reg;
     reg [1:0] rs_reg;
-    //////////////////
+    //////////////////   
     reg [1:0] write_addr_EX;
     reg [1:0] write_addr_MEM;
     reg [1:0] write_addr_WB;
@@ -143,7 +122,7 @@ module datapath (
     reg [3:0] opcode_EX;
     reg [5:0] func_code_EX;
     reg [`WORD_SIZE-1:0] data3_reg_WB;
-    // end of reg //
+    // end of reg //  
 
 	// control registers(each stage)
 	/*
@@ -170,9 +149,9 @@ module datapath (
 
     /*
      * usually, I named reg variable in this way
-     *
-     *     ~_wire: wire used for MUXing data.
-     *     ~_reg : register used for carrying value to next stage.
+     * 
+     *     ~_wire: wire used for MUXing data. 
+     *     ~_reg : register used for carrying value to next stage. 
      *     ~_EX or ~_MEM..: used for carrying value in that stage.
      */
     // register wiring
@@ -194,7 +173,7 @@ module datapath (
         rt_reg <= inst[9:8];
         rd_reg <= inst[7:6];
         rs_reg <= inst[11:10];
-        case (RegDst)
+        case (RegDst) 
             0 : write_addr_EX <= inst[9:8];
             1 : write_addr_EX <= inst[7:6];
             // this is for JAL or JRL instruction
@@ -241,7 +220,7 @@ module datapath (
 
     assign is_halted = isHalt_reg;
 
-    // read instruction data from memory Address
+    // read instruction data from memory Address 
 	assign i_address = PC;
 	assign i_readM = 1;
 	assign i_writeM = 0;
@@ -263,13 +242,13 @@ module datapath (
     end
     //////////////////////
 
-    // memory signal
+    // memory signal  
     assign d_readM = MemRead_reg[1];
     assign d_writeM = MemWrite_reg[1];
     //////////////////////
 
     // PC, inst update
-    always @ (posedge clk) begin
+    always @ (posedge clk) begin 
         if (reset_n == 0) begin
             PC <= 0;
             num_inst <= -2;
@@ -280,7 +259,7 @@ module datapath (
             if (stall) begin
                 PC <= PC;
                 inst <= inst;
-            end
+            end 
             // normal instruction
             else begin
             PC <= PC_next;
@@ -298,63 +277,18 @@ module datapath (
     // Jump: jump to PC jump
     // Jump_R: jump to regster #2 value
     // Branch: jump to PC + 1 + extended_reg
-    // always @ (Jump or Jump_R or PC_jmp or Branch_taken or PC_carrie_reg[0] or extended or PC or A_wire or taken or target_addr) begin
-    //     // Jump instruction Update PC only if mispredict happened is on
-    //     if (PC != PC_next) begin
-    //         if (Jump) begin
-    //             PC_next = PC_jmp;
-    //         end
-    //         else if (Jump_R) begin
-    //             PC_next = A_wire;
-    //         end
-    //         else if (Branch_taken) begin
-    //             PC_next = PC_carrie_reg[0] + extended;
-    //         end
-    //         else if (taken) begin
-    //             PC_next = target_addr;
-    //         end
-    //         else begin
-    //             PC_next = PC + 1;
-    //         end
-    //     end else begin
-    //         PC_next = PC + 1;
-    //     end
-    // end
-    always @ (Jump or Branch_taken or Branch or Jump_R or taken or taken_reg or target_addr or PC_jmp or PC  or PC_carrie_reg or extended or A_wire) begin
-        if (taken) begin
-            PC_next = target_addr;
-        end else begin
-            if (Jump) begin
-                // if jump to predicted address and incorrect, fix it
-                if (PC != PC_jmp) PC_next = PC_jmp;
-                // if next jmp address is same with PC when prediction not taken,
-                // you just jump to next instruction
-                else if ((PC == PC_jmp) && !taken_reg) PC_next = PC;
-                else PC_next = PC + 1;
-            end
-            else if (Branch) begin
-                // if branch taken
-                if (Branch_taken) begin
-                    // if branch taken and prediction incorrect, fix it
-                    if ((PC != PC_carrie_reg[0] + extended)) PC_next = PC_carrie_reg[0] + extended;
-                    // 
-                    else if ((PC == PC_carrie_reg[0] + extended) && !taken_reg) PC_next = PC;
-                    else PC_next = PC + 1;
-                end
-                else begin
-                    // if predicted address is incorrect, then fix it
-                    if (taken_reg) PC_next = PC_carrie_reg[0] + 1;
-                    else PC_next = PC + 1;
-                end
-            end
-            else if (Jump_R) begin
-                // if predicted address is incorrect, then fix it
-                if ((PC != A_wire)) PC_next = A_wire;
-                // this means you just jump to next instruction
-                else if ((PC == A_wire) && !taken_reg) PC_next = PC;
-                else PC_next = PC + 1;
-            end
-            else PC_next = PC + 1;
+    always @ (Jump or Jump_R or PC_jmp or Branch_taken or PC_carrie_reg[0] or extended_reg or PC or A_wire) begin
+        if (Jump) begin
+            PC_next = PC_jmp;
+        end
+        else if (Jump_R) begin
+            PC_next = A_wire;
+        end
+        else if (Branch_taken) begin
+            PC_next = PC_carrie_reg[0] + extended;
+        end
+        else begin
+            PC_next = PC + 1;
         end
     end
     /////////////////////////
@@ -367,7 +301,7 @@ module datapath (
     // this implementation write output_port in WB stage
     // always @ (posedge clk) output_port = isWWD_reg[2] ? ALUOut_WB : output_port;
     ///////////////////////////////////////////////////////
-
+    
     // this implementation write output_port in ID stage
     // So, when stall, output_port must stall...
     always @ (posedge clk) output_port = stall ? output_port : (isWWD ? A_wire : output_port);
@@ -391,14 +325,14 @@ module datapath (
 
     // Register file wiring
     RegisterFile rf(
-        .addr1(addr1),
-        .addr2(addr2),
-        .addr3(addr3),
-        .data3(data3),
-        .write(RegWrite_reg[2]),
-        .clk(clk),
-        .reset_n(reset_n),
-        .data1(data1),
+        .addr1(addr1), 
+        .addr2(addr2), 
+        .addr3(addr3), 
+        .data3(data3), 
+        .write(RegWrite_reg[2]), 
+        .clk(clk), 
+        .reset_n(reset_n), 
+        .data1(data1), 
         .data2(data2)
     );
 
@@ -419,14 +353,9 @@ module datapath (
     );
 
     hazard_detector hd(
-        .prev_taken(taken_reg),
-
         .Jump(Jump),
         .Jump_R(Jump_R),
         .Branch_taken(Branch_taken),
-
-        .PC_now(PC),
-        .PC_next(PC_next),
 
         .flush(flush)
     );
@@ -434,7 +363,7 @@ module datapath (
     // stall_unit SU(
     //     .opcode(opcode),
     //     .func_code(func_code),
-
+        
     //     .dest_EX(write_addr_EX),
     //     .dest_MEM(write_addr_MEM),
     //     .dest_WB(write_addr_WB),
@@ -459,7 +388,7 @@ module datapath (
         .dest_EX(write_addr_EX),
         .dest_MEM(write_addr_MEM),
         .dest_WB(write_addr_WB),
-
+        
         .RegWrite_reg_EX(RegWrite_reg[0]),
         .RegWrite_reg_MEM(RegWrite_reg[1]),
         .RegWrite_reg_WB(RegWrite_reg[2]),
@@ -472,34 +401,6 @@ module datapath (
         .ForwardB(ForwardB)
     );
 
-    Branch_predictor BP(
-        .clk(clk),
-        .prev_taken(taken_reg),
-
-        .PC(PC),
-
-        .send_addr_sig(send_addr_sig),
-        .PC_prev(PC_carrie_reg[0]-1),
-        .Actual_address(Actual_address),
-
-        .taken(taken),
-        .target_addr(target_addr)
-    );
-    
-    // Branch_predictor_always BP(
-    //     .clk(clk),
-    //     .prev_taken(taken_reg),
-
-    //     .PC(PC),
-
-    //     .send_addr_sig(send_addr_sig),
-    //     .PC_prev(PC_carrie_reg[0]-1),
-    //     .Actual_address(Actual_address),
-
-    //     .taken(taken),
-    //     .target_addr(target_addr)
-    // );
-
     // sign extension module for ADI
     sign_extension SE(.imm(inst[7:0]), .extended(extended));
 
@@ -509,7 +410,7 @@ module sign_extension(
     input [7:0] imm,
     output [`WORD_SIZE-1:0] extended
 );
-    assign extended = imm[7] ? { {8{1'b1}}, imm} : {8'b0, imm};
+    assign extended = imm[7] ? { {8{1'b1}}, imm} : {8'b0, imm}; 
 endmodule
 
 // this module used for Branch instruction can Jump at ID stage
@@ -521,7 +422,7 @@ module comparator(
 
     output reg Zero
 
-);
+);  
     always @ (*) begin
         case (OP)
             `OP_BNE : begin
@@ -532,7 +433,7 @@ module comparator(
                 Zero = (A == B);
             end
 
-            `OP_BGZ : begin
+            `OP_BGZ : begin 
                 if (A != 0) Zero = ~A[15];
                 else Zero = 0;
             end
@@ -544,3 +445,4 @@ module comparator(
     end
 endmodule
  ////// end of def //////
+ 

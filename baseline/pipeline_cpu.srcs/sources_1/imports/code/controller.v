@@ -7,7 +7,7 @@
  * Therefore, the CPU can be implemented by the sending correct signal to MUX.
  * I implemented this as a schematic in the Lab06 PDF.
  */
-
+ 
 module control_unit (
     input reset_n,
     input clk,

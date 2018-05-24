@@ -2,19 +2,14 @@
 
 // detect control hazard and send hazard signal
 module hazard_detector(
-    input prev_taken,
-
     input Jump,
     input Jump_R,
     input Branch_taken,
 
-    input [15:0] PC_now,
-    input [15:0] PC_next,
-
     output flush
 );
-    // flush if mispredict or not predict
-    assign flush = prev_taken ? ((Jump | Branch_taken | Jump_R) & (PC_now + 1 != PC_next)) : (Jump | Jump_R | Branch_taken);
+    
+    assign flush = Jump | Branch_taken | Jump_R;
 
 endmodule 
 
