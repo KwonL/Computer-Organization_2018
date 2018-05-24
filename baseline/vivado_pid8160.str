@@ -1,0 +1,59 @@
+/*
+
+Vivado v2016.4 (64-bit)
+SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+Process ID: 8160
+
+Current time: 	5/24/18 11:54:49 PM KST
+Time zone: 	Korea Standard Time (Asia/Seoul)
+
+OS: Windows 10
+Version: 10.0
+Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Gulim,name=±¼¸²,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	D:/Xilinx/Vivado/2016.4/tps/win64/jre
+
+User name: 	lkh116
+User home directory: D:/Users/lkh116
+User working directory: D:/Users/lkh116/Desktop/C.O_2018/baseline
+User country: 	KR
+User language: 	ko
+User locale: 	ko_KR
+
+RDI base root directory: D:/Xilinx/Vivado
+RDI data directory: D:/Xilinx/Vivado/2016.4/data
+RDI bin directory: D:/Xilinx/Vivado/2016.4/bin
+
+Vivado preferences path: D:/Users/lkh116/AppData/Roaming/Xilinx/Vivado/2016.4/vivado.ini
+Vivado layouts directory: D:/Users/lkh116/AppData/Roaming/Xilinx/Vivado/2016.4/layouts
+
+GUI allocated memory:	229 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 414 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bt:g (cd:JFrame):  Open Project : addNotify
+// Opening Vivado Project: D:\Users\lkh116\Desktop\C.O_2018\baseline\pipeline_cpu.xpr. Version: Vivado v2016.4 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.xpr 
+// [GUI Memory]: 35 MB (+34020kb) [00:00:08]
+// [Engine Memory]: 403 MB (+271321kb) [00:00:08]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu_predictor' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
