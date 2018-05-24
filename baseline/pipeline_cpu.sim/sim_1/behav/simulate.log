@@ -1,6 +1,284 @@
 Vivado Simulator 2016.4
 Time resolution is 1 ps
-Clock # 1211
+Test #  1-1 has been failed!
+output_port = 0xxxxx (Ans : 0x0)
+Test #  1-1 has been failed!
+output_port = 0xxxxx (Ans : 0x0)
+Test #  2-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test #  2-2 has been failed!
+output_port = 0x1 (Ans : 0x2)
+Test #  3-1 has been failed!
+output_port = 0x2 (Ans : 0x1)
+Test #  3-2 has been failed!
+output_port = 0x1 (Ans : 0x3)
+Test #  4-1 has been failed!
+output_port = 0x3 (Ans : 0x2)
+Test #  4-2 has been failed!
+output_port = 0x2 (Ans : 0x3)
+Test #  4-3 has been failed!
+output_port = 0x3 (Ans : 0x5)
+Test #  5-1 has been failed!
+output_port = 0x5 (Ans : 0x2)
+Test #  5-2 has been failed!
+output_port = 0x2 (Ans : 0xfffe)
+Test #  5-3 has been failed!
+output_port = 0xfffe (Ans : 0x3)
+Test #  5-4 has been failed!
+output_port = 0x3 (Ans : 0xfffd)
+Test #  5-5 has been failed!
+output_port = 0xfffd (Ans : 0xffff)
+Test #  5-6 has been failed!
+output_port = 0xffff (Ans : 0x1)
+Test #  6-1 has been failed!
+output_port = 0x1 (Ans : 0x0)
+Test #  6-3 has been failed!
+output_port = 0x0 (Ans : 0x2)
+Test #  7-2 has been failed!
+output_port = 0x2 (Ans : 0x3)
+Test #  8-1 has been failed!
+output_port = 0x3 (Ans : 0xfffd)
+Test #  8-2 has been failed!
+output_port = 0xfffd (Ans : 0xfffc)
+Test #  8-3 has been failed!
+output_port = 0xfffc (Ans : 0xffff)
+Test #  9-1 has been failed!
+output_port = 0xffff (Ans : 0xfffe)
+Test #  9-2 has been failed!
+output_port = 0xfffe (Ans : 0xfffd)
+Test #  9-3 has been failed!
+output_port = 0xfffd (Ans : 0x0)
+Test # 10-1 has been failed!
+output_port = 0x0 (Ans : 0x4)
+Test # 10-2 has been failed!
+output_port = 0x4 (Ans : 0x6)
+Test # 10-3 has been failed!
+output_port = 0x6 (Ans : 0x0)
+Test # 11-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 11-3 has been failed!
+output_port = 0x1 (Ans : 0x0)
+Test # 12-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 12-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 12-2 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 13-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 13-1 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 13-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 13-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 14-1 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 14-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 15-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 15-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 15-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 16-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 16-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 16-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 16-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Clock #  117
 The testbench is finished. Summarizing...
-All Pass!
-$finish called at time : 121250 ns : File "D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v" Line 159
+Test #  1-1 :     Wrong
+Test #  2-1 :     Wrong
+Test #  2-2 :     Wrong
+Test #  3-1 :     Wrong
+Test #  3-2 :     Wrong
+Test #  4-1 :     Wrong
+Test #  4-2 :     Wrong
+Test #  4-3 :     Wrong
+Test #  5-1 :     Wrong
+Test #  5-2 :     Wrong
+Test #  5-3 :     Wrong
+Test #  5-4 :     Wrong
+Test #  5-5 :     Wrong
+Test #  5-6 :     Wrong
+Test #  6-1 :     Wrong
+Test #  6-3 :     Wrong
+Test #  7-2 :     Wrong
+Test #  8-1 :     Wrong
+Test #  8-2 :     Wrong
+Test #  8-3 :     Wrong
+Test #  9-1 :     Wrong
+Test #  9-2 :     Wrong
+Test #  9-3 :     Wrong
+Test # 10-1 :     Wrong
+Test # 10-2 :     Wrong
+Test # 10-3 :     Wrong
+Test # 11-1 :     Wrong
+Test # 11-3 :     Wrong
+Test # 12-1 :     Wrong
+Test # 12-2 :     Wrong
+Test # 13-1 :     Wrong
+Test # 13-2 :     Wrong
+Test # 14-1 :     Wrong
+Test # 14-2 :     Wrong
+Test # 15-1 :     Wrong
+Test # 15-2 :     Wrong
+Test # 16-1 :     Wrong
+Test # 16-2 :     Wrong
+Test # 17-1 : No Result
+Test # 17-2 : No Result
+Test # 17-3 : No Result
+Test # 18-1 : No Result
+Test # 18-2 : No Result
+Test # 18-3 : No Result
+Test # 19-1 : No Result
+Test # 19-2 : No Result
+Test # 19-3 : No Result
+Test #   20 : No Result
+Pass : 8/56
+$finish called at time : 11850 ns : File "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v" Line 159
+Test #  1-1 has been failed!
+output_port = 0xxxxx (Ans : 0x0)
+Test #  2-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test #  2-2 has been failed!
+output_port = 0x1 (Ans : 0x2)
+Test #  3-1 has been failed!
+output_port = 0x2 (Ans : 0x1)
+Test #  3-2 has been failed!
+output_port = 0x1 (Ans : 0x3)
+Test #  4-1 has been failed!
+output_port = 0x3 (Ans : 0x2)
+Test #  4-2 has been failed!
+output_port = 0x2 (Ans : 0x3)
+Test #  4-3 has been failed!
+output_port = 0x3 (Ans : 0x5)
+Test #  5-1 has been failed!
+output_port = 0x5 (Ans : 0x2)
+Test #  5-2 has been failed!
+output_port = 0x2 (Ans : 0xfffe)
+Test #  5-3 has been failed!
+output_port = 0xfffe (Ans : 0x3)
+Test #  5-4 has been failed!
+output_port = 0x3 (Ans : 0xfffd)
+Test #  5-5 has been failed!
+output_port = 0xfffd (Ans : 0xffff)
+Test #  5-6 has been failed!
+output_port = 0xffff (Ans : 0x1)
+Test #  6-1 has been failed!
+output_port = 0x1 (Ans : 0x0)
+Test #  6-3 has been failed!
+output_port = 0x0 (Ans : 0x2)
+Test #  7-2 has been failed!
+output_port = 0x2 (Ans : 0x3)
+Test #  8-1 has been failed!
+output_port = 0x3 (Ans : 0xfffd)
+Test #  8-2 has been failed!
+output_port = 0xfffd (Ans : 0xfffc)
+Test #  8-3 has been failed!
+output_port = 0xfffc (Ans : 0xffff)
+Test #  9-1 has been failed!
+output_port = 0xffff (Ans : 0xfffe)
+Test #  9-2 has been failed!
+output_port = 0xfffe (Ans : 0xfffd)
+Test #  9-3 has been failed!
+output_port = 0xfffd (Ans : 0x0)
+Test # 10-1 has been failed!
+output_port = 0x0 (Ans : 0x4)
+Test # 10-2 has been failed!
+output_port = 0x4 (Ans : 0x6)
+Test # 10-3 has been failed!
+output_port = 0x6 (Ans : 0x0)
+Test # 11-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 11-3 has been failed!
+output_port = 0x1 (Ans : 0x0)
+Test # 12-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 12-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 12-2 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 13-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 13-1 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 13-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 13-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 14-1 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 14-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 15-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 15-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 15-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 16-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 16-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 16-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 16-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Clock #  117
+The testbench is finished. Summarizing...
+Test #  1-1 :     Wrong
+Test #  2-1 :     Wrong
+Test #  2-2 :     Wrong
+Test #  3-1 :     Wrong
+Test #  3-2 :     Wrong
+Test #  4-1 :     Wrong
+Test #  4-2 :     Wrong
+Test #  4-3 :     Wrong
+Test #  5-1 :     Wrong
+Test #  5-2 :     Wrong
+Test #  5-3 :     Wrong
+Test #  5-4 :     Wrong
+Test #  5-5 :     Wrong
+Test #  5-6 :     Wrong
+Test #  6-1 :     Wrong
+Test #  6-3 :     Wrong
+Test #  7-2 :     Wrong
+Test #  8-1 :     Wrong
+Test #  8-2 :     Wrong
+Test #  8-3 :     Wrong
+Test #  9-1 :     Wrong
+Test #  9-2 :     Wrong
+Test #  9-3 :     Wrong
+Test # 10-1 :     Wrong
+Test # 10-2 :     Wrong
+Test # 10-3 :     Wrong
+Test # 11-1 :     Wrong
+Test # 11-3 :     Wrong
+Test # 12-1 :     Wrong
+Test # 12-2 :     Wrong
+Test # 13-1 :     Wrong
+Test # 13-2 :     Wrong
+Test # 14-1 :     Wrong
+Test # 14-2 :     Wrong
+Test # 15-1 :     Wrong
+Test # 15-2 :     Wrong
+Test # 16-1 :     Wrong
+Test # 16-2 :     Wrong
+Test # 17-1 : No Result
+Test # 17-2 : No Result
+Test # 17-3 : No Result
+Test # 18-1 : No Result
+Test # 18-2 : No Result
+Test # 18-3 : No Result
+Test # 19-1 : No Result
+Test # 19-2 : No Result
+Test # 19-3 : No Result
+Test #   20 : No Result
+Pass : 8/56
+$finish called at time : 11850 ns : File "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v" Line 159

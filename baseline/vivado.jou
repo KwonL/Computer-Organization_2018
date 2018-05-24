@@ -11,3 +11,13 @@
 #-----------------------------------------------------------
 start_gui
 open_project D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.xpr
+launch_simulation
+open_wave_config D:/Users/lkh116/Desktop/C.O_2018/baseline/cpu_TB_behav.wcfg
+source cpu_TB.tcl
+restart
+run all
+restart
+run 10 us
+run 10 us
+save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/baseline/cpu_TB_behav.wcfg}
+close_sim

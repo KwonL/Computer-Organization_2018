@@ -17,3 +17,440 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2016.4/data/ip'.
+launch_simulation
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'cpu_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj cpu_TB_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hazard_detector
+INFO: [VRFC 10-311] analyzing module stall_unit
+WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:40]
+INFO: [VRFC 10-311] analyzing module forwarding_unit
+WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:100]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardA is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:101]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardB is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:102]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module control_unit
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemRead is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:36]
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:37]
+WARNING: [VRFC 10-1315] redeclaration of ansi port RegDst is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:38]
+WARNING: [VRFC 10-1315] redeclaration of ansi port Jump is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:39]
+WARNING: [VRFC 10-1315] redeclaration of ansi port Jump_R is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:40]
+WARNING: [VRFC 10-1315] redeclaration of ansi port Branch is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:41]
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemtoReg is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:42]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUOp is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:43]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUSrc1 is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:44]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUSrc2 is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:45]
+WARNING: [VRFC 10-1315] redeclaration of ansi port RegWrite is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:46]
+WARNING: [VRFC 10-1315] redeclaration of ansi port isWWD is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:47]
+WARNING: [VRFC 10-1315] redeclaration of ansi port isHalt is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v:48]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-1195] overwriting previous definition of module ALU [../../../pipeline_cpu.srcs/sources_1/imports/code/ALU.v:39]
+INFO: [VRFC 10-311] analyzing module datapath
+WARNING: [VRFC 10-1315] redeclaration of ansi port num_inst is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:59]
+WARNING: [VRFC 10-1315] redeclaration of ansi port output_port is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:60]
+WARNING: [VRFC 10-756] identifier reg_data is used before its declaration [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:90]
+WARNING: [VRFC 10-756] identifier MemtoReg_reg is used before its declaration [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:91]
+WARNING: [VRFC 10-756] identifier reg_data is used before its declaration [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:95]
+WARNING: [VRFC 10-756] identifier MemtoReg_reg is used before its declaration [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:96]
+INFO: [VRFC 10-311] analyzing module sign_extension
+INFO: [VRFC 10-311] analyzing module comparator
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+WARNING: [VRFC 10-756] identifier i_readM_reg is used before its declaration [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/memory.v:37]
+WARNING: [VRFC 10-756] identifier d_readM_reg is used before its declaration [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/memory.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+WARNING: [VRFC 10-1315] redeclaration of ansi port num_inst is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:38]
+WARNING: [VRFC 10-1315] redeclaration of ansi port output_port is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:39]
+INFO: [VRFC 10-2458] undeclared symbol stall, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:47]
+INFO: [VRFC 10-2458] undeclared symbol MemRead, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:49]
+INFO: [VRFC 10-2458] undeclared symbol MemWrite, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:50]
+INFO: [VRFC 10-2458] undeclared symbol Jump, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:53]
+INFO: [VRFC 10-2458] undeclared symbol Jump_R, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:54]
+INFO: [VRFC 10-2458] undeclared symbol Branch, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:55]
+INFO: [VRFC 10-2458] undeclared symbol MemtoReg, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:56]
+INFO: [VRFC 10-2458] undeclared symbol ALUSrc1, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:58]
+INFO: [VRFC 10-2458] undeclared symbol ALUSrc2, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:59]
+INFO: [VRFC 10-2458] undeclared symbol RegWrite, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:60]
+INFO: [VRFC 10-2458] undeclared symbol isWWD, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:62]
+INFO: [VRFC 10-2458] undeclared symbol isHalt, assumed default net type wire [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:63]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_TB
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.sim/sim_1/behav'
+Vivado Simulator 2016.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2016.4/bin/unwrapped/win64.o/xelab.exe -wto e7332c2036a44b54bff7ce42bd925476 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot cpu_TB_behav xil_defaultlib.cpu_TB xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v" Line 11. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 12. Module datapath doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "../../../pipeline_cpu.srcs/sources_1/imports/code/ALU.v" Line 39. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 417. Module comparator doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 4. Module hazard_detector doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 77. Module forwarding_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 409. Module sign_extension doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v" Line 11. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 12. Module datapath doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "../../../pipeline_cpu.srcs/sources_1/imports/code/ALU.v" Line 39. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 417. Module comparator doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 4. Module hazard_detector doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 77. Module forwarding_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 409. Module sign_extension doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.control_unit
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.comparator
+Compiling module xil_defaultlib.hazard_detector
+Compiling module xil_defaultlib.forwarding_unit
+Compiling module xil_defaultlib.sign_extension
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.cpu
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.cpu_TB
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot cpu_TB_behav
+
+****** Webtalk v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.sim/sim_1/behav/xsim.dir/cpu_TB_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.sim/sim_1/behav/xsim.dir/cpu_TB_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri May 25 01:20:30 2018. For additional details about this file, please refer to the WebTalk help file at D:/Xilinx/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri May 25 01:20:30 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cpu_TB_behav -key {Behavioral:sim_1:Functional:cpu_TB} -tclbatch {cpu_TB.tcl} -view {D:/Users/lkh116/Desktop/C.O_2018/baseline/cpu_TB_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+open_wave_config D:/Users/lkh116/Desktop/C.O_2018/baseline/cpu_TB_behav.wcfg
+source cpu_TB.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Test #  1-1 has been failed!
+output_port = 0xxxxx (Ans : 0x0)
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'cpu_TB_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 768.465 ; gain = 6.996
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+Test #  1-1 has been failed!
+output_port = 0xxxxx (Ans : 0x0)
+Test #  2-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test #  2-2 has been failed!
+output_port = 0x1 (Ans : 0x2)
+Test #  3-1 has been failed!
+output_port = 0x2 (Ans : 0x1)
+Test #  3-2 has been failed!
+output_port = 0x1 (Ans : 0x3)
+Test #  4-1 has been failed!
+output_port = 0x3 (Ans : 0x2)
+Test #  4-2 has been failed!
+output_port = 0x2 (Ans : 0x3)
+Test #  4-3 has been failed!
+output_port = 0x3 (Ans : 0x5)
+Test #  5-1 has been failed!
+output_port = 0x5 (Ans : 0x2)
+Test #  5-2 has been failed!
+output_port = 0x2 (Ans : 0xfffe)
+Test #  5-3 has been failed!
+output_port = 0xfffe (Ans : 0x3)
+Test #  5-4 has been failed!
+output_port = 0x3 (Ans : 0xfffd)
+Test #  5-5 has been failed!
+output_port = 0xfffd (Ans : 0xffff)
+Test #  5-6 has been failed!
+output_port = 0xffff (Ans : 0x1)
+Test #  6-1 has been failed!
+output_port = 0x1 (Ans : 0x0)
+Test #  6-3 has been failed!
+output_port = 0x0 (Ans : 0x2)
+Test #  7-2 has been failed!
+output_port = 0x2 (Ans : 0x3)
+Test #  8-1 has been failed!
+output_port = 0x3 (Ans : 0xfffd)
+Test #  8-2 has been failed!
+output_port = 0xfffd (Ans : 0xfffc)
+Test #  8-3 has been failed!
+output_port = 0xfffc (Ans : 0xffff)
+Test #  9-1 has been failed!
+output_port = 0xffff (Ans : 0xfffe)
+Test #  9-2 has been failed!
+output_port = 0xfffe (Ans : 0xfffd)
+Test #  9-3 has been failed!
+output_port = 0xfffd (Ans : 0x0)
+Test # 10-1 has been failed!
+output_port = 0x0 (Ans : 0x4)
+Test # 10-2 has been failed!
+output_port = 0x4 (Ans : 0x6)
+Test # 10-3 has been failed!
+output_port = 0x6 (Ans : 0x0)
+Test # 11-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 11-3 has been failed!
+output_port = 0x1 (Ans : 0x0)
+Test # 12-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 12-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 12-2 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 13-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 13-1 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 13-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 13-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 14-1 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 14-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 15-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 15-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 15-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 16-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 16-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 16-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 16-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Clock #  117
+The testbench is finished. Summarizing...
+Test #  1-1 :     Wrong
+Test #  2-1 :     Wrong
+Test #  2-2 :     Wrong
+Test #  3-1 :     Wrong
+Test #  3-2 :     Wrong
+Test #  4-1 :     Wrong
+Test #  4-2 :     Wrong
+Test #  4-3 :     Wrong
+Test #  5-1 :     Wrong
+Test #  5-2 :     Wrong
+Test #  5-3 :     Wrong
+Test #  5-4 :     Wrong
+Test #  5-5 :     Wrong
+Test #  5-6 :     Wrong
+Test #  6-1 :     Wrong
+Test #  6-3 :     Wrong
+Test #  7-2 :     Wrong
+Test #  8-1 :     Wrong
+Test #  8-2 :     Wrong
+Test #  8-3 :     Wrong
+Test #  9-1 :     Wrong
+Test #  9-2 :     Wrong
+Test #  9-3 :     Wrong
+Test # 10-1 :     Wrong
+Test # 10-2 :     Wrong
+Test # 10-3 :     Wrong
+Test # 11-1 :     Wrong
+Test # 11-3 :     Wrong
+Test # 12-1 :     Wrong
+Test # 12-2 :     Wrong
+Test # 13-1 :     Wrong
+Test # 13-2 :     Wrong
+Test # 14-1 :     Wrong
+Test # 14-2 :     Wrong
+Test # 15-1 :     Wrong
+Test # 15-2 :     Wrong
+Test # 16-1 :     Wrong
+Test # 16-2 :     Wrong
+Test # 17-1 : No Result
+Test # 17-2 : No Result
+Test # 17-3 : No Result
+Test # 18-1 : No Result
+Test # 18-2 : No Result
+Test # 18-3 : No Result
+Test # 19-1 : No Result
+Test # 19-2 : No Result
+Test # 19-3 : No Result
+Test #   20 : No Result
+Pass : 8/56
+$finish called at time : 11850 ns : File "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v" Line 159
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+Test #  1-1 has been failed!
+output_port = 0xxxxx (Ans : 0x0)
+Test #  2-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test #  2-2 has been failed!
+output_port = 0x1 (Ans : 0x2)
+Test #  3-1 has been failed!
+output_port = 0x2 (Ans : 0x1)
+Test #  3-2 has been failed!
+output_port = 0x1 (Ans : 0x3)
+Test #  4-1 has been failed!
+output_port = 0x3 (Ans : 0x2)
+Test #  4-2 has been failed!
+output_port = 0x2 (Ans : 0x3)
+Test #  4-3 has been failed!
+output_port = 0x3 (Ans : 0x5)
+Test #  5-1 has been failed!
+output_port = 0x5 (Ans : 0x2)
+Test #  5-2 has been failed!
+output_port = 0x2 (Ans : 0xfffe)
+Test #  5-3 has been failed!
+output_port = 0xfffe (Ans : 0x3)
+Test #  5-4 has been failed!
+output_port = 0x3 (Ans : 0xfffd)
+Test #  5-5 has been failed!
+output_port = 0xfffd (Ans : 0xffff)
+Test #  5-6 has been failed!
+output_port = 0xffff (Ans : 0x1)
+Test #  6-1 has been failed!
+output_port = 0x1 (Ans : 0x0)
+Test #  6-3 has been failed!
+output_port = 0x0 (Ans : 0x2)
+Test #  7-2 has been failed!
+output_port = 0x2 (Ans : 0x3)
+Test #  8-1 has been failed!
+output_port = 0x3 (Ans : 0xfffd)
+Test #  8-2 has been failed!
+output_port = 0xfffd (Ans : 0xfffc)
+Test #  8-3 has been failed!
+output_port = 0xfffc (Ans : 0xffff)
+Test #  9-1 has been failed!
+output_port = 0xffff (Ans : 0xfffe)
+Test #  9-2 has been failed!
+output_port = 0xfffe (Ans : 0xfffd)
+Test #  9-3 has been failed!
+output_port = 0xfffd (Ans : 0x0)
+Test # 10-1 has been failed!
+output_port = 0x0 (Ans : 0x4)
+Test # 10-2 has been failed!
+output_port = 0x4 (Ans : 0x6)
+Test # 10-3 has been failed!
+output_port = 0x6 (Ans : 0x0)
+Test # 11-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 11-3 has been failed!
+output_port = 0x1 (Ans : 0x0)
+Test # 12-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 12-1 has been failed!
+output_port = 0x0 (Ans : 0x1)
+Test # 12-2 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 13-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 13-1 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 13-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 13-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 14-1 has been failed!
+output_port = 0x3 (Ans : 0xffff)
+Test # 14-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+run 10 us
+Test # 15-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 15-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 15-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 16-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 16-1 has been failed!
+output_port = 0x1 (Ans : 0xffff)
+Test # 16-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Test # 16-2 has been failed!
+output_port = 0x3 (Ans : 0x1)
+Clock #  117
+The testbench is finished. Summarizing...
+Test #  1-1 :     Wrong
+Test #  2-1 :     Wrong
+Test #  2-2 :     Wrong
+Test #  3-1 :     Wrong
+Test #  3-2 :     Wrong
+Test #  4-1 :     Wrong
+Test #  4-2 :     Wrong
+Test #  4-3 :     Wrong
+Test #  5-1 :     Wrong
+Test #  5-2 :     Wrong
+Test #  5-3 :     Wrong
+Test #  5-4 :     Wrong
+Test #  5-5 :     Wrong
+Test #  5-6 :     Wrong
+Test #  6-1 :     Wrong
+Test #  6-3 :     Wrong
+Test #  7-2 :     Wrong
+Test #  8-1 :     Wrong
+Test #  8-2 :     Wrong
+Test #  8-3 :     Wrong
+Test #  9-1 :     Wrong
+Test #  9-2 :     Wrong
+Test #  9-3 :     Wrong
+Test # 10-1 :     Wrong
+Test # 10-2 :     Wrong
+Test # 10-3 :     Wrong
+Test # 11-1 :     Wrong
+Test # 11-3 :     Wrong
+Test # 12-1 :     Wrong
+Test # 12-2 :     Wrong
+Test # 13-1 :     Wrong
+Test # 13-2 :     Wrong
+Test # 14-1 :     Wrong
+Test # 14-2 :     Wrong
+Test # 15-1 :     Wrong
+Test # 15-2 :     Wrong
+Test # 16-1 :     Wrong
+Test # 16-2 :     Wrong
+Test # 17-1 : No Result
+Test # 17-2 : No Result
+Test # 17-3 : No Result
+Test # 18-1 : No Result
+Test # 18-2 : No Result
+Test # 18-3 : No Result
+Test # 19-1 : No Result
+Test # 19-2 : No Result
+Test # 19-3 : No Result
+Test #   20 : No Result
+Pass : 8/56
+$finish called at time : 11850 ns : File "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v" Line 159
+save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/baseline/cpu_TB_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri May 25 01:28:05 2018...
