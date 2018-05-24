@@ -34,8 +34,23 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 	reg [`WORD_SIZE-1:0] i_outputData;
 	reg [`WORD_SIZE-1:0] d_outputData;
 	
-	assign i_data = i_readM?i_outputData:`WORD_SIZE'bz;
-	assign d_data = d_readM?d_outputData:`WORD_SIZE'bz;
+	assign i_data = i_readM_reg?i_outputData_reg:`WORD_SIZE'bz;
+	assign d_data = d_readM_reg?d_outputData_reg:`WORD_SIZE'bz;
+
+	// these registers are for delaying memory op
+	reg i_readM_reg;
+	reg i_writeM_reg;
+	reg d_readM_reg;
+	reg d_writeM_reg;
+
+	reg [`WORD_SIZE-1:0] i_address_reg;
+	reg [`WORD_SIZE-1:0] d_address_reg;
+
+	reg [`WORD_SIZE-1:0] i_outputData_reg;
+	reg [`WORD_SIZE-1:0] d_outputData_reg;
+
+	reg [`WORD_SIZE-1:0] d_data_reg;
+	//////////////////////////////////////////////
 	
 	always@(posedge clk)
 		if(!reset_n)
@@ -245,6 +260,22 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 				if(i_readM)i_outputData <= memory[i_address];
 				if(i_writeM)memory[i_address] <= i_data;
 				if(d_readM)d_outputData <= memory[d_address];
-				if(d_writeM)memory[d_address] <= d_data;
+				// store change
+				if(d_writeM_reg)memory[d_address_reg] <= d_data_reg;
+
+				// Update registers for delaying memory
+				i_readM_reg <= i_readM;
+				i_writeM_reg <= i_writeM;
+				d_readM_reg <= d_readM;
+				d_writeM_reg <= d_writeM;
+				
+				i_address_reg <= i_address;
+				d_address_reg <= d_address;
+				
+				i_outputData_reg <= i_outputData;
+				d_outputData_reg <= d_outputData;
+
+				d_data_reg <= d_data;
+				//////////////////////////////////////
 			end
 endmodule
