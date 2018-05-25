@@ -1,0 +1,71 @@
+/*
+
+Vivado v2016.4 (64-bit)
+SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+Process ID: 10512
+
+Current time: 	5/26/18 3:31:02 AM KST
+Time zone: 	Korea Standard Time (Asia/Seoul)
+
+OS: Windows 10
+Version: 10.0
+Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Gulim,name=±¼¸²,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	D:/Xilinx/Vivado/2016.4/tps/win64/jre
+
+User name: 	lkh116
+User home directory: D:/Users/lkh116
+User working directory: D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu
+User country: 	KR
+User language: 	ko
+User locale: 	ko_KR
+
+RDI base root directory: D:/Xilinx/Vivado
+RDI data directory: D:/Xilinx/Vivado/2016.4/data
+RDI bin directory: D:/Xilinx/Vivado/2016.4/bin
+
+Vivado preferences path: D:/Users/lkh116/AppData/Roaming/Xilinx/Vivado/2016.4/vivado.ini
+Vivado layouts directory: D:/Users/lkh116/AppData/Roaming/Xilinx/Vivado/2016.4/layouts
+
+GUI allocated memory:	221 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 496 MB
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: D:\Users\lkh116\Desktop\C.O_2018\baseline_cpu\pipeline_cpu.xpr. Version: Vivado v2016.4 
+// bt:g (cd:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu/pipeline_cpu.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'D:/Users/lkh116/Desktop/C.O_2018/pipeline_cpu' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 64 MB (+64931kb) [00:00:05]
+// [Engine Memory]: 447 MB (+316754kb) [00:00:05]
+// [GUI Memory]: 73 MB (+5746kb) [00:00:05]
+// [Engine Memory]: 496 MB (+28409kb) [00:00:05]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2016.4/data/ip'. 
+// Project name: pipeline_cpu; location: D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu; part: xc7k70tfbv676-1
+dismissDialog("Open Project"); // bt:g (cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// HMemoryUtils.trashcanNow. Engine heap size: 506 MB. GUI used memory: 32 MB. Current time: 5/26/18 3:31:04 AM KST
