@@ -193,6 +193,9 @@ module datapath (
             1: reg_data <= d_data_reg;
             0: reg_data <= ALUOut_reg;
         endcase
+        Jump_R_reg <= Jump_R;
+        Branch_taken_reg <= Branch_taken;
+        Jump_reg <= Jump;
         d_data_reg <= d_data;
         ALUOut_reg <= ALUOut;
 
@@ -300,7 +303,7 @@ module datapath (
     /////////////////////////
 
     // PC_jmp wiring
-    assign PC_jmp = {PC_carrie_reg[0][15:12], inst[11:0]};
+    assign PC_jmp = {PC_carrie_reg[1][15:12], inst[11:0]};
     ///////////////////
 
     // output port
