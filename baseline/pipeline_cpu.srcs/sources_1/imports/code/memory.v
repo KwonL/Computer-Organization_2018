@@ -257,9 +257,9 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 			end
 		else
 			begin
-				if(i_readM)i_outputData <= memory[i_address];
+				if(i_readM_reg)i_outputData <= memory[i_address_reg];
 				if(i_writeM)memory[i_address] <= i_data;
-				if(d_readM)d_outputData <= memory[d_address];
+				if(d_readM_reg)d_outputData <= memory[d_address_reg];
 				// store change
 				if(d_writeM_reg)memory[d_address_reg] <= d_data_reg;
 

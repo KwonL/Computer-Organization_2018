@@ -138,13 +138,17 @@ module datapath (
 	// maybe jump will be used directly?
 	reg Jump_reg;
 	reg Branch_reg;
+    reg Branch_taken_reg;
+    reg Jump_R_reg;
 	reg MemtoReg_reg[2:0];
 	reg [3:0] ALUOp_reg;
 	reg ALUSrc1_reg;
     reg ALUSrc2_reg;
-	reg RegWrite_reg[2:0];
+	reg RegWrite_reg[3:0];
 	reg isWWD_reg[2:0];
 	reg isHalt_reg;
+    reg [`WORD_SIZE-1:0] d_data_reg;
+    reg [`WORD_SIZE-1:0] ALUOut_reg;
 	// end of reg//
 
     /*
@@ -185,10 +189,12 @@ module datapath (
         A_reg[1] <= A;
         opcode_EX <= opcode;
         func_code_EX <= func_code;
-        case (MemtoReg_reg[1])
-            1: reg_data <= d_data;
-            0: reg_data <= ALUOut;
+        case (MemtoReg_reg[2])
+            1: reg_data <= d_data_reg;
+            0: reg_data <= ALUOut_reg;
         endcase
+        d_data_reg <= d_data;
+        ALUOut_reg <= ALUOut;
 
     end
     // end of wiring //
@@ -285,7 +291,7 @@ module datapath (
             PC_next = A_wire;
         end
         else if (Branch_taken) begin
-            PC_next = PC_carrie_reg[0] + extended;
+            PC_next = PC_carrie_reg[1] + extended;
         end
         else begin
             PC_next = PC + 1;
@@ -329,7 +335,7 @@ module datapath (
         .addr2(addr2), 
         .addr3(addr3), 
         .data3(data3), 
-        .write(RegWrite_reg[2]), 
+        .write(RegWrite_reg[3]), 
         .clk(clk), 
         .reset_n(reset_n), 
         .data1(data1), 
@@ -356,6 +362,10 @@ module datapath (
         .Jump(Jump),
         .Jump_R(Jump_R),
         .Branch_taken(Branch_taken),
+
+        .Jump_reg(Jump_reg),
+        .Branch_taken_reg(Branch_taken_reg),
+        .Jump_R_reg(Jump_R_reg),
 
         .flush(flush)
     );

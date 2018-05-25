@@ -6,10 +6,14 @@ module hazard_detector(
     input Jump_R,
     input Branch_taken,
 
+    input Jump_reg,
+    input Jump_R_reg,
+    input Branch_taken_reg,
+
     output flush
 );
-    
-    assign flush = Jump | Branch_taken | Jump_R;
+    // now must flush two instruction
+    assign flush = (Jump | Branch_taken | Jump_R) | (Jump_reg | Branch_taken_reg | Jump_R_reg);
 
 endmodule 
 

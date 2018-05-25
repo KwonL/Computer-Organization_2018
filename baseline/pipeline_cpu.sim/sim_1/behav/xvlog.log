@@ -3,11 +3,11 @@ INFO: [VRFC 10-311] analyzing module RegisterFile
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module hazard_detector
 INFO: [VRFC 10-311] analyzing module stall_unit
-WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:40]
+WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:44]
 INFO: [VRFC 10-311] analyzing module forwarding_unit
-WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:100]
-WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardA is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:101]
-WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardB is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:102]
+WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:104]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardA is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:105]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardB is not allowed [D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:106]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/baseline/pipeline_cpu.srcs/sources_1/imports/code/controller.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
 INFO: [VRFC 10-311] analyzing module control_unit
