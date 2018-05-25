@@ -88,14 +88,14 @@ module datapath (
      * 0: don't forwarding
      */
     assign A_wire = (ForwardA == 3) ? reg_data :
-                        (ForwardA == 2) ? (MemtoReg_reg[1] ? d_data : ALUOut) :
-                        (ForwardA == 1) ? ALU_wire :
-                                          data1;
+                    (ForwardA == 2) ? (MemtoReg_reg[1] ? d_data : ALUOut) :
+                    (ForwardA == 1) ? ALU_wire :
+                                      data1;
     // Fowarding in ID stage, and store it in B
     assign B_wire = (ForwardB == 3) ? reg_data :
-                        (ForwardB == 2) ? (MemtoReg_reg[1] ? d_data : ALUOut) :
-                        (ForwardB == 1) ? ALU_wire :
-                                          data2;
+                    (ForwardB == 2) ? (MemtoReg_reg[1] ? d_data : ALUOut) :
+                    (ForwardB == 1) ? ALU_wire :
+                                      data2;
     // end of var //
 
     // registers (A, B, ALUOut and so on..)
@@ -149,6 +149,7 @@ module datapath (
 	reg isHalt_reg;
     reg [`WORD_SIZE-1:0] d_data_reg;
     reg [`WORD_SIZE-1:0] ALUOut_reg;
+    reg [1:0] addr3_reg;
 	// end of reg//
 
     /*
@@ -198,6 +199,7 @@ module datapath (
         Jump_reg <= Jump;
         d_data_reg <= d_data;
         ALUOut_reg <= ALUOut;
+        addr3_reg <= addr3;
 
     end
     // end of wiring //
@@ -220,6 +222,7 @@ module datapath (
         RegWrite_reg[0] <= RegWrite;
         RegWrite_reg[1] <= RegWrite_reg[0];
         RegWrite_reg[2] <= RegWrite_reg[1];
+        RegWrite_reg[3] <= RegWrite_reg[2];
 		isWWD_reg[0] <= isWWD;
         isWWD_reg[1] <= isWWD_reg[0];
         isWWD_reg[2] <= isWWD_reg[1];
@@ -336,7 +339,7 @@ module datapath (
     RegisterFile rf(
         .addr1(addr1), 
         .addr2(addr2), 
-        .addr3(addr3), 
+        .addr3(addr3_reg), 
         .data3(data3), 
         .write(RegWrite_reg[3]), 
         .clk(clk), 

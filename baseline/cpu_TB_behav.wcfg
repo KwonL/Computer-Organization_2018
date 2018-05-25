@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="8903333333fs"></ZoomStartTime>
-      <ZoomEndTime time="10159333334fs"></ZoomEndTime>
-      <Cursor1Time time="9950000000fs"></Cursor1Time>
+      <ZoomStartTime time="7710082644fs"></ZoomStartTime>
+      <ZoomEndTime time="9017983472fs"></ZoomEndTime>
+      <Cursor1Time time="8231167000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+      <ValueColumnWidth column_width="114"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="23" />
    <wvobject fp_name="/cpu_TB/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -48,14 +48,6 @@
       <obj_property name="ElementShortName">output_port[15:0]</obj_property>
       <obj_property name="ObjectShortName">output_port[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/i_readM" type="logic">
-      <obj_property name="ElementShortName">i_readM</obj_property>
-      <obj_property name="ObjectShortName">i_readM</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/i_writeM" type="logic">
-      <obj_property name="ElementShortName">i_writeM</obj_property>
-      <obj_property name="ObjectShortName">i_writeM</obj_property>
-   </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/dp/i_address" type="array">
       <obj_property name="ElementShortName">i_address[15:0]</obj_property>
       <obj_property name="ObjectShortName">i_address[15:0]</obj_property>
@@ -63,6 +55,14 @@
    <wvobject fp_name="/cpu_TB/UUT/dp/i_data" type="array">
       <obj_property name="ElementShortName">i_data[15:0]</obj_property>
       <obj_property name="ObjectShortName">i_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/NUUT/i_outputData" type="array">
+      <obj_property name="ElementShortName">i_outputData[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_outputData[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/NUUT/i_outputData_reg" type="array">
+      <obj_property name="ElementShortName">i_outputData_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_outputData_reg[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/dp/d_readM" type="logic">
       <obj_property name="ElementShortName">d_readM</obj_property>
@@ -76,20 +76,40 @@
       <obj_property name="ElementShortName">d_address[15:0]</obj_property>
       <obj_property name="ObjectShortName">d_address[15:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/cpu_TB/NUUT/d_data" type="array">
+      <obj_property name="ElementShortName">d_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/NUUT/d_outputData" type="array">
+      <obj_property name="ElementShortName">d_outputData[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d_outputData[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/NUUT/d_outputData_reg" type="array">
+      <obj_property name="ElementShortName">d_outputData_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d_outputData_reg[15:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/dp/d_data" type="array">
       <obj_property name="ElementShortName">d_data[15:0]</obj_property>
       <obj_property name="ObjectShortName">d_data[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/flush" type="logic">
-      <obj_property name="ElementShortName">flush</obj_property>
-      <obj_property name="ObjectShortName">flush</obj_property>
+   <wvobject fp_name="/cpu_TB/UUT/dp/data3" type="array">
+      <obj_property name="ElementShortName">data3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data3[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/Branch_taken" type="logic">
-      <obj_property name="ElementShortName">Branch_taken</obj_property>
-      <obj_property name="ObjectShortName">Branch_taken</obj_property>
+   <wvobject fp_name="/cpu_TB/UUT/dp/RegWrite_reg" type="array">
+      <obj_property name="ElementShortName">RegWrite_reg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">RegWrite_reg[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/dp/Branch_taken_reg" type="logic">
-      <obj_property name="ElementShortName">Branch_taken_reg</obj_property>
-      <obj_property name="ObjectShortName">Branch_taken_reg</obj_property>
+   <wvobject fp_name="/cpu_TB/UUT/dp/MemtoReg_reg" type="array">
+      <obj_property name="ElementShortName">MemtoReg_reg[2:0]</obj_property>
+      <obj_property name="ObjectShortName">MemtoReg_reg[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/dp/ALUOut_reg" type="array">
+      <obj_property name="ElementShortName">ALUOut_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOut_reg[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/dp/d_data_reg" type="array">
+      <obj_property name="ElementShortName">d_data_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d_data_reg[15:0]</obj_property>
    </wvobject>
 </wave_config>
