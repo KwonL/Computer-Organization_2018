@@ -225,9 +225,6 @@ module datapath (
     // read instruction data from memory Address 
 	assign i_address = PC;
     reg i_readM;
-	always @ (posedge clk) begin
-        i_readM <= i_send_data;
-    end
 	assign i_writeM = 0;
     ///////////////////////
 
@@ -274,6 +271,7 @@ module datapath (
             if (flush) inst <= 0;
             else inst <= i_data;
             end
+            i_readM <= i_send_data; 
         end
     end
     always @ (inst) begin
