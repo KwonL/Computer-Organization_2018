@@ -15,6 +15,7 @@ module datapath (
 	
 	output i_readM,
 	output i_writeM,
+    input i_send_data,
 	output [`WORD_SIZE-1:0] i_address,
 	input [`WORD_SIZE-1:0] i_data,
 
@@ -73,6 +74,7 @@ module datapath (
     wire Branch_taken;
     assign Branch_taken = Branch & Zero;
     wire stall;
+    assign stall = ~i_send_data;
     // for control unit to stop write signal
     assign stall_out = stall;
     wire [1:0] ForwardA;
@@ -222,7 +224,10 @@ module datapath (
 
     // read instruction data from memory Address 
 	assign i_address = PC;
-	assign i_readM = 1;
+    reg i_readM;
+	always @ (posedge clk) begin
+        i_readM <= i_send_data;
+    end
 	assign i_writeM = 0;
     ///////////////////////
 
@@ -239,6 +244,7 @@ module datapath (
         PC <= 0;
         num_inst <= -2;
         reg_data <= 0;
+        i_readM = 1;
     end
     //////////////////////
 
@@ -253,6 +259,7 @@ module datapath (
             PC <= 0;
             num_inst <= -2;
             inst <= 0;
+            i_readM = 1;
         end
         else begin
             // stalling until data complete
@@ -396,7 +403,7 @@ module datapath (
         .MemRead_reg_EX(MemRead_reg[0]),
         .MemRead_reg_MEM(MemRead_reg[1]),
 
-        .stall(stall),
+        // .stall(stall),
         .ForwardA(ForwardA),
         .ForwardB(ForwardB)
     );

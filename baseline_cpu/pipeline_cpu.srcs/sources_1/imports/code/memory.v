@@ -4,7 +4,7 @@
 `define WORD_SIZE 16	//	instead of 2^16 words to reduce memory
 			//	requirements in the Active-HDL simulator 
 
-module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_writeM, d_address, d_data);
+module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_writeM, d_address, d_data, i_send_data);
 	input clk;
 	wire clk;
 	input reset_n;
@@ -29,6 +29,8 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 	wire [`WORD_SIZE-1:0] d_address;
 	inout d_data;
 	wire [`WORD_SIZE-1:0] d_data;
+	output i_send_data;
+	reg i_send_data;
 	
 	reg [`WORD_SIZE-1:0] memory [0:`MEMORY_SIZE-1];
 	reg [`WORD_SIZE-1:0] i_outputData;
@@ -50,11 +52,20 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 	reg [`WORD_SIZE-1:0] d_outputData_reg;
 
 	reg [`WORD_SIZE-1:0] d_data_reg;
+
+	// register for delay
+	reg i_send_data_temp;
+	always @ (posedge clk) begin
+		i_send_data_temp <= i_readM;
+		i_send_data <= i_send_data_temp;
+	end
 	//////////////////////////////////////////////
 	
 	always@(posedge clk)
 		if(!reset_n)
 			begin
+				i_send_data <= 0;
+				i_send_data_temp <= 0;
 				memory[16'h0] <= 16'h9023;
 				memory[16'h1] <= 16'h1;
 				memory[16'h2] <= 16'hffff;

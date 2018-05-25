@@ -16,6 +16,7 @@ module cpu(
     // Instruction memory interface
     output i_readM, 
     output i_writeM, 
+    input i_send_data,
     output [`WORD_SIZE-1:0] i_address, 
     inout [`WORD_SIZE-1:0] i_data, 
 
@@ -69,6 +70,7 @@ module cpu(
 
         .i_readM(i_readM),
         .i_writeM(i_writeM),
+        .i_send_data(i_send_data),
         .i_address(i_address),
         .i_data(i_data),
 
