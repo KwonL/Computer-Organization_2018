@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sat May 26 13:11:25 2018
+# Process ID: 8212
+# Current directory: D:/Users/lkh116/Desktop/cache_cpu
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8852 D:\Users\lkh116\Desktop\cache_cpu\cache_cpu.xpr
+# Log file: D:/Users/lkh116/Desktop/cache_cpu/vivado.log
+# Journal file: D:/Users/lkh116/Desktop/cache_cpu\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu' since last save.
+WARNING: [Project 1-312] File not found as 'D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.srcs/sources_1/imports/code/RegisterFile.v'; using path 'D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.srcs/sources_1/imports/code/opcodes.v'; using path 'D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu/pipeline_cpu.srcs/sources_1/imports/code/opcodes.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.srcs/sources_1/imports/code/Hazard_control.v'; using path 'D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.srcs/sources_1/imports/code/ALU.v'; using path 'D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu/pipeline_cpu.srcs/sources_1/imports/code/ALU.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.srcs/sources_1/imports/code/controller.v'; using path 'D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.srcs/sources_1/imports/code/datapath.v'; using path 'D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.srcs/sources_1/imports/code/cpu.v'; using path 'D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.srcs/sources_1/imports/code/memory.v'; using path 'D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu/pipeline_cpu.srcs/sources_1/imports/code/memory.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.srcs/sources_1/imports/code/constants.v'; using path 'D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu/pipeline_cpu.srcs/sources_1/imports/code/constants.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.srcs/sim_1/imports/sim/cpu_TB.v'; using path 'D:/Users/lkh116/Desktop/C.O_2018/baseline_cpu/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v' instead.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2016.4/data/ip'.
+open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 706.680 ; gain = 79.203
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat May 26 13:12:23 2018...

@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sat May 26 13:11:25 2018
+# Process ID: 8212
+# Current directory: D:/Users/lkh116/Desktop/cache_cpu
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8852 D:\Users\lkh116\Desktop\cache_cpu\cache_cpu.xpr
+# Log file: D:/Users/lkh116/Desktop/cache_cpu/vivado.log
+# Journal file: D:/Users/lkh116/Desktop/cache_cpu\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Users/lkh116/Desktop/cache_cpu/cache_cpu.xpr
