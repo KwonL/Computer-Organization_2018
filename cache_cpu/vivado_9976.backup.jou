@@ -68,4 +68,3 @@ run all
 relaunch_sim
 restart
 run all
-close_sim

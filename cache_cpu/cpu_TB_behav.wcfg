@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="9071666666fs"></ZoomStartTime>
-      <ZoomEndTime time="10185666667fs"></ZoomEndTime>
-      <Cursor1Time time="10000000000fs"></Cursor1Time>
+      <ZoomStartTime time="93545000000fs"></ZoomStartTime>
+      <ZoomEndTime time="94775000001fs"></ZoomEndTime>
+      <Cursor1Time time="94550000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="118"></ValueColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="21" />
+   <WVObjectSize size="22" />
    <wvobject fp_name="/cpu_TB/UUT/dp/reset_n" type="logic">
       <obj_property name="ElementShortName">reset_n</obj_property>
       <obj_property name="ObjectShortName">reset_n</obj_property>
@@ -75,6 +75,10 @@
    <wvobject fp_name="/cpu_TB/NUUT/i_address" type="array">
       <obj_property name="ElementShortName">i_address[15:0]</obj_property>
       <obj_property name="ObjectShortName">i_address[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/NUUT/i_outputData_reg" type="array">
+      <obj_property name="ElementShortName">i_outputData_reg[4:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">i_outputData_reg[4:0][15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/cpu_TB/NUUT/i_data" type="array">
       <obj_property name="ElementShortName">i_data[15:0]</obj_property>

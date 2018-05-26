@@ -36,28 +36,31 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 	reg [`WORD_SIZE-1:0] i_outputData;
 	reg [`WORD_SIZE-1:0] d_outputData;
 	
-	assign i_data = i_readM_reg[1]?i_outputData_reg:`WORD_SIZE'bz;
-	assign d_data = (d_readM_reg[1]&&!d_writeM)?d_outputData_reg:`WORD_SIZE'bz;
+	assign i_data = i_readM_reg[5]?i_outputData_reg[4]:`WORD_SIZE'bz;
+	assign d_data = (d_readM_reg[5]&&!d_writeM)?d_outputData_reg[4]:`WORD_SIZE'bz;
 
 	// these registers are for delaying memory op
-	reg i_readM_reg[1:0];
-	reg i_writeM_reg;
-	reg d_readM_reg[1:0];
-	reg d_writeM_reg;
+	reg i_readM_reg[5:0];
+	reg i_writeM_reg[5:0];
+	reg d_readM_reg[5:0];
+	reg d_writeM_reg[5:0];
 
-	reg [`WORD_SIZE-1:0] i_address_reg;
-	reg [`WORD_SIZE-1:0] d_address_reg;
+	reg [`WORD_SIZE-1:0] i_outputData_reg[4:0];
+	reg [`WORD_SIZE-1:0] d_outputData_reg[4:0];
 
-	reg [`WORD_SIZE-1:0] i_outputData_reg;
-	reg [`WORD_SIZE-1:0] d_outputData_reg;
+	reg [`WORD_SIZE-1:0] d_data_reg[5:0];
 
-	reg [`WORD_SIZE-1:0] d_data_reg;
+	reg [`WORD_SIZE-1:0] d_address_reg[4:0];
 
 	// register for delay
-	reg i_send_data_temp;
+	reg i_send_data_temp[4:0];
 	always @ (posedge clk) begin
-		i_send_data_temp <= i_readM;
-		i_send_data <= i_send_data_temp;
+		i_send_data_temp[0] <= i_readM;
+		i_send_data_temp[1] <= i_send_data_temp[0];
+		i_send_data_temp[2] <= i_send_data_temp[1];
+		i_send_data_temp[3] <= i_send_data_temp[2];
+		i_send_data_temp[4] <= i_send_data_temp[3];
+		i_send_data <= i_send_data_temp[4];
 	end
 	//////////////////////////////////////////////
 	
@@ -65,7 +68,11 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 		if(!reset_n)
 			begin
 				i_send_data <= 0;
-				i_send_data_temp <= 0;
+				i_send_data_temp[0] <= 0;
+				i_send_data_temp[1] <= 0;
+				i_send_data_temp[2] <= 0;
+				i_send_data_temp[3] <= 0;
+				i_send_data_temp[4] <= 0;
 				memory[16'h0] <= 16'h9023;
 				memory[16'h1] <= 16'h1;
 				memory[16'h2] <= 16'hffff;
@@ -272,23 +279,61 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 				if(i_writeM)memory[i_address] <= i_data;
 				if(d_readM)d_outputData <= memory[d_address];
 				// store change
-				if(d_writeM_reg)memory[d_address_reg] <= d_data_reg;
+				if(d_writeM_reg[4])memory[d_address_reg[4]] <= d_data_reg[4];
 
 				// Update registers for delaying memory
+				// delaying readM signal for 6 clk
 				i_readM_reg[0] <= i_readM;
 				i_readM_reg[1] <= i_readM_reg[0];
-				i_writeM_reg <= i_writeM;
+				i_readM_reg[2] <= i_readM_reg[1];
+				i_readM_reg[3] <= i_readM_reg[2];
+				i_readM_reg[4] <= i_readM_reg[3];
+				i_readM_reg[5] <= i_readM_reg[4];
+
+				// delaying writeM signal for 6 clk
+				i_writeM_reg[0] <= i_writeM;
+				i_writeM_reg[1] <= i_writeM_reg[0];
+				i_writeM_reg[2] <= i_writeM_reg[1];
+				i_writeM_reg[3] <= i_writeM_reg[2];
+				i_writeM_reg[4] <= i_writeM_reg[3];
+				i_writeM_reg[5] <= i_writeM_reg[4];
+
 				d_readM_reg[0] <= d_readM;
 				d_readM_reg[1] <= d_readM_reg[0];
-				d_writeM_reg <= d_writeM;
-				
-				i_address_reg <= i_address;
-				d_address_reg <= d_address;
-				
-				i_outputData_reg <= i_outputData;
-				d_outputData_reg <= d_outputData;
+				d_readM_reg[2] <= d_readM_reg[1];
+				d_readM_reg[3] <= d_readM_reg[2];
+				d_readM_reg[4] <= d_readM_reg[3];
+				d_readM_reg[5] <= d_readM_reg[4];
+				d_writeM_reg[0] <= d_writeM;
+				d_writeM_reg[1] <= d_writeM_reg[0];
+				d_writeM_reg[2] <= d_writeM_reg[1];
+				d_writeM_reg[3] <= d_writeM_reg[2];
+				d_writeM_reg[4] <= d_writeM_reg[3];
+				d_writeM_reg[5] <= d_writeM_reg[4];
 
-				d_data_reg <= d_data;
+				i_outputData_reg[0] <= i_outputData;
+				i_outputData_reg[1] <= i_outputData_reg[0];
+				i_outputData_reg[2] <= i_outputData_reg[1];
+				i_outputData_reg[3] <= i_outputData_reg[2];
+				i_outputData_reg[4] <= i_outputData_reg[3];
+				d_outputData_reg[0] <= d_outputData;
+				d_outputData_reg[1] <= d_outputData_reg[0];
+				d_outputData_reg[2] <= d_outputData_reg[1];
+				d_outputData_reg[3] <= d_outputData_reg[2];
+				d_outputData_reg[4] <= d_outputData_reg[3];
+
+				d_data_reg[0] <= d_data;
+				d_data_reg[1] <= d_data_reg[0];
+				d_data_reg[2] <= d_data_reg[1];
+				d_data_reg[3] <= d_data_reg[2];
+				d_data_reg[4] <= d_data_reg[3];
+				d_data_reg[5] <= d_data_reg[4];
+
+				d_address_reg[0] <= d_address;
+				d_address_reg[1] <= d_address_reg[0];
+				d_address_reg[2] <= d_address_reg[1];
+				d_address_reg[3] <= d_address_reg[2];
+				d_address_reg[4] <= d_address_reg[3];
 				//////////////////////////////////////
 			end
 endmodule
