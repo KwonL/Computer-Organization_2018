@@ -39,6 +39,10 @@ module cpu(
     wire [`WORD_SIZE-1:0] num_inst;
     wire [`WORD_SIZE-1:0] output_port;
 
+    cache_unit cache(
+        
+    );
+
     control_unit controller(
 		.reset_n(Reset_N),
         .clk(Clk),
