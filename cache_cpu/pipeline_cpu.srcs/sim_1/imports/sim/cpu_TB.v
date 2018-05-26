@@ -13,13 +13,13 @@ module cpu_TB();
 	wire i_readM;
 	wire i_writeM;
 	wire [`WORD_SIZE-1:0] i_address;
-	wire [`WORD_SIZE-1:0] i_data;		
+	wire [4*`WORD_SIZE-1:0] i_data_block;		
 	
 	// Data memory interface
 	wire d_readM;
 	wire d_writeM;
 	wire [`WORD_SIZE-1:0] d_address;
-	wire [`WORD_SIZE-1:0] d_data;
+	wire [4*`WORD_SIZE-1:0] d_data_block;
 
 	// for debuging purpose
 	wire [`WORD_SIZE-1:0] num_inst;		// number of instruction during execution
@@ -28,8 +28,8 @@ module cpu_TB();
 	wire i_send_data;
 
 	// instantiate the unit under test
-	cpu UUT (clk, reset_n, i_readM, i_writeM, i_send_data, i_address, i_data, d_readM, d_writeM, d_address, d_data, num_inst, output_port, is_halted);
-	Memory NUUT(!clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_writeM, d_address, d_data, i_send_data);		   
+	cpu UUT (clk, reset_n, i_readM, i_writeM, i_send_data, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, num_inst, output_port, is_halted);
+	Memory NUUT(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, i_send_data);		   
 
 	// initialize inputs
 	initial begin
@@ -37,7 +37,7 @@ module cpu_TB();
 		
 		reset_n = 1;	   // generate a LOW pulse for reset_n
 		#(`PERIOD1/4) reset_n = 0;
-		#(`PERIOD1 + `PERIOD1/2) reset_n = 1;
+		#(`PERIOD1) reset_n = 1;
 	end
 
 	// generate the clock

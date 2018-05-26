@@ -13,15 +13,15 @@ module datapath (
     input clk,
     input reset_n,
 	
-	output i_readM,
-	output i_writeM,
-    input i_send_data,
-	output [`WORD_SIZE-1:0] i_address,
+	output i_readC,
+	output i_writeC,
+    input i_hit,
+	output [`WORD_SIZE-1:0] i_address_to_C,
 	input [`WORD_SIZE-1:0] i_data,
 
-	output d_readM,
-	output d_writeM,
-	output [`WORD_SIZE-1:0] d_address,
+	output d_readC,
+	output d_writeC,
+	output [`WORD_SIZE-1:0] d_address_to_C,
 	inout [`WORD_SIZE-1:0] d_data,
 
     output [`WORD_SIZE-1:0] num_inst, 
@@ -74,7 +74,7 @@ module datapath (
     wire Branch_taken;
     assign Branch_taken = Branch & Zero;
     wire stall;
-    assign stall = ~i_send_data;
+    assign stall = ~i_hit;
     // for control unit to stop write signal
     assign stall_out = stall;
     wire [1:0] ForwardA;
@@ -223,8 +223,8 @@ module datapath (
     assign is_halted = isHalt_reg;
 
     // read instruction data from memory Address 
-	assign i_address = PC;
-    reg i_readM;
+	assign i_address_to_C = PC;
+    reg i_readC;
 	assign i_writeM = 0;
     ///////////////////////
 
@@ -241,7 +241,7 @@ module datapath (
         PC <= 0;
         num_inst <= -2;
         reg_data <= 0;
-        i_readM = 1;
+        i_readC = 1;
     end
     //////////////////////
 
@@ -256,7 +256,7 @@ module datapath (
             PC <= 0;
             num_inst <= -2;
             inst <= 0;
-            i_readM = 1;
+            i_readC = 1;
         end
         else begin
             // stalling until data complete
@@ -271,7 +271,7 @@ module datapath (
             if (flush) inst <= 0;
             else inst <= i_data;
             end
-            i_readM <= i_send_data; 
+            i_readC <= i_hit; 
         end
     end
     always @ (inst) begin

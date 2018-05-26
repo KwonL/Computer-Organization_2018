@@ -4,7 +4,7 @@
 `define WORD_SIZE 16	//	instead of 2^16 words to reduce memory
 			//	requirements in the Active-HDL simulator 
 
-module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_writeM, d_address, d_data, i_send_data);
+module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, i_send_data);
 	input clk;
 	wire clk;
 	input reset_n;
@@ -17,8 +17,8 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 	wire i_writeM;
 	input [`WORD_SIZE-1:0] i_address;
 	wire [`WORD_SIZE-1:0] i_address;
-	inout i_data;
-	wire [`WORD_SIZE-1:0] i_data;
+	inout i_data_block;
+	wire [4*`WORD_SIZE-1:0] i_data_block;
 	
 	// Data memory interface
 	input d_readM;
@@ -27,17 +27,17 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 	wire d_writeM;
 	input [`WORD_SIZE-1:0] d_address;
 	wire [`WORD_SIZE-1:0] d_address;
-	inout d_data;
-	wire [`WORD_SIZE-1:0] d_data;
+	inout d_data_block;
+	wire [4*`WORD_SIZE-1:0] d_data_block;
 	output i_send_data;
 	reg i_send_data;
 	
 	reg [`WORD_SIZE-1:0] memory [0:`MEMORY_SIZE-1];
-	reg [`WORD_SIZE-1:0] i_outputData;
-	reg [`WORD_SIZE-1:0] d_outputData;
+	reg [4*`WORD_SIZE-1:0] i_outputData;
+	reg [4*`WORD_SIZE-1:0] d_outputData;
 	
-	assign i_data = i_readM_reg[5]?i_outputData_reg[4]:`WORD_SIZE'bz;
-	assign d_data = (d_readM_reg[5]&&!d_writeM)?d_outputData_reg[4]:`WORD_SIZE'bz;
+	assign i_data_block = i_readM_reg[5]?i_outputData_reg[4]:`WORD_SIZE'bz;
+	assign d_data_block = (d_readM_reg[5]&&!d_writeM)?d_outputData_reg[4]:`WORD_SIZE'bz;
 
 	// these registers are for delaying memory op
 	reg i_readM_reg[5:0];
@@ -45,10 +45,10 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 	reg d_readM_reg[5:0];
 	reg d_writeM_reg[5:0];
 
-	reg [`WORD_SIZE-1:0] i_outputData_reg[4:0];
-	reg [`WORD_SIZE-1:0] d_outputData_reg[4:0];
+	reg [4*`WORD_SIZE-1:0] i_outputData_reg[4:0];
+	reg [4*`WORD_SIZE-1:0] d_outputData_reg[4:0];
 
-	reg [`WORD_SIZE-1:0] d_data_reg[5:0];
+	reg [4*`WORD_SIZE-1:0] d_data_reg[5:0];
 
 	reg [`WORD_SIZE-1:0] d_address_reg[4:0];
 
@@ -275,9 +275,9 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 			end
 		else
 			begin
-				if(i_readM)i_outputData <= memory[i_address];
-				if(i_writeM)memory[i_address] <= i_data;
-				if(d_readM)d_outputData <= memory[d_address];
+				if(i_readM)i_outputData <= {memory[i_address], memory[i_address+1], memory[i_address+2], memory[i_address+3]};
+				// if(i_writeM)memory[i_address] <= i_data_block;
+				if(d_readM)d_outputData <= {memory[d_address], memory[d_address+1], memory[d_address+2], memory[d_address+3]};
 				// store change
 				if(d_writeM_reg[4])memory[d_address_reg[4]] <= d_data_reg[4];
 
@@ -322,7 +322,7 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data, d_readM, d_wri
 				d_outputData_reg[3] <= d_outputData_reg[2];
 				d_outputData_reg[4] <= d_outputData_reg[3];
 
-				d_data_reg[0] <= d_data;
+				d_data_reg[0] <= d_data_block;
 				d_data_reg[1] <= d_data_reg[0];
 				d_data_reg[2] <= d_data_reg[1];
 				d_data_reg[3] <= d_data_reg[2];
