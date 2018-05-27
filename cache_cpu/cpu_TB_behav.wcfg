@@ -11,9 +11,9 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="26943333333fs"></ZoomStartTime>
-      <ZoomEndTime time="28151333334fs"></ZoomEndTime>
-      <Cursor1Time time="27950000000fs"></Cursor1Time>
+      <ZoomStartTime time="20043333333fs"></ZoomStartTime>
+      <ZoomEndTime time="21251333334fs"></ZoomEndTime>
+      <Cursor1Time time="20250000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
@@ -64,6 +64,10 @@
       <obj_property name="ElementShortName">d_writeC</obj_property>
       <obj_property name="ObjectShortName">d_writeC</obj_property>
    </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/cache/d_hit" type="logic">
+      <obj_property name="ElementShortName">d_hit</obj_property>
+      <obj_property name="ObjectShortName">d_hit</obj_property>
+   </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/cache/d_address_to_C" type="array">
       <obj_property name="ElementShortName">d_address_to_C[15:0]</obj_property>
       <obj_property name="ObjectShortName">d_address_to_C[15:0]</obj_property>
@@ -72,10 +76,6 @@
       <obj_property name="ElementShortName">d_data[15:0]</obj_property>
       <obj_property name="ObjectShortName">d_data[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/cache/d_hit" type="logic">
-      <obj_property name="ElementShortName">d_hit</obj_property>
-      <obj_property name="ObjectShortName">d_hit</obj_property>
-   </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/cache/d_send_data" type="logic">
       <obj_property name="ElementShortName">d_send_data</obj_property>
       <obj_property name="ObjectShortName">d_send_data</obj_property>
@@ -83,6 +83,10 @@
    <wvobject fp_name="/cpu_TB/UUT/cache/d_address" type="array">
       <obj_property name="ElementShortName">d_address[15:0]</obj_property>
       <obj_property name="ObjectShortName">d_address[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/cache/d_dirty" type="array">
+      <obj_property name="ElementShortName">d_dirty[0:3]</obj_property>
+      <obj_property name="ObjectShortName">d_dirty[0:3]</obj_property>
    </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/cache/d_readM" type="logic">
       <obj_property name="ElementShortName">d_readM</obj_property>
@@ -95,10 +99,6 @@
    <wvobject fp_name="/cpu_TB/UUT/cache/d_data_block" type="array">
       <obj_property name="ElementShortName">d_data_block[63:0]</obj_property>
       <obj_property name="ObjectShortName">d_data_block[63:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/cache/d_data_internel" type="logic">
-      <obj_property name="ElementShortName">d_data_internel</obj_property>
-      <obj_property name="ObjectShortName">d_data_internel</obj_property>
    </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/cache/d_cache" type="array">
       <obj_property name="ElementShortName">d_cache[0:3][0:3][15:0]</obj_property>

@@ -38,8 +38,8 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM,
 	reg [4*`WORD_SIZE-1:0] i_outputData;
 	reg [4*`WORD_SIZE-1:0] d_outputData;
 	
-	assign i_data_block = i_readM_reg[5]?i_outputData_reg[4]:`WORD_SIZE'bz;
-	assign d_data_block = (d_readM_reg[5]&&!d_writeM_reg[5])?d_outputData_reg[4]:4*`WORD_SIZE'bz;
+	assign i_data_block = i_readM_reg[5]?i_outputData_reg[4]:16'bz;
+	assign d_data_block = (d_readM_reg[5]&&!d_writeM_reg[5])?d_outputData_reg[4]:64'bz;
 
 	// these registers are for delaying memory op
 	reg i_readM_reg[5:0];

@@ -95,12 +95,25 @@ module cache_unit(
     end
 
 
-    reg d_data_internel;
+    /*
+     * d-cache part
+     * write back policy and write allocate policy
+     * need dirty bit
+     */
+    
+    // cannot directly assign data to d_data because it is inout
+    reg [`WORD_SIZE-1:0] d_data_internel;
     assign d_data = d_readC ? d_data_internel : 16'bz;
+    // cannot directly assign
+    reg [4*`WORD_SIZE-1:0] d_data_block_internel;
+    assign d_data_block = d_writeM ? d_data_block_internel : 64'bz;
+
     // d-cache
     // one line consists of four word
     reg [`WORD_SIZE-1:0] d_cache [0:3][0:3];
     reg [11:0] d_tag [0:3];
+    reg d_dirty [0:3];
+
     wire [11:0] d_input_tag = d_address_to_C[15:4];
     wire [1:0] d_input_index = d_address_to_C[3:2];
     wire [1:0] d_input_offset = d_address_to_C[1:0];
@@ -121,34 +134,64 @@ module cache_unit(
         // reset cache
         if (reset_n == 0) begin
             d_hit <= 0;
-            for (i = 0; i < 4; i = i+1) begin
+            for (i = 0; i < 4; i = i + 1) begin
                 d_tag[i] <= -1;
+                d_dirty[i] <= 0;
             end
             d_readM <= 0;
             d_writeM <= 0;
         end
         else begin
-            // if cache hit occur
+            // if data read hit occur
             if (d_readC && (d_input_tag == d_tag[d_input_index])) begin
                 d_hit <= 1;
                 d_data_internel <= d_cache[d_input_index][d_input_offset];
                 d_readM <= 0;
+                d_writeM <= 0;
             end
-            // read miss, send data request to memory
-            else if (d_readC) begin
-                d_hit <= 0;
-                d_readM <= 1;
+            // if data write hit occur
+            else if (d_writeC && (d_input_tag == d_tag[d_input_index])) begin
+                d_hit <= 1;
+                d_cache[d_input_index][d_input_offset] <= d_data;
+                d_writeM <= 0;
+                d_readM <= 0;
+                d_dirty[d_input_index] <= 1;
+            end 
+            // read or write miss, bring data from memory
+            else if (d_readC | d_writeC) begin
+                // cache is modified, so write back to memory
+                if (d_dirty[d_input_index]) begin
+                    // back in this else if(d_readC|d_writeC) block and goto below else
+                    d_dirty[d_input_index] <= 0;
+                    d_writeM <= 1;
+                    d_hit <= 0;
+                    d_readM <= 0;
+                    // send data to memory
+                    d_data_block_internel <= {d_cache[d_input_index][0], d_cache[d_input_index][1], d_cache[d_input_index][2], d_cache[d_input_index][3]};
+                end
+                // no need to write back
+                else begin
+                    d_hit <= 0;
+                    d_readM <= 1;
+                    d_writeM <= 0;
+                end
             end 
             else begin
                 d_hit <= 0;
                 d_readM <= 0;
+                d_writeM <= 0;
             end
+            // recieve data from memory
             if (d_send_data) begin
+                // Just allocate data block for correct cache offset
                 d_cache[d_input_index][0] <= d_data_block[4*`WORD_SIZE-1:3*`WORD_SIZE];
                 d_cache[d_input_index][1] <= d_data_block[3*`WORD_SIZE-1:2*`WORD_SIZE];
                 d_cache[d_input_index][2] <= d_data_block[2*`WORD_SIZE-1:`WORD_SIZE];
                 d_cache[d_input_index][3] <= d_data_block[`WORD_SIZE-1:0];
+                // tag
                 d_tag[d_input_index] <= d_input_tag;
+                // new data's drity bit is 0 
+                d_dirty[d_input_index] <= 0;
                 // send data to CPU
                 d_hit <= 1;
                 d_data_internel <= d_temp_data[d_input_offset];

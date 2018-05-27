@@ -125,6 +125,9 @@ module datapath (
     reg [3:0] opcode_EX;
     reg [5:0] func_code_EX;
     reg [`WORD_SIZE-1:0] data3_reg_WB;
+
+    reg d_readC_maintainer;
+    reg d_writeC_maintainer;
     // end of reg //  
 
 	// control registers(each stage)
@@ -246,10 +249,22 @@ module datapath (
     end
     //////////////////////
 
-    // memory signal  
-    assign d_readC = MemRead_reg[1];
-    assign d_writeC = MemWrite_reg[1];
-    //////////////////////
+    always @ (posedge clk) begin
+        if (stall) begin
+            d_readC_maintainer <= d_readC_maintainer;
+            d_writeC_maintainer <= d_writeC_maintainer;
+        end
+        else begin
+            d_readC_maintainer <= MemRead_reg[0];
+            d_writeC_maintainer <= MemWrite_reg[0];
+        end
+    end
+    assign d_readC = d_readC_maintainer;
+    assign d_writeC = d_writeC_maintainer;
+    // // memory signal  
+    // assign d_readC = MemRead_reg[1];
+    // assign d_writeC = MemWrite_reg[1];
+    // //////////////////////
 
     // PC, inst update
     always @ (posedge clk) begin 
