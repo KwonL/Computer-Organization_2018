@@ -127,7 +127,8 @@ module cache_unit(
     ///////////////////////////////////////////
 
     // send address
-    assign d_address = {d_address_to_C[`WORD_SIZE-1:2], 2'b00};
+    // address is evicted line's address
+    assign d_address = d_writeM ? {d_tag[i_input_index], d_input_index, 2'b00} : {d_address_to_C[15:2], 2'b00};
 
     // d_hit block
     always @ (posedge clk) begin

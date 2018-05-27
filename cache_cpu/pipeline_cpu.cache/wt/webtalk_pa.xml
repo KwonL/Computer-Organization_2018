@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sat May 26 23:04:45 2018">
+<application name="pa" timeStamp="Mon May 28 04:09:56 2018">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="49e6e7e84346466689a83ff73a3e1c2c" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -23,61 +23,62 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="NewProject" value="1" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="1" type="JavaHandler"/>
 <property name="ShowView" value="1" type="JavaHandler"/>
-<property name="SimulationRelaunch" value="102" type="JavaHandler"/>
-<property name="SimulationRestart" value="127" type="JavaHandler"/>
-<property name="SimulationRun" value="11" type="JavaHandler"/>
-<property name="SimulationRunAll" value="29" type="JavaHandler"/>
-<property name="SimulationRunForTime" value="343" type="JavaHandler"/>
+<property name="SimulationRelaunch" value="150" type="JavaHandler"/>
+<property name="SimulationRestart" value="175" type="JavaHandler"/>
+<property name="SimulationRun" value="12" type="JavaHandler"/>
+<property name="SimulationRunAll" value="71" type="JavaHandler"/>
+<property name="SimulationRunForTime" value="469" type="JavaHandler"/>
 <property name="SimulationStep" value="1" type="JavaHandler"/>
 <property name="UnselectAllCmdHandler" value="1" type="JavaHandler"/>
 <property name="ViewTaskRTLAnalysis" value="1" type="JavaHandler"/>
-<property name="WaveformSaveConfiguration" value="43" type="JavaHandler"/>
+<property name="WaveformSaveConfiguration" value="56" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
 <property name="AbstractFileView_RELOAD" value="18" type="GuiResourceData"/>
-<property name="AbstractSearchablePanel_SHOW_SEARCH" value="8" type="GuiResourceData"/>
+<property name="AbstractSearchablePanel_SHOW_SEARCH" value="9" type="GuiResourceData"/>
 <property name="AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES" value="1" type="GuiResourceData"/>
 <property name="BaseDialog_CANCEL" value="4" type="GuiResourceData"/>
 <property name="BaseDialog_OK" value="3" type="GuiResourceData"/>
 <property name="BaseDialog_YES" value="1" type="GuiResourceData"/>
-<property name="CmdMsgDialog_MESSAGES" value="7" type="GuiResourceData"/>
-<property name="CmdMsgDialog_OK" value="27" type="GuiResourceData"/>
+<property name="CmdMsgDialog_MESSAGES" value="11" type="GuiResourceData"/>
+<property name="CmdMsgDialog_OK" value="37" type="GuiResourceData"/>
 <property name="CommandsInput_TYPE_TCL_COMMAND_HERE" value="2" type="GuiResourceData"/>
 <property name="CreateSrcFileDialog_FILE_NAME" value="1" type="GuiResourceData"/>
 <property name="FileSetPanel_FILE_SET_PANEL_TREE" value="154" type="GuiResourceData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="23" type="GuiResourceData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="24" type="GuiResourceData"/>
 <property name="GettingStartedView_CREATE_NEW_PROJECT" value="1" type="GuiResourceData"/>
 <property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="4" type="GuiResourceData"/>
 <property name="PACommandNames_LEAVE_FEEDBACK_HELP" value="3" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_LIVE_BREAK" value="10" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_LIVE_RESTART" value="134" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_LIVE_RUN" value="352" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_LIVE_RUN_ALL" value="30" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_LIVE_BREAK" value="15" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_LIVE_RESTART" value="185" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_LIVE_RUN" value="479" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_LIVE_RUN_ALL" value="72" type="GuiResourceData"/>
 <property name="PACommandNames_SIMULATION_LIVE_STEP" value="1" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_RELAUNCH" value="111" type="GuiResourceData"/>
-<property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="11" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_RELAUNCH" value="162" type="GuiResourceData"/>
+<property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="12" type="GuiResourceData"/>
 <property name="PAViews_CODE" value="4" type="GuiResourceData"/>
-<property name="ProgressDialog_BACKGROUND" value="13" type="GuiResourceData"/>
+<property name="ProgressDialog_BACKGROUND" value="30" type="GuiResourceData"/>
 <property name="ProgressDialog_CANCEL" value="3" type="GuiResourceData"/>
 <property name="ProjectNameChooser_CHOOSE_PROJECT_LOCATION" value="1" type="GuiResourceData"/>
 <property name="ProjectNameChooser_PROJECT_NAME" value="1" type="GuiResourceData"/>
 <property name="RDICommands_UNSELECT_ALL" value="2" type="GuiResourceData"/>
-<property name="RDIViews_WAVEFORM_VIEWER" value="1016" type="GuiResourceData"/>
+<property name="RDIViews_WAVEFORM_VIEWER" value="1414" type="GuiResourceData"/>
 <property name="RemoveSourcesDialog_ALSO_DELETE" value="4" type="GuiResourceData"/>
-<property name="SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE" value="72" type="GuiResourceData"/>
-<property name="SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE" value="167" type="GuiResourceData"/>
+<property name="SimulationLiveRunForComp_SPECIFY_TIME_AND_UNITS" value="1" type="GuiResourceData"/>
+<property name="SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE" value="84" type="GuiResourceData"/>
+<property name="SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE" value="203" type="GuiResourceData"/>
 <property name="SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT" value="9" type="GuiResourceData"/>
 <property name="SrcChooserPanel_CREATE_FILE" value="2" type="GuiResourceData"/>
 <property name="SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_FILES_INTO" value="4" type="GuiResourceData"/>
 <property name="SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO" value="3" type="GuiResourceData"/>
 <property name="SrcChooserTable_SRC_CHOOSER_TABLE" value="1" type="GuiResourceData"/>
-<property name="TclConsoleView_TCL_CONSOLE_CODE_EDITOR" value="349" type="GuiResourceData"/>
-<property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="97" type="GuiResourceData"/>
+<property name="TclConsoleView_TCL_CONSOLE_CODE_EDITOR" value="448" type="GuiResourceData"/>
+<property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="188" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="61" type="GuiMode"/>
+<property name="GuiMode" value="62" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="42" type="TclMode"/>
+<property name="TclMode" value="43" type="TclMode"/>
 </item>
 </section>
 </application>

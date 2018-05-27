@@ -75,7 +75,7 @@ module datapath (
     wire Branch_taken;
     assign Branch_taken = Branch & Zero;
     wire stall;
-    assign stall = (~i_hit | (~d_hit & d_readC));
+    assign stall = (~i_hit | (~d_hit & (d_readC | d_writeC)));
     // for control unit to stop write signal
     assign stall_out = stall;
     wire [1:0] ForwardA;

@@ -292,7 +292,12 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM,
 				// if(i_writeM)memory[i_address] <= i_data_block;
 				if(d_readM)d_outputData <= {memory[d_address], memory[d_address+1], memory[d_address+2], memory[d_address+3]};
 				// store change
-				if(d_writeM_reg[4])memory[d_address_reg[4]] <= d_data_reg[4];
+				if(d_writeM_reg[4]) begin
+					memory[d_address_reg[4]] <= d_data_reg[4][4*`WORD_SIZE-1:3*`WORD_SIZE];
+					memory[d_address_reg[4] + 1] <= d_data_reg[4][3*`WORD_SIZE-1:2*`WORD_SIZE];
+					memory[d_address_reg[4] + 2] <= d_data_reg[4][2*`WORD_SIZE-1:1*`WORD_SIZE];
+					memory[d_address_reg[4] + 3] <= d_data_reg[4][1*`WORD_SIZE-1:0*`WORD_SIZE];
+				end
 
 				// Update registers for delaying memory
 				// delaying readM signal for 6 clk
