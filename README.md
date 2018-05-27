@@ -23,3 +23,9 @@ My space for Projects
     
     6-3) pipeline CPU with branch predictor for control hazard solution
 
+7. 16-bit pipeline CPU with cache
+
+    7-1) baseline CPU - it takes 2-cycle to read memory
+    
+    7-2) cache CPU - it takes 6-cycle to read memory and 1-cycle to read cache
+    
