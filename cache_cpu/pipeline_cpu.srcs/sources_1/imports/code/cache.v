@@ -182,7 +182,7 @@ module cache_unit(
                 d_writeM <= 0;
             end
             // recieve data from memory
-            if (d_send_data) begin
+            if (d_send_data && (d_readC | d_writeC)) begin
                 // Just allocate data block for correct cache offset
                 d_cache[d_input_index][0] <= d_data_block[4*`WORD_SIZE-1:3*`WORD_SIZE];
                 d_cache[d_input_index][1] <= d_data_block[3*`WORD_SIZE-1:2*`WORD_SIZE];
@@ -194,7 +194,8 @@ module cache_unit(
                 d_dirty[d_input_index] <= 0;
                 // send data to CPU
                 d_hit <= 1;
-                d_data_internel <= d_temp_data[d_input_offset];
+                if (d_readC) d_data_internel <= d_temp_data[d_input_offset];
+                else if (d_writeC) d_cache[d_input_index][d_input_offset] <= d_data;
             end
         end
     end

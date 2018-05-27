@@ -75,7 +75,7 @@ module datapath (
     wire Branch_taken;
     assign Branch_taken = Branch & Zero;
     wire stall;
-    assign stall = (~i_hit | (~d_hit & d_readC)) | (stall_from_fu & !d_hit);
+    assign stall = (~i_hit | (~d_hit & d_readC));
     // for control unit to stop write signal
     assign stall_out = stall;
     wire [1:0] ForwardA;
@@ -162,7 +162,7 @@ module datapath (
      */
     // register wiring
     always @ (posedge clk) begin
-        if (!stall) begin
+        if (!stall | stall_from_fu) begin
         ALUOut <= ALU_wire;
         ALUOut_WB <= ALUOut;
         A <= A_wire;
@@ -201,7 +201,7 @@ module datapath (
 
 	// control carrier wiring
 	always @ (posedge clk) begin
-        if (!stall) begin
+        if (!stall | stall_from_fu) begin
 		MemRead_reg[0] <= MemRead;
 		MemWrite_reg[0] <= MemWrite;
 		MemRead_reg[1] <= MemRead_reg[0];
@@ -252,7 +252,7 @@ module datapath (
     //////////////////////
 
     always @ (posedge clk) begin
-        if (stall) begin
+        if (stall && !stall_from_fu) begin
             d_readC_maintainer <= d_readC_maintainer;
             d_writeC_maintainer <= d_writeC_maintainer;
         end
@@ -278,7 +278,7 @@ module datapath (
         end
         else begin
             // stalling until data complete
-            if (stall) begin
+            if (stall | stall_from_fu) begin
                 PC <= PC;
                 inst <= inst;
             end 
@@ -327,7 +327,7 @@ module datapath (
     
     // this implementation write output_port in ID stage
     // So, when stall, output_port must stall...
-    always @ (posedge clk) output_port = stall ? output_port : (isWWD ? A_wire : output_port);
+    always @ (posedge clk) output_port = stall_from_fu | stall ? output_port : (isWWD ? A_wire : output_port);
     ////////////////////
 
     // instruction decoding

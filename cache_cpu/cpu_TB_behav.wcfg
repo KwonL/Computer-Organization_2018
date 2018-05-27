@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="81343333333fs"></ZoomStartTime>
-      <ZoomEndTime time="82551333334fs"></ZoomEndTime>
-      <Cursor1Time time="82350000000fs"></Cursor1Time>
+      <ZoomStartTime time="998993333333fs"></ZoomStartTime>
+      <ZoomEndTime time="1000201333334fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
       <ValueColumnWidth column_width="112"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="31" />
+   <WVObjectSize size="32" />
    <wvobject fp_name="/cpu_TB/UUT/dp/reset_n" type="logic">
       <obj_property name="ElementShortName">reset_n</obj_property>
       <obj_property name="ObjectShortName">reset_n</obj_property>
@@ -143,5 +143,9 @@
    <wvobject fp_name="/cpu_TB/NUUT/d_writeM_reg" type="array">
       <obj_property name="ElementShortName">d_writeM_reg[5:0]</obj_property>
       <obj_property name="ObjectShortName">d_writeM_reg[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/NUUT/memory" type="array">
+      <obj_property name="ElementShortName">memory[0:255][15:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:255][15:0]</obj_property>
    </wvobject>
 </wave_config>
