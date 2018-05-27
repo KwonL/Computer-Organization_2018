@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="20043333333fs"></ZoomStartTime>
-      <ZoomEndTime time="21251333334fs"></ZoomEndTime>
-      <Cursor1Time time="20250000000fs"></Cursor1Time>
+      <ZoomStartTime time="81343333333fs"></ZoomStartTime>
+      <ZoomEndTime time="82551333334fs"></ZoomEndTime>
+      <Cursor1Time time="82350000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
       <ValueColumnWidth column_width="112"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="30" />
+   <WVObjectSize size="31" />
    <wvobject fp_name="/cpu_TB/UUT/dp/reset_n" type="logic">
       <obj_property name="ElementShortName">reset_n</obj_property>
       <obj_property name="ObjectShortName">reset_n</obj_property>
@@ -63,6 +63,10 @@
    <wvobject fp_name="/cpu_TB/UUT/cache/d_writeC" type="logic">
       <obj_property name="ElementShortName">d_writeC</obj_property>
       <obj_property name="ObjectShortName">d_writeC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/cache/i_hit" type="logic">
+      <obj_property name="ElementShortName">i_hit</obj_property>
+      <obj_property name="ObjectShortName">i_hit</obj_property>
    </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/cache/d_hit" type="logic">
       <obj_property name="ElementShortName">d_hit</obj_property>

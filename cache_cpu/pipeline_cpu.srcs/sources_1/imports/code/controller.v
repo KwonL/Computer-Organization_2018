@@ -51,10 +51,10 @@ module control_unit (
     always @ (opcode or func_code or stall) begin
         // if stall, turn off write signal.
         if (stall) begin
-            MemWrite = 0;
-            RegWrite = 0;
-            isWWD = 0;
-            isHalt = 0;
+            // MemWrite = 0;
+            // RegWrite = 0;
+            // isWWD = 0;
+            // isHalt = 0;
         end else begin
         // nop
         if (opcode == 0 & func_code == 0) begin

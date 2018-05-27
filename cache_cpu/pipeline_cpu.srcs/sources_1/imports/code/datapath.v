@@ -75,7 +75,7 @@ module datapath (
     wire Branch_taken;
     assign Branch_taken = Branch & Zero;
     wire stall;
-    assign stall = (~i_hit | (~d_hit & d_readC));
+    assign stall = (~i_hit | (~d_hit & d_readC)) | (stall_from_fu & !d_hit);
     // for control unit to stop write signal
     assign stall_out = stall;
     wire [1:0] ForwardA;
@@ -126,8 +126,8 @@ module datapath (
     reg [5:0] func_code_EX;
     reg [`WORD_SIZE-1:0] data3_reg_WB;
 
-    reg d_readC_maintainer;
-    reg d_writeC_maintainer;
+    reg d_readC_maintainer = 0;
+    reg d_writeC_maintainer = 0;
     // end of reg //  
 
 	// control registers(each stage)
@@ -162,7 +162,7 @@ module datapath (
      */
     // register wiring
     always @ (posedge clk) begin
-
+        if (!stall) begin
         ALUOut <= ALU_wire;
         ALUOut_WB <= ALUOut;
         A <= A_wire;
@@ -195,12 +195,13 @@ module datapath (
             1: reg_data <= d_data;
             0: reg_data <= ALUOut;
         endcase
-
+        end
     end
     // end of wiring //
 
 	// control carrier wiring
 	always @ (posedge clk) begin
+        if (!stall) begin
 		MemRead_reg[0] <= MemRead;
 		MemWrite_reg[0] <= MemWrite;
 		MemRead_reg[1] <= MemRead_reg[0];
@@ -221,6 +222,7 @@ module datapath (
         isWWD_reg[1] <= isWWD_reg[0];
         isWWD_reg[2] <= isWWD_reg[1];
 		isHalt_reg <= isHalt;
+        end
 	end
 	// end of wiring
 
@@ -417,7 +419,7 @@ module datapath (
         .MemRead_reg_EX(MemRead_reg[0]),
         .MemRead_reg_MEM(MemRead_reg[1]),
 
-        // .stall(stall),
+        .stall(stall_from_fu),
         .ForwardA(ForwardA),
         .ForwardB(ForwardB)
     );
