@@ -17,6 +17,7 @@ module cpu(
     output i_readM, 
     output i_writeM, 
     input i_send_data,
+    input d_send_data,
     output [`WORD_SIZE-1:0] i_address, 
     inout [4*`WORD_SIZE-1:0] i_data_block, 
 
@@ -107,6 +108,7 @@ module cpu(
 
         .d_readC(d_readC),
         .d_writeC(d_writeC),
+        .d_hit(d_hit),
         .d_address_to_C(d_address_to_C),
         .d_data(d_data),
 

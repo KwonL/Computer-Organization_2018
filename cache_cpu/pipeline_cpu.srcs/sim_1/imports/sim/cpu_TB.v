@@ -28,8 +28,8 @@ module cpu_TB();
 	wire i_send_data;
 
 	// instantiate the unit under test
-	cpu UUT (clk, reset_n, i_readM, i_writeM, i_send_data, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, num_inst, output_port, is_halted);
-	Memory NUUT(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, i_send_data);		   
+	cpu UUT (clk, reset_n, i_readM, i_writeM, i_send_data, d_send_data, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, num_inst, output_port, is_halted);
+	Memory NUUT(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, i_send_data, d_send_data);		   
 
 	// initialize inputs
 	initial begin

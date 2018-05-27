@@ -4,7 +4,7 @@
 `define WORD_SIZE 16	//	instead of 2^16 words to reduce memory
 			//	requirements in the Active-HDL simulator 
 
-module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, i_send_data);
+module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, i_send_data, d_send_data);
 	input clk;
 	wire clk;
 	input reset_n;
@@ -31,13 +31,15 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM,
 	wire [4*`WORD_SIZE-1:0] d_data_block;
 	output i_send_data;
 	reg i_send_data;
+	output d_send_data;
+	reg d_send_data;
 	
 	reg [`WORD_SIZE-1:0] memory [0:`MEMORY_SIZE-1];
 	reg [4*`WORD_SIZE-1:0] i_outputData;
 	reg [4*`WORD_SIZE-1:0] d_outputData;
 	
 	assign i_data_block = i_readM_reg[5]?i_outputData_reg[4]:`WORD_SIZE'bz;
-	assign d_data_block = (d_readM_reg[5]&&!d_writeM)?d_outputData_reg[4]:`WORD_SIZE'bz;
+	assign d_data_block = (d_readM_reg[5]&&!d_writeM_reg[5])?d_outputData_reg[4]:4*`WORD_SIZE'bz;
 
 	// these registers are for delaying memory op
 	reg i_readM_reg[5:0];
@@ -63,6 +65,17 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM,
 		i_send_data <= i_send_data_temp[4];
 	end
 	//////////////////////////////////////////////
+
+	// register for delay
+	reg d_send_data_temp[4:0];
+	always @ (posedge clk) begin
+		d_send_data_temp[0] <= d_readM;
+		d_send_data_temp[1] <= d_send_data_temp[0];
+		d_send_data_temp[2] <= d_send_data_temp[1];
+		d_send_data_temp[3] <= d_send_data_temp[2];
+		d_send_data_temp[4] <= d_send_data_temp[3];
+		d_send_data <= d_send_data_temp[4];
+	end
 	
 	always@(posedge clk)
 		if(!reset_n)

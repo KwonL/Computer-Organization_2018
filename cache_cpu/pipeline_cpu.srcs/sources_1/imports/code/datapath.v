@@ -21,6 +21,7 @@ module datapath (
 
 	output d_readC,
 	output d_writeC,
+    input d_hit,
 	output [`WORD_SIZE-1:0] d_address_to_C,
 	inout [`WORD_SIZE-1:0] d_data,
 
@@ -74,7 +75,7 @@ module datapath (
     wire Branch_taken;
     assign Branch_taken = Branch & Zero;
     wire stall;
-    assign stall = ~i_hit;
+    assign stall = (~i_hit | (~d_hit & d_readC));
     // for control unit to stop write signal
     assign stall_out = stall;
     wire [1:0] ForwardA;
@@ -233,7 +234,7 @@ module datapath (
     /////////////////////
 
     // load data
-    assign d_address = ALUOut;
+    assign d_address_to_C = ALUOut;
 
     // initializing cpu
     initial begin
@@ -246,8 +247,8 @@ module datapath (
     //////////////////////
 
     // memory signal  
-    assign d_readM = MemRead_reg[1];
-    assign d_writeM = MemWrite_reg[1];
+    assign d_readC = MemRead_reg[1];
+    assign d_writeC = MemWrite_reg[1];
     //////////////////////
 
     // PC, inst update
