@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="221136013512fs"></ZoomStartTime>
-      <ZoomEndTime time="223792797298fs"></ZoomEndTime>
-      <Cursor1Time time="223350000000fs"></Cursor1Time>
+      <ZoomStartTime time="220627333334fs"></ZoomStartTime>
+      <ZoomEndTime time="221963333335fs"></ZoomEndTime>
+      <Cursor1Time time="220850000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="110"></ValueColumnWidth>
+      <ValueColumnWidth column_width="108"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="17" />
    <wvobject fp_name="/cpu_TB/UUT/dp/reset_n" type="logic">
@@ -39,10 +39,12 @@
    <wvobject fp_name="/cpu_TB/UUT/dp/inst" type="array">
       <obj_property name="ElementShortName">inst[15:0]</obj_property>
       <obj_property name="ObjectShortName">inst[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/dp/num_inst" type="array">
       <obj_property name="ElementShortName">num_inst[15:0]</obj_property>
       <obj_property name="ObjectShortName">num_inst[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/dp/rf/register" type="array">
       <obj_property name="ElementShortName">register[0:3][15:0]</obj_property>
@@ -51,26 +53,6 @@
    <wvobject fp_name="/cpu_TB/UUT/dp/output_port" type="array">
       <obj_property name="ElementShortName">output_port[15:0]</obj_property>
       <obj_property name="ObjectShortName">output_port[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/cache/i_num_hit" type="array">
-      <obj_property name="ElementShortName">i_num_hit[31:0]</obj_property>
-      <obj_property name="ObjectShortName">i_num_hit[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/cache/i_num_miss" type="array">
-      <obj_property name="ElementShortName">i_num_miss[31:0]</obj_property>
-      <obj_property name="ObjectShortName">i_num_miss[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/cache/d_num_hit" type="array">
-      <obj_property name="ElementShortName">d_num_hit[31:0]</obj_property>
-      <obj_property name="ObjectShortName">d_num_hit[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/cpu_TB/UUT/cache/d_num_miss" type="array">
-      <obj_property name="ElementShortName">d_num_miss[31:0]</obj_property>
-      <obj_property name="ObjectShortName">d_num_miss[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/cpu_TB/UUT/cache/i_hit" type="logic">
       <obj_property name="ElementShortName">i_hit</obj_property>
@@ -91,5 +73,25 @@
    <wvobject fp_name="/cpu_TB/UUT/cache/d_dirty" type="array">
       <obj_property name="ElementShortName">d_dirty[0:3]</obj_property>
       <obj_property name="ObjectShortName">d_dirty[0:3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/dp/i_num_hit" type="array">
+      <obj_property name="ElementShortName">i_num_hit[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_num_hit[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/cache/i_num_miss" type="array">
+      <obj_property name="ElementShortName">i_num_miss[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_num_miss[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/dp/d_num_hit" type="array">
+      <obj_property name="ElementShortName">d_num_hit[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d_num_hit[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cpu_TB/UUT/cache/d_num_miss" type="array">
+      <obj_property name="ElementShortName">d_num_miss[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d_num_miss[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

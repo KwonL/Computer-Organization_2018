@@ -153,6 +153,23 @@ module datapath (
 	reg isHalt_reg;
 	// end of reg//
 
+    // this is for cache sim
+    integer i_num_hit = 0;
+    // integer i_num_miss = 0;
+    integer d_num_hit = 0;
+    // integer d_num_miss = 0;
+
+    always @ (posedge clk) begin
+        if (!stall) begin
+            if (i_hit) i_num_hit <= i_num_hit + 1;
+            // else if (i_readC) i_num_miss <= i_num_miss + 1;
+            if (d_hit) d_num_hit <= d_num_hit + 1;
+            // else if (d_readC | d_writeC) d_num_miss <= d_num_miss + 1;
+        end
+    end 
+
+    /////////////////////////////
+
     /*
      * usually, I named reg variable in this way
      * 

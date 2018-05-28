@@ -38,8 +38,8 @@ module cache_unit(
      * i-cache part
      */
 
-    // integer for i-cache
-    integer i_num_hit = 0;
+    // // integer for i-cache
+    // integer i_num_hit = 0;
     integer i_num_miss = 0;
 
     // i-cache
@@ -80,8 +80,8 @@ module cache_unit(
                 i_data <= i_cache[i_input_index][i_input_offset];
                 i_readM <= 0;
 
-                // num_hit ++
-                i_num_hit <= i_num_hit + 1;
+                // // num_hit ++
+                // i_num_hit <= i_num_hit + 1;
             end
             // read miss, send data request to memory
             else if (i_readC) begin
@@ -115,8 +115,8 @@ module cache_unit(
      * need dirty bit
      */
 
-    // integer for d-cache
-    integer d_num_hit = 0;
+    // // integer for d-cache
+    // integer d_num_hit = 0;
     integer d_num_miss = 0;
     
     // cannot directly assign data to d_data because it is inout
@@ -168,8 +168,8 @@ module cache_unit(
                 d_readM <= 0;
                 d_writeM <= 0;
 
-                // num_hit ++
-                d_num_hit <= d_num_hit + 1;
+                // // num_hit ++
+                // d_num_hit <= d_num_hit + 1;
             end
             // if data write hit occur
             else if (d_writeC && (d_input_tag == d_tag[d_input_index])) begin
@@ -179,8 +179,8 @@ module cache_unit(
                 d_readM <= 0;
                 d_dirty[d_input_index] <= 1;
 
-                // num_hit ++
-                d_num_hit <= d_num_hit + 1;
+                // // num_hit ++
+                // d_num_hit <= d_num_hit + 1;
             end 
             // read or write miss, bring data from memory
             else if (d_readC | d_writeC) begin
