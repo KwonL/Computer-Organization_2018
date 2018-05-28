@@ -1,22 +1,22 @@
-Unable to capture context for thread 13188 in process 11796, can not generate back trace
-Exception at PC 0x00007FFF959EBB93
+Unable to capture context for thread 11172 in process 10640, can not generate back trace
+Exception at PC 0x00007FFA7130BB93
 Printing stacktrace...
 
-Unable to capture context for thread 13188 in process 11796, can not generate back trace
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
-Exception at PC 0x00007FF806B93FB8
+Unable to capture context for thread 11172 in process 10640, can not generate back trace
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8
+Exception at PC 0x00007FFAB3B23FB8

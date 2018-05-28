@@ -34,6 +34,14 @@ module cache_unit(
     inout [4*`WORD_SIZE-1:0] d_data_block
 );
 
+    /* 
+     * i-cache part
+     */
+
+    // integer for i-cache
+    integer i_num_hit = 0;
+    integer i_num_miss = 0;
+
     // i-cache
     // one line consists of four word
     reg [`WORD_SIZE-1:0] i_cache [0:3][0:3];
@@ -71,6 +79,9 @@ module cache_unit(
                 i_hit <= 1;
                 i_data <= i_cache[i_input_index][i_input_offset];
                 i_readM <= 0;
+
+                // num_hit ++
+                i_num_hit <= i_num_hit + 1;
             end
             // read miss, send data request to memory
             else if (i_readC) begin
@@ -90,6 +101,9 @@ module cache_unit(
                 // send data to CPU
                 i_hit <= 1;
                 i_data <= i_temp_data[i_input_offset];
+                
+                // num_miss ++
+                i_num_miss <= i_num_miss + 1;
             end
         end
     end
@@ -100,6 +114,10 @@ module cache_unit(
      * write back policy and write allocate policy
      * need dirty bit
      */
+
+    // integer for d-cache
+    integer d_num_hit = 0;
+    integer d_num_miss = 0;
     
     // cannot directly assign data to d_data because it is inout
     reg [`WORD_SIZE-1:0] d_data_internel;
@@ -149,6 +167,9 @@ module cache_unit(
                 d_data_internel <= d_cache[d_input_index][d_input_offset];
                 d_readM <= 0;
                 d_writeM <= 0;
+
+                // num_hit ++
+                d_num_hit <= d_num_hit + 1;
             end
             // if data write hit occur
             else if (d_writeC && (d_input_tag == d_tag[d_input_index])) begin
@@ -157,6 +178,9 @@ module cache_unit(
                 d_writeM <= 0;
                 d_readM <= 0;
                 d_dirty[d_input_index] <= 1;
+
+                // num_hit ++
+                d_num_hit <= d_num_hit + 1;
             end 
             // read or write miss, bring data from memory
             else if (d_readC | d_writeC) begin
@@ -197,6 +221,9 @@ module cache_unit(
                 d_hit <= 1;
                 if (d_readC) d_data_internel <= d_temp_data[d_input_offset];
                 else if (d_writeC) d_cache[d_input_index][d_input_offset] <= d_data;
+
+                // miss occur
+                d_num_miss <= d_num_miss + 1;
             end
         end
     end
