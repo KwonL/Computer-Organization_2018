@@ -18,7 +18,7 @@ module cpu(
     input DMA_end,
     output BG, 
     input BR,
-    output cmd,  // this may need more bit
+    output [`WORD_SIZE-1+4:0] cmd,  // this may need more bit
 
     // Instruction memory interface
     output i_readM, 
@@ -50,7 +50,8 @@ module cpu(
     wire [`WORD_SIZE-1:0] output_port;
     wire [`WORD_SIZE-1:0] i_address_to_C;
     wire [`WORD_SIZE-1:0] d_address_to_C;
-
+    wire [`WORD_SIZE-1+4:0] cmd;
+    
     cache_unit cache(
         .clk(!Clk),
         .reset_n(Reset_N),
@@ -75,7 +76,10 @@ module cpu(
         .d_address(d_address),
         .d_readM(d_readM),
         .d_writeM(d_writeM),
-        .d_data_block(d_data_block)
+        .d_data_block(d_data_block),
+
+        .BR(BR),
+        .BG(BG)
     );
 
     control_unit controller(
@@ -145,7 +149,6 @@ module cpu(
         .func_code(func_code),
 
         // DMA
-        .DMA_begin(DMA_begin),
         .DMA_begin(DMA_begin),
         .DMA_end(DMA_end),
         .BG(BG),

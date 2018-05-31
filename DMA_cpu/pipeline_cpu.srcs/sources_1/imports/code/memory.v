@@ -76,6 +76,13 @@ module Memory(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM,
 		d_send_data_temp[4] <= d_send_data_temp[3];
 		d_send_data <= d_send_data_temp[4];
 	end
+
+	// for debugging
+	wire [`WORD_SIZE-1:0] externel_dev_memory [11:0];
+	genvar k;
+	for (k = 0; k < 12; k = k+1) begin
+		assign externel_dev_memory[k] = memory[16'h01f4 + k];
+	end
 	
 	always@(posedge clk)
 		if(!reset_n)

@@ -5,24 +5,28 @@ Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/cache.v" Line 5. Module cache_unit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v" Line 11. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 12. Module datapath doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/cache.v" Line 5. Module cache_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v" Line 11. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 12. Module datapath doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "../../../pipeline_cpu.srcs/sources_1/imports/code/ALU.v" Line 39. Module ALU doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 457. Module comparator doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 4. Module hazard_detector doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 77. Module forwarding_unit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 449. Module sign_extension doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/cache.v" Line 5. Module cache_unit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v" Line 11. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 12. Module datapath doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 483. Module comparator doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 4. Module hazard_detector doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 77. Module forwarding_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 475. Module sign_extension doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/DMA.v" Line 18. Module DMA doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/external_device.v" Line 16. Module external_device doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/cache.v" Line 5. Module cache_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v" Line 11. Module control_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 12. Module datapath doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" Line 22. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "../../../pipeline_cpu.srcs/sources_1/imports/code/ALU.v" Line 39. Module ALU doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 457. Module comparator doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 4. Module hazard_detector doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 77. Module forwarding_unit doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/cache_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 449. Module sign_extension doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 483. Module comparator doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 4. Module hazard_detector doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" Line 77. Module forwarding_unit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" Line 475. Module sign_extension doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/DMA.v" Line 18. Module DMA doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/external_device.v" Line 16. Module external_device doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.cache_unit
@@ -36,6 +40,8 @@ Compiling module xil_defaultlib.sign_extension
 Compiling module xil_defaultlib.datapath
 Compiling module xil_defaultlib.cpu
 Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.DMA
+Compiling module xil_defaultlib.external_device
 Compiling module xil_defaultlib.cpu_TB
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot cpu_TB_behav

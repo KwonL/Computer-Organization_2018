@@ -20,14 +20,50 @@ module DMA (
     input [4 * `WORD_SIZE - 1 : 0] edata,
     // cmd = size(upper 4-bit) + address(lower 16-bit)
     input [`WORD_SIZE-1+4:0] cmd,
-    output BR, READ,
+    output reg BR, 
+    output READ,
     output [`WORD_SIZE - 1 : 0] addr, 
     output [4 * `WORD_SIZE - 1 : 0] data,
-    output [1:0] offset,
-    output interrupt);
+    output reg [1:0] offset,
+    output reg interrupt
+);
+
+    // internel registers
+    reg [`WORD_SIZE-1:0] temp_addr;
+    reg [3:0] temp_size;
+    reg [4*`WORD_SIZE-1:0] temp_data;
 
     /* Implement your own logic */
-    
+    always @ (posedge CLK) begin
+        // if CPU send cmd
+        if (cmd == {4'd12, 16'h01f4}) begin
+            BR <= 1;
+            temp_addr <= cmd[`WORD_SIZE-1:0];
+            temp_size <= cmd[`WORD_SIZE-1+4:`WORD_SIZE];
+        end
+        // Bus granted, send data
+        if (BG == 1) begin
+            // count offset
+            if (offset < 2) offset <= offset + 1;
+            // as initialize offset, yield BUS
+            else begin
+                offset <= 0;
+                BR <= 0;
+                interrupt <= 1;
+            end
+        end
+    end
+
+    initial begin
+        BR <= 0;
+        offset <= 0;
+    end
+
+    // if Bus grnated then read memory
+    // else, float READ port
+    assign READ = BG ? (BR ? 1 : 0) : 1'bz;
+    assign addr = BG ? temp_addr + 4*offset : 16'bz;
+    assign data = BG ? edata : 64'bz;
 
 endmodule
 

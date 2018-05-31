@@ -1,6 +1,7 @@
 `timescale 1ns/1ns										
 `define PERIOD1 100
 `define WORD_SIZE 16
+`define MEMORY_SIZE 512
 
 `define NUM_TEST 56
 `define TESTID_SIZE 5
@@ -27,17 +28,8 @@ module cpu_TB();
 	wire is_halted;				// set if the cpu is halted
 	wire i_send_data;
 
-	// instantiate the unit under test
-	cpu UUT (clk, reset_n, i_readM, i_writeM, i_send_data, d_send_data, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, num_inst, output_port, is_halted);
-	Memory NUUT(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, i_send_data, d_send_data);		   
-	
-	/*
-	 * DMA part
-	 */
-	reg [`WORD_SIZE - 1 : 0] memory [`MEMORY_SIZE - 1 : 0];
-
 	wire BG;
-	wire cmd;
+	wire [`WORD_SIZE-1+4:0] cmd;
 	wire BR;
 	wire [4 * `WORD_SIZE - 1 : 0] edata;
 	wire dma_READ;
@@ -47,9 +39,17 @@ module cpu_TB();
 	wire dma_end_int;
 	wire dma_start_int;
 
-	DMA DMA(.CLK(CLK), .BG(BG),  .edata(edata), .cmd(cmd), .BR(BR), .READ(dma_READ),
-		.addr(dma_addr), .data(dma_data), .offset(dma_offset), .interrupt(dma_end_int));
-	external_device edevice(.offset(offset), .interrupt(dma_start_int), .data(edata));
+	// instantiate the unit under test
+	cpu UUT (clk, reset_n, dma_start_int, dma_end_int, BG, BR, cmd, i_readM, i_writeM, i_send_data, d_send_data, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, num_inst, output_port, is_halted);
+	Memory NUUT(clk, reset_n, i_readM, i_writeM, i_address, i_data_block, d_readM, d_writeM, d_address, d_data_block, i_send_data, d_send_data);		   
+	
+	/*
+	 * DMA part
+	 */
+
+	DMA DMA(.CLK(clk), .BG(BG),  .edata(edata), .cmd(cmd), .BR(BR), .READ(d_writeM),
+		.addr(d_address), .data(d_data_block), .offset(dma_offset), .interrupt(dma_end_int));
+	external_device edevice(.offset(dma_offset), .interrupt(dma_start_int), .data(edata));
 	/////////////////////////////////////////////////////////////////////////////////
 
 	// initialize inputs

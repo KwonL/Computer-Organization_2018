@@ -29,9 +29,12 @@ module cache_unit(
     // communication with Memory
     input d_send_data,
     output [`WORD_SIZE-1:0] d_address,
-    output reg d_readM,
-    output reg d_writeM,
-    inout [4*`WORD_SIZE-1:0] d_data_block
+    output d_readM,
+    output d_writeM,
+    inout [4*`WORD_SIZE-1:0] d_data_block,
+    
+    input BR,
+    input BG
 );
 
     /* 
@@ -118,13 +121,19 @@ module cache_unit(
     // // integer for d-cache
     // integer d_num_hit = 0;
     integer d_num_miss = 0;
+
+
+    reg d_writeM_reg;
+    reg d_readM_reg;
+
+    // cannot access to memory when DMA use it
     
     // cannot directly assign data to d_data because it is inout
     reg [`WORD_SIZE-1:0] d_data_internel;
     assign d_data = d_readC ? d_data_internel : 16'bz;
     // cannot directly assign
     reg [4*`WORD_SIZE-1:0] d_data_block_internel;
-    assign d_data_block = d_writeM ? d_data_block_internel : 64'bz;
+    assign d_data_block = BR | BG ? 64'bz : d_writeM ? d_data_block_internel : 64'bz;
 
     // d-cache
     // one line consists of four word
@@ -146,8 +155,10 @@ module cache_unit(
 
     // send address
     // address is evicted line's address
-    assign d_address = d_writeM ? {d_tag[i_input_index], d_input_index, 2'b00} : {d_address_to_C[15:2], 2'b00};
-
+    assign d_address = BR | BG ? 16'bz : d_writeM ? {d_tag[i_input_index], d_input_index, 2'b00} : {d_address_to_C[15:2], 2'b00};
+    assign d_writeM = BG | BR ? 1'bz : d_writeM_reg;
+    assign d_readM = BG | BR ? 1'bz : d_readM_reg;
+    
     // d_hit block
     always @ (posedge clk) begin
         // reset cache
@@ -157,16 +168,16 @@ module cache_unit(
                 d_tag[i] <= -1;
                 d_dirty[i] <= 0;
             end
-            d_readM <= 0;
-            d_writeM <= 0;
+            d_readM_reg <= 0;
+            d_writeM_reg <= 0;
         end
         else begin
             // if data read hit occur
             if (d_readC && (d_input_tag == d_tag[d_input_index])) begin
                 d_hit <= 1;
                 d_data_internel <= d_cache[d_input_index][d_input_offset];
-                d_readM <= 0;
-                d_writeM <= 0;
+                d_readM_reg <= 0;
+                d_writeM_reg <= 0;
 
                 // // num_hit ++
                 // d_num_hit <= d_num_hit + 1;
@@ -175,8 +186,8 @@ module cache_unit(
             else if (d_writeC && (d_input_tag == d_tag[d_input_index])) begin
                 d_hit <= 1;
                 d_cache[d_input_index][d_input_offset] <= d_data;
-                d_writeM <= 0;
-                d_readM <= 0;
+                d_writeM_reg <= 0;
+                d_readM_reg <= 0;
                 d_dirty[d_input_index] <= 1;
 
                 // // num_hit ++
@@ -188,23 +199,23 @@ module cache_unit(
                 if (d_dirty[d_input_index]) begin
                     // back in this else if(d_readC|d_writeC) block and goto below else
                     d_dirty[d_input_index] <= 0;
-                    d_writeM <= 1;
+                    d_writeM_reg <= 1;
                     d_hit <= 0;
-                    d_readM <= 0;
+                    d_readM_reg <= 0;
                     // send data to memory
                     d_data_block_internel <= {d_cache[d_input_index][0], d_cache[d_input_index][1], d_cache[d_input_index][2], d_cache[d_input_index][3]};
                 end
                 // no need to write back
                 else begin
                     d_hit <= 0;
-                    d_readM <= 1;
-                    d_writeM <= 0;
+                    d_readM_reg <= 1;
+                    d_writeM_reg <= 0;
                 end
             end 
             else begin
                 d_hit <= 0;
-                d_readM <= 0;
-                d_writeM <= 0;
+                d_readM_reg <= 0;
+                d_writeM_reg <= 0;
             end
             // recieve data from memory
             if (d_send_data && (d_readC | d_writeC)) begin

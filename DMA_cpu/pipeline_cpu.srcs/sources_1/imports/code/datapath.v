@@ -48,14 +48,14 @@ module datapath (
     output stall_out,
     
     output [3:0] opcode,
-    output [5:0] func_code
+    output [5:0] func_code,
 
     // DMA interface
     input DMA_begin,
     input DMA_end,
     output BG, 
     input BR,
-    output cmd,
+    output [`WORD_SIZE-1+4:0] cmd
 );
     // internel register for PC and instruction
     reg [`WORD_SIZE-1:0] PC;
@@ -175,6 +175,25 @@ module datapath (
         end
     end 
 
+    /*
+     * DMA communication part
+     */
+    reg BG;
+    assign cmd = DMA_begin ? {4'd12, 16'h01f4} : 20'bz;
+    always @ (posedge !clk) begin
+        if (reset_n == 0) begin
+            BG <= 0;
+        end else begin
+        // yield BUS to DMA controller
+        if (BR) begin
+            BG <= 1;
+        end
+        // recieve BUS from DMA
+        else if (DMA_end) begin
+            BG <= 0;
+        end
+        end
+    end
     /////////////////////////////
 
     /*
