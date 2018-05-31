@@ -12,6 +12,7 @@
 
 `define FIRE_TIME 2600
 `define INTTERRUPT_DURATION 100
+`define FIRST_FIRE_TIME 25000
 
 module external_device(
     input wire [`DEVICE_BIT_LEN - 1 :0] offset,

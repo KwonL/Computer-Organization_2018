@@ -2,105 +2,44 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Thu May 31 21:01:21 2018
-# Process ID: 5968
+# Start of session at: Thu May 31 22:13:00 2018
+# Process ID: 5172
 # Current directory: D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5148 D:\Users\lkh116\Desktop\C.O_2018\DMA_cpu\pipeline_cpu.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6608 D:\Users\lkh116\Desktop\C.O_2018\DMA_cpu\pipeline_cpu.xpr
 # Log file: D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/vivado.log
 # Journal file: D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu\vivado.jou
-#-----------------------------------------------------------sstart_guiopen_project D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.xpr
-
-add_files -norecurse -scan_for_includes {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/opcodes.v D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/external_device.v D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/ALU.v D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/memory.v D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/constants.v D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/cpu.v D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/cache.v D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/DMA.v D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/datapath.v D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/controller.v}
-launch_simulation
-launch_simulation
-launch_simulation
-launch_simulation
-launch_simulation
-launch_simulation
+#-----------------------------------------------------------
+start_gui
+open_project D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.xpr
 launch_simulation
 open_wave_config D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg
 source cpu_TB.tcl
 restart
 run all
-restart
-run all
-run all
-restart
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-run all
-restart
 run 10 us
-restart
 run 10 us
 relaunch_sim
-run all
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-restart
-run all
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-restart
 run 10 us
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-restart
 run 10 us
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-relaunch_sim
-restart
-run all
-restart
-run 10 us
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-relaunch_sim
-restart
-run all
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-relaunch_sim
-relaunch_sim
-restart
-run all
-relaunch_sim
-restart
-run all
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-run 10 us
-restart
-run 10 us
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-restart
-run 10 us
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-run 10 us
-relaunch_sim
-relaunch_sim
-restart
-run 10 us
-save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-relaunch_sim
-restart
-run 10 us
-relaunch_sim
-restart
 run 10 us
 relaunch_sim
 restart
 run all
-relaunch_sim
 restart
 run all
-relaunch_sim
+run all
+restart
 run all
 run all
 restart
 run 10 us
+run 10 us
+run 10 us
 relaunch_sim
-run all
 relaunch_sim
-run all
+relaunch_sim
 restart
 run all
-run 10 us
+run all
 save_wave_config {D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/cpu_TB_behav.wcfg}
-run all
 close_sim

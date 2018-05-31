@@ -44,8 +44,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/DM
 INFO: [VRFC 10-311] analyzing module cache_unit
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/memory.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Memory
-WARNING: [VRFC 10-756] identifier i_readM_reg is used before its declaration [D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/memory.v:41]
-WARNING: [VRFC 10-756] identifier d_readM_reg is used before its declaration [D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/memory.v:42]
+WARNING: [VRFC 10-756] identifier i_readM_reg is used before its declaration [D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/memory.v:48]
+WARNING: [VRFC 10-756] identifier d_readM_reg is used before its declaration [D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/memory.v:49]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/external_device.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module external_device
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/DMA.v" into library xil_defaultlib

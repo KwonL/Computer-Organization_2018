@@ -1,7 +1,6 @@
 Vivado Simulator 2016.4
 Time resolution is 1 ps
-$finish called at time : 5400 ns : File "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/external_device.v" Line 54
-$finish called at time : 5400 ns : File "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/external_device.v" Line 54
+$finish called at time : 24300 ns : File "D:/Users/lkh116/Desktop/C.O_2018/DMA_cpu/pipeline_cpu.srcs/sources_1/imports/code/external_device.v" Line 57
 Clock # 2233
 The testbench is finished. Summarizing...
 All Pass!
