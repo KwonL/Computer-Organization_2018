@@ -29,3 +29,8 @@ My space for Projects
     
     7-2) cache CPU - it takes 6-cycle to read memory and 1-cycle to read cache
     
+8. 16-bit pipeline CPU with DMA controller
+
+    Externel Device write data to memory. DMA controller can handle this without CPU stall
+    
+    
