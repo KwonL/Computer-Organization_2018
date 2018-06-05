@@ -1,10 +1,11 @@
-# Computer Organization 2018 first semester
+## SNU 2018-1 Computer Organization Projects
+Seoul National University EE computer organization lecture.
+by prof.JangWoo Kim
 
-Instructor : prof.JangWoo Kim
+## Motivation
+The whole purpose of this project is to complete a system. To do this, I builded a pipeline CPU with cache and DMA added starting with a single cycle CPU.
 
-
-My space for Projects
-
+## Features
 1. ALU : 16-bit ALU
 2. RTL sequential logic
 
@@ -32,5 +33,13 @@ My space for Projects
 8. 16-bit pipeline CPU with DMA controller
 
     Externel Device write data to memory. DMA controller can handle this without CPU stall
+
+    8-1) DMA controller
     
-    
+    8-2) DMA controller with cycle stealing
+
+## Tests
+You can enter some project folder and open description file. Just press 'run simulation' button to test projects.
+
+## How to use?
+I leave this project for my juniors. Good Luck!
