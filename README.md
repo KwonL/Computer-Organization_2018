@@ -6,6 +6,8 @@ by prof.JangWoo Kim
 The whole purpose of this project is to complete a system. To do this, I builded a pipeline CPU with cache and DMA added starting with a single cycle CPU.
 
 ## Features
+You can find Verilog source code in 'some_project_folder/project_folder.srcs/sources_1/imports/code'
+
 1. ALU : 16-bit ALU
 2. RTL sequential logic
 
