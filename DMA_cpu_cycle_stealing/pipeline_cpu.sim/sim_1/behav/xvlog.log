@@ -1,0 +1,80 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hazard_detector
+INFO: [VRFC 10-311] analyzing module stall_unit
+WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:40]
+INFO: [VRFC 10-311] analyzing module forwarding_unit
+WARNING: [VRFC 10-1315] redeclaration of ansi port stall is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:100]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardA is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:101]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ForwardB is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/Hazard_control.v:102]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module control_unit
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemRead is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:36]
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemWrite is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:37]
+WARNING: [VRFC 10-1315] redeclaration of ansi port RegDst is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:38]
+WARNING: [VRFC 10-1315] redeclaration of ansi port Jump is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:39]
+WARNING: [VRFC 10-1315] redeclaration of ansi port Jump_R is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:40]
+WARNING: [VRFC 10-1315] redeclaration of ansi port Branch is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:41]
+WARNING: [VRFC 10-1315] redeclaration of ansi port MemtoReg is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:42]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUOp is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:43]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUSrc1 is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:44]
+WARNING: [VRFC 10-1315] redeclaration of ansi port ALUSrc2 is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:45]
+WARNING: [VRFC 10-1315] redeclaration of ansi port RegWrite is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:46]
+WARNING: [VRFC 10-1315] redeclaration of ansi port isWWD is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:47]
+WARNING: [VRFC 10-1315] redeclaration of ansi port isHalt is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/controller.v:48]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+WARNING: [VRFC 10-1195] overwriting previous definition of module ALU [../../../pipeline_cpu.srcs/sources_1/imports/code/ALU.v:39]
+INFO: [VRFC 10-311] analyzing module datapath
+WARNING: [VRFC 10-1315] redeclaration of ansi port num_inst is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:68]
+WARNING: [VRFC 10-1315] redeclaration of ansi port output_port is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:69]
+WARNING: [VRFC 10-1315] redeclaration of ansi port BG is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:181]
+WARNING: [VRFC 10-1315] redeclaration of ansi port i_readC is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:275]
+INFO: [VRFC 10-2458] undeclared symbol i_writeM, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:276]
+INFO: [VRFC 10-2458] undeclared symbol stall_from_fu, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:464]
+WARNING: [VRFC 10-756] identifier reg_data is used before its declaration [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:100]
+WARNING: [VRFC 10-756] identifier MemtoReg_reg is used before its declaration [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:101]
+WARNING: [VRFC 10-756] identifier reg_data is used before its declaration [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:105]
+WARNING: [VRFC 10-756] identifier MemtoReg_reg is used before its declaration [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/datapath.v:106]
+INFO: [VRFC 10-311] analyzing module sign_extension
+INFO: [VRFC 10-311] analyzing module comparator
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cache.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cache_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+WARNING: [VRFC 10-756] identifier i_readM_reg is used before its declaration [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/memory.v:48]
+WARNING: [VRFC 10-756] identifier d_readM_reg is used before its declaration [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/memory.v:49]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/external_device.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module external_device
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/DMA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DMA
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+WARNING: [VRFC 10-1315] redeclaration of ansi port num_inst is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:49]
+WARNING: [VRFC 10-1315] redeclaration of ansi port output_port is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:50]
+WARNING: [VRFC 10-1315] redeclaration of ansi port cmd is not allowed [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:53]
+INFO: [VRFC 10-2458] undeclared symbol i_readC, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:59]
+INFO: [VRFC 10-2458] undeclared symbol i_hit, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:62]
+INFO: [VRFC 10-2458] undeclared symbol d_readC, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:69]
+INFO: [VRFC 10-2458] undeclared symbol d_writeC, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:70]
+INFO: [VRFC 10-2458] undeclared symbol d_hit, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:73]
+INFO: [VRFC 10-2458] undeclared symbol stall, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:91]
+INFO: [VRFC 10-2458] undeclared symbol MemRead, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:93]
+INFO: [VRFC 10-2458] undeclared symbol MemWrite, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:94]
+INFO: [VRFC 10-2458] undeclared symbol Jump, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:97]
+INFO: [VRFC 10-2458] undeclared symbol Jump_R, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:98]
+INFO: [VRFC 10-2458] undeclared symbol Branch, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:99]
+INFO: [VRFC 10-2458] undeclared symbol MemtoReg, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:100]
+INFO: [VRFC 10-2458] undeclared symbol ALUSrc1, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:102]
+INFO: [VRFC 10-2458] undeclared symbol ALUSrc2, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:103]
+INFO: [VRFC 10-2458] undeclared symbol RegWrite, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:104]
+INFO: [VRFC 10-2458] undeclared symbol isWWD, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:106]
+INFO: [VRFC 10-2458] undeclared symbol isHalt, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:107]
+INFO: [VRFC 10-2458] undeclared symbol i_writeC, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/cpu.v:115]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_TB
+INFO: [VRFC 10-2458] undeclared symbol d_send_data, assumed default net type wire [D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v:43]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

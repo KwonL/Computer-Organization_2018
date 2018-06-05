@@ -1,0 +1,7 @@
+Vivado Simulator 2016.4
+Time resolution is 1 ps
+$finish called at time : 46300 ns : File "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sources_1/imports/code/external_device.v" Line 56
+Clock # 2234
+The testbench is finished. Summarizing...
+All Pass!
+$finish called at time : 223450 ns : File "D:/Users/lkh116/Desktop/DMA_cpu_cycle_stealing/pipeline_cpu.srcs/sim_1/imports/sim/cpu_TB.v" Line 181
