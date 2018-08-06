@@ -3,7 +3,7 @@ Seoul National University EE computer organization lecture.
 by prof.JangWoo Kim
 
 ## Motivation
-The whole purpose of this project is to complete a system. To do this, I builded a pipeline CPU with cache and DMA added starting with a single cycle CPU.
+The whole purpose of this project is to complete a system. To do this, I built a pipeline CPU with cache and DMA added starting with a single cycle CPU.
 
 ## Features
 You can find Verilog source code in 'some_project_folder/project_folder.srcs/sources_1/imports/code'
